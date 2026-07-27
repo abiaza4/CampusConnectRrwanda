@@ -4,32 +4,32 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const teamMembers = [
   {
-    name: "Jean-Pierre Mugabo",
+    name: "Abiaza Stephen",
     role: "Founder & CEO",
     bio: "Education technology entrepreneur with a passion for making higher education information accessible across East Africa.",
   },
   {
-    name: "Claire Uwimana",
+    name: "Ruotto Deng",
     role: "Head of Research",
-    bio: "Former university admissions consultant. Leads the team that verifies and maintains all university data on the platform.",
+    bio: "Leads the team that verifies and maintains all university data on the platform.",
   },
   {
-    name: "Patrick Nsengiyumva",
+    name: "Wani Henry",
     role: "Chief Technology Officer",
     bio: "Full-stack developer specializing in education platforms. Ensures the website is fast, accessible, and mobile-friendly.",
   },
   {
-    name: "Diane Kabera",
-    role: "Content Director",
-    bio: "Journalist and education writer. Creates guides, blog posts, and informational content for students and parents.",
-  },
-  {
-    name: "Emmanuel Habimana",
+    name: "Deng Mayom",
     role: "Student Relations",
     bio: "International student advocate who helps connect students with universities and provides guidance on the application process.",
   },
   {
-    name: "Alice Mukamana",
+    name: "Edison Joseph",
+    role: "Content Director",
+    bio: "Creates guides, blog posts, and informational content for students and parents.",
+  },
+  {
+    name: "Emmanuel Tartisio",
     role: "Design Lead",
     bio: "UX designer focused on creating intuitive, beautiful interfaces that make complex information easy to navigate.",
   },

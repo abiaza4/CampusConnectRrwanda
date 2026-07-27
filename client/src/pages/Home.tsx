@@ -152,7 +152,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section
-        className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] max-h-[900px] overflow-hidden bg-gradient-to-br from-navy via-navy-dark to-emerald-900"
+        className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] max-h-[900px] overflow-hidden bg-black"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
