@@ -32,7 +32,7 @@ const heroSlides = [
     subtitle: "Everything you need to know about studying in Rwanda—all in one place.",
   },
   {
-    image: "https://www.ines.ac.rw/media/banners/PIC_2311.jpg",
+    image: "https://media.licdn.com/dms/image/v2/D4E22AQFEh1BPOBwgSA/feedshare-shrink_800/B4EZ7_Zej_KAAk-/0/1782401333386?e=2147483647&v=beta&t=Z7mS-asKIhqwRK_a-Wtufkkd9N1chaX0SKPEWuswL2w",
     title: "Your Future Starts Here",
     subtitle: "From admission to graduation, we guide you every step of the way.",
   },
@@ -241,11 +241,9 @@ export default function Home() {
                 </Button>
               </Link>
             </motion.div>
-          </div>
 
-          {/* Slide Indicators */}
-          <div className="absolute bottom-6 sm:bottom-8 left-0 right-0">
-            <div className="flex justify-center gap-2">
+            {/* Slide Indicators */}
+            <div className="flex justify-center gap-2 pt-2">
               {heroSlides.map((_, i) => (
                 <button
                   key={i}
