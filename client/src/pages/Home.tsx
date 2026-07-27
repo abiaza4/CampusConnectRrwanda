@@ -169,7 +169,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section
-        className="relative min-h-[100dvh] min-h-[600px] max-h-[900px] overflow-hidden"
+        className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] max-h-[900px] overflow-hidden"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -185,8 +185,8 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Content */}
-        <div className="relative h-full flex flex-col justify-center items-center text-center">
-          <div className="container">
+        <div className="relative h-full flex flex-col justify-center items-center text-center px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-0">
+          <div className="w-full max-w-4xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -194,15 +194,15 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="max-w-3xl"
+                className="max-w-3xl mx-auto"
               >
                 <h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4"
                   style={{ fontFamily: "'Fraunces', serif" }}
                 >
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
                   {heroSlides[currentSlide].subtitle}
                 </p>
               </motion.div>
@@ -213,7 +213,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="w-full max-w-xl mx-auto px-4"
+              className="w-full max-w-xl mx-auto"
             >
               <div className="relative">
                 <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -227,7 +227,7 @@ export default function Home() {
                       setLocation(`/universities?search=${encodeURIComponent(searchQuery.trim())}`);
                     }
                   }}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/95 backdrop-blur-sm border-0 shadow-2xl text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald/50 text-sm md:text-base"
+                  className="w-full pl-12 pr-4 py-3.5 sm:py-4 rounded-2xl bg-white/95 backdrop-blur-sm border-0 shadow-2xl text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald/50 text-sm md:text-base"
                 />
               </div>
             </motion.div>
@@ -237,15 +237,15 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-wrap justify-center gap-3 mt-6 px-4"
+              className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mt-5 sm:mt-6"
             >
-              <Link href="/universities">
-                <Button className="bg-emerald hover:bg-emerald-dark text-white px-6 py-3 rounded-xl font-medium text-sm shadow-lg shadow-emerald/20 transition-all">
+              <Link href="/universities" className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-emerald hover:bg-emerald-dark text-white px-6 py-3 rounded-xl font-medium text-sm shadow-lg shadow-emerald/20 transition-all">
                   Explore Universities <ArrowRight size={16} className="ml-2" />
                 </Button>
               </Link>
-              <Link href="/study-guide">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-6 py-3 rounded-xl font-medium text-sm">
+              <Link href="/study-guide" className="w-full sm:w-auto">
+                <Button variant="outline" className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 px-6 py-3 rounded-xl font-medium text-sm">
                   Study in Rwanda Guide
                 </Button>
               </Link>
@@ -253,7 +253,7 @@ export default function Home() {
           </div>
 
           {/* Slide Indicators */}
-          <div className="absolute bottom-8 left-0 right-0">
+          <div className="absolute bottom-6 sm:bottom-8 left-0 right-0">
             <div className="flex justify-center gap-2">
               {heroSlides.map((_, i) => (
                 <button
