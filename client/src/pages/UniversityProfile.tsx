@@ -1355,13 +1355,13 @@ export default function UniversityProfile() {
                     <TabsTrigger
                       key={tab.id}
                       value={tab.id}
-                      className={`whitespace-nowrap px-3 py-2 text-xs md:text-sm rounded-lg transition-all ${
+                      className={`whitespace-nowrap px-3 py-2 text-xs md:text-sm rounded-lg transition-all !border-0 ${
                         isActive
-                          ? "bg-emerald text-white shadow-md shadow-emerald/20"
+                          ? "!bg-emerald !text-white !shadow-md !shadow-emerald/20 data-[state=active]:bg-emerald data-[state=active]:text-white"
                           : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5"
                       }`}
                     >
-                      <Icon className={`w-3.5 h-3.5 md:mr-1.5 ${isActive ? "text-white" : ""}`} />
+                      <Icon className={`w-3.5 h-3.5 md:mr-1.5 ${isActive ? "!text-white" : "text-gray-400 dark:text-gray-500 group-hover:text-gray-600"}`} />
                       <span className="hidden md:inline">{tab.label}</span>
                     </TabsTrigger>
                   );
