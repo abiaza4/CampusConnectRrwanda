@@ -115,6 +115,12 @@ export default function Footer() {
                   info@campusconnect.rw
                 </a>
               </li>
+              <li className="flex items-start gap-2.5">
+                <Mail size={14} className="text-emerald mt-0.5 shrink-0" />
+                <a href="mailto:abiazaawari@gmail.com" className="text-sm text-white/50 hover:text-emerald transition-colors">
+                  abiazaawari@gmail.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>

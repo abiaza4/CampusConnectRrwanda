@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -19,6 +19,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const [location] = useLocation();
+  const isHome = location === "/";
 
   useEffect(() => {
     setIsOpen(false);
@@ -27,8 +28,18 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-deep-navy/90 backdrop-blur-xl shadow-lg shadow-black/5 transition-all duration-300">
       <nav className="container flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
+        {/* Back Arrow + Logo */}
+        <div className="flex items-center gap-2.5">
+          {!isHome && (
+            <button
+              onClick={() => window.history.back()}
+              className="flex items-center justify-center w-9 h-9 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
+              aria-label="Go back"
+            >
+              <ArrowLeft size={20} />
+            </button>
+          )}
+          <Link href="/" className="flex items-center gap-2.5 group">
           <div className="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-navy to-emerald p-1 shadow-lg shadow-navy/20">
             <img
               src="/campusconnect logo.jpg"
@@ -37,6 +48,7 @@ export default function Navbar() {
             />
           </div>
         </Link>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
