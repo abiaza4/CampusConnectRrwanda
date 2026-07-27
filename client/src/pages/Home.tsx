@@ -27,29 +27,20 @@ import { universities } from "@/data/universities";
 
 const heroSlides = [
   {
-    gradient: "from-navy via-navy-dark to-emerald-900",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/University_of_Rwanda%2CHuye_campus_.jpg/1280px-University_of_Rwanda%2CHuye_campus_.jpg",
     title: "Discover Rwanda's Universities with Confidence",
     subtitle: "Everything you need to know about studying in Rwanda—all in one place.",
   },
   {
-    gradient: "from-deep-navy via-navy to-emerald-800",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/University_of_Rwanda%2C_Nyarugenge_Campus.jpg/1280px-University_of_Rwanda%2C_Nyarugenge_Campus.jpg",
     title: "Your Future Starts Here",
     subtitle: "From admission to graduation, we guide you every step of the way.",
   },
   {
-    gradient: "from-navy-dark via-deep-navy to-emerald-900",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/University_of_Rwanda%2C_Remera_Campus.jpg/1280px-University_of_Rwanda%2C_Remera_Campus.jpg",
     title: "World-Class Education in the Heart of Africa",
     subtitle: "Explore accredited universities with modern facilities, vibrant campuses, and endless opportunities.",
   },
-];
-
-const universityCampusImages = [
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/University_of_Rwanda%2CHuye_campus_.jpg/1280px-University_of_Rwanda%2CHuye_campus_.jpg",
-  "https://ulk.ac.rw/wp-content/uploads/2016/06/ULK-Kigali-Campus-Main-Mini.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/University_of_Rwanda%2C_Nyarugenge_Campus.jpg/1280px-University_of_Rwanda%2C_Nyarugenge_Campus.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/University_of_Rwanda%2C_Remera_Campus.jpg/1280px-University_of_Rwanda%2C_Remera_Campus.jpg",
-  "https://ulk.ac.rw/wp-content/uploads/2016/06/LOGO-ULK.png",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/University_of_Rwanda%2CHuye_campus_.jpg/1280px-University_of_Rwanda%2CHuye_campus_.jpg",
 ];
 
 const featuredUniversities = universities.slice(0, 4);
@@ -180,8 +171,15 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
-              className={`absolute inset-0 bg-gradient-to-br ${heroSlides[currentSlide].gradient}`}
-            />
+              className="absolute inset-0"
+            >
+              <img
+                src={heroSlides[currentSlide].image}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/60" />
+            </motion.div>
         </AnimatePresence>
 
         {/* Content */}
