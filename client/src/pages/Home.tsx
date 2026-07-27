@@ -27,17 +27,17 @@ import { universities } from "@/data/universities";
 
 const heroSlides = [
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/University_of_Rwanda%2CHuye_campus_.jpg/1280px-University_of_Rwanda%2CHuye_campus_.jpg",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80",
     title: "Discover Rwanda's Universities with Confidence",
     subtitle: "Everything you need to know about studying in Rwanda—all in one place.",
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/University_of_Rwanda%2C_Nyarugenge_Campus.jpg/1280px-University_of_Rwanda%2C_Nyarugenge_Campus.jpg",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1600&q=80",
     title: "Your Future Starts Here",
     subtitle: "From admission to graduation, we guide you every step of the way.",
   },
   {
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/University_of_Rwanda%2C_Remera_Campus.jpg/1280px-University_of_Rwanda%2C_Remera_Campus.jpg",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80",
     title: "World-Class Education in the Heart of Africa",
     subtitle: "Explore accredited universities with modern facilities, vibrant campuses, and endless opportunities.",
   },
@@ -131,7 +131,6 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [paused, setPaused] = useState(false);
-  const [uniImageSlide, setUniImageSlide] = useState(0);
   const [currentFeature, setCurrentFeature] = useState(0);
 
   useEffect(() => {
@@ -144,13 +143,6 @@ export default function Home() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setUniImageSlide((prev) => (prev + 1) % universityCampusImages.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
       setCurrentFeature((prev) => (prev + 1) % platformFeatures.length);
     }, 5000);
     return () => clearInterval(timer);
@@ -160,7 +152,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section
-        className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] max-h-[900px] overflow-hidden"
+        className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] max-h-[900px] overflow-hidden bg-gradient-to-br from-navy via-navy-dark to-emerald-900"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -177,8 +169,9 @@ export default function Home() {
                 src={heroSlides[currentSlide].image}
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
+                onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
               />
-              <div className="absolute inset-0 bg-black/60" />
+              <div className="absolute inset-0 bg-black/50" />
             </motion.div>
         </AnimatePresence>
 
