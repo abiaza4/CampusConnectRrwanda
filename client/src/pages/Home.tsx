@@ -27,17 +27,17 @@ import { universities } from "@/data/universities";
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80",
+    image: "https://ulk.ac.rw/wp-content/uploads/2016/08/ULK-Masters-Programmes-min.jpg",
     title: "Discover Rwanda's Universities with Confidence",
     subtitle: "Everything you need to know about studying in Rwanda—all in one place.",
   },
   {
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1600&q=80",
+    image: "https://www.ines.ac.rw/media/banners/PIC_2311.jpg",
     title: "Your Future Starts Here",
     subtitle: "From admission to graduation, we guide you every step of the way.",
   },
   {
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80",
+    image: "https://uok.ac.rw/wp-content/uploads/2026/05/Web-banner-2-02-scaled-1.jpg",
     title: "World-Class Education in the Heart of Africa",
     subtitle: "Explore accredited universities with modern facilities, vibrant campuses, and endless opportunities.",
   },
