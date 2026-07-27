@@ -1,0 +1,104 @@
+import { Badge } from "@/components/ui/badge";
+import { Mail, Linkedin, ExternalLink } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
+
+const teamMembers = [
+  {
+    name: "Jean-Pierre Mugabo",
+    role: "Founder & CEO",
+    bio: "Education technology entrepreneur with a passion for making higher education information accessible across East Africa.",
+  },
+  {
+    name: "Claire Uwimana",
+    role: "Head of Research",
+    bio: "Former university admissions consultant. Leads the team that verifies and maintains all university data on the platform.",
+  },
+  {
+    name: "Patrick Nsengiyumva",
+    role: "Chief Technology Officer",
+    bio: "Full-stack developer specializing in education platforms. Ensures the website is fast, accessible, and mobile-friendly.",
+  },
+  {
+    name: "Diane Kabera",
+    role: "Content Director",
+    bio: "Journalist and education writer. Creates guides, blog posts, and informational content for students and parents.",
+  },
+  {
+    name: "Emmanuel Habimana",
+    role: "Student Relations",
+    bio: "International student advocate who helps connect students with universities and provides guidance on the application process.",
+  },
+  {
+    name: "Alice Mukamana",
+    role: "Design Lead",
+    bio: "UX designer focused on creating intuitive, beautiful interfaces that make complex information easy to navigate.",
+  },
+];
+
+export default function Team() {
+  return (
+    <div>
+      {/* Hero */}
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
+        <div className="container relative">
+          <ScrollReveal>
+            <div className="text-center max-w-3xl mx-auto">
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">Our People</Badge>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
+                Meet the Team
+              </h1>
+              <p className="text-white/70 text-lg">
+                A dedicated group of education professionals, technologists, and researchers working to make higher education information accessible.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-16 bg-gray-50 dark:bg-background">
+        <div className="container">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {teamMembers.map((member, i) => (
+              <ScrollReveal key={i} delay={i * 0.08}>
+                <div className="bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5 hover:shadow-lg transition-all text-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald to-navy flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-xl">
+                      {member.name.split(" ").map((n) => n[0]).join("")}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-emerald font-medium mb-3">{member.role}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{member.bio}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          {/* Values */}
+          <ScrollReveal delay={0.3}>
+            <div className="mt-16 bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center" style={{ fontFamily: "'Fraunces', serif" }}>
+                Our Values
+              </h2>
+              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                {[
+                  { value: "Accuracy", desc: "Every piece of information is verified and regularly updated." },
+                  { value: "Accessibility", desc: "Education information should be free and available to everyone." },
+                  { value: "Integrity", desc: "We provide honest, unbiased information without favoring any institution." },
+                  { value: "Innovation", desc: "We use technology to simplify the education research process." },
+                ].map((v) => (
+                  <div key={v.value} className="text-center">
+                    <h4 className="font-semibold text-emerald text-sm mb-1">{v.value}</h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{v.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </div>
+  );
+}
