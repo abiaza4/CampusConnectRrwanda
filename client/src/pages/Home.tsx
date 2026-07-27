@@ -185,8 +185,8 @@ export default function Home() {
         </AnimatePresence>
 
         {/* Content */}
-        <div className="relative h-full flex flex-col justify-center items-center text-center px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-0">
-          <div className="w-full max-w-4xl mx-auto">
+        <div className="relative h-full flex flex-col items-center text-center px-5 sm:px-6 md:px-8 py-16 sm:py-20 md:py-0">
+          <div className="flex flex-col items-center justify-center flex-1 w-full max-w-4xl mx-auto gap-6 sm:gap-7 md:gap-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
@@ -194,15 +194,15 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="max-w-3xl mx-auto"
+                className="flex flex-col items-center"
               >
                 <h1
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 sm:mb-4"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
                   style={{ fontFamily: "'Fraunces', serif" }}
                 >
                   {heroSlides[currentSlide].title}
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
                   {heroSlides[currentSlide].subtitle}
                 </p>
               </motion.div>
@@ -213,7 +213,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="w-full max-w-xl mx-auto"
+              className="w-full max-w-xl"
             >
               <div className="relative">
                 <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -237,7 +237,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mt-5 sm:mt-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-3"
             >
               <Link href="/universities" className="w-full sm:w-auto">
                 <Button className="w-full sm:w-auto bg-emerald hover:bg-emerald-dark text-white px-6 py-3 rounded-xl font-medium text-sm shadow-lg shadow-emerald/20 transition-all">
