@@ -47,6 +47,7 @@ export default function Footer() {
                 { label: "Scholarships", href: "/scholarships" },
                 { label: "Compare Programs", href: "/compare" },
                 { label: "Events", href: "/events" },
+                { label: "Equivalence", href: "/equivalence" },
                 { label: "Blog", href: "/blog" },
                 { label: "About Us", href: "/about" },
                 { label: "Our Team", href: "/team" },
@@ -69,19 +70,23 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {[
-                "Application for Equivalence",
-                "Visa Application Assistance",
-                "University Registration",
-                "Accommodation Search",
-                "Certificate of Good Conduct",
-                "Academic Documents Notarization",
-                "Course Recommendations",
-                "And More...",
+                { label: "Application for Equivalence", href: "/equivalence" },
+                { label: "Visa Application Assistance", href: "/visa-guide" },
+                { label: "University Registration", href: null },
+                { label: "Accommodation Search", href: null },
+                { label: "Certificate of Good Conduct", href: null },
+                { label: "Academic Documents Notarization", href: null },
+                { label: "Course Recommendations", href: null },
+                { label: "And More...", href: null },
               ].map((service) => (
-                <li key={service}>
-                  <span className="text-sm text-white/50">
-                    {service}
-                  </span>
+                <li key={service.label}>
+                  {service.href ? (
+                    <Link href={service.href}>
+                      <span className="text-sm text-white/50 hover:text-emerald transition-colors cursor-pointer">{service.label}</span>
+                    </Link>
+                  ) : (
+                    <span className="text-sm text-white/50">{service.label}</span>
+                  )}
                 </li>
               ))}
             </ul>

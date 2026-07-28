@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Scholarships", href: "/scholarships" },
   { label: "Compare", href: "/compare" },
   { label: "Events", href: "/events" },
+  { label: "Equivalence", href: "/equivalence" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ];

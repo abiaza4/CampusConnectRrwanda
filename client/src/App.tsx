@@ -15,6 +15,7 @@ const Scholarships = lazy(() => import("./pages/Scholarships"));
 const CostCalculator = lazy(() => import("./pages/CostCalculator"));
 const Compare = lazy(() => import("./pages/Compare"));
 const Events = lazy(() => import("./pages/Events"));
+const Equivalence = lazy(() => import("./pages/Equivalence"));
 const Blog = lazy(() => import("./pages/Blog"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const About = lazy(() => import("./pages/About"));
@@ -43,6 +44,7 @@ function Router() {
           <Route path="/cost-calculator" component={CostCalculator} />
           <Route path="/compare" component={Compare} />
           <Route path="/events" component={Events} />
+          <Route path="/equivalence" component={Equivalence} />
           <Route path="/blog" component={Blog} />
           <Route path="/faq" component={FAQ} />
           <Route path="/about" component={About} />
