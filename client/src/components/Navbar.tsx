@@ -12,6 +12,7 @@ const navLinks = [
     { label: "Scholarships", href: "/scholarships" },
     { label: "Equivalence", href: "/equivalence" },
     { label: "Visa Guide", href: "/visa-guide" },
+    { label: "Important Info", href: "/important-info" },
   ]},
   { label: "Compare", href: "/compare" },
   { label: "Events", href: "/events" },
@@ -65,7 +66,7 @@ export default function Navbar() {
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    location.startsWith("/study-guide") || location === "/scholarships" || location === "/equivalence" || location === "/visa-guide"
+                    location.startsWith("/study-guide") || location === "/scholarships" || location === "/equivalence" || location === "/visa-guide" || location === "/important-info"
                       ? "text-navy dark:text-emerald bg-gray-100 dark:bg-white/5"
                       : "text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-emerald hover:bg-gray-100 dark:hover:bg-white/5"
                   }`}
@@ -145,7 +146,7 @@ export default function Navbar() {
                   <button
                     onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                     className={`flex items-center justify-between w-full px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                      location.startsWith("/study-guide") || location === "/scholarships" || location === "/equivalence" || location === "/visa-guide"
+                      location.startsWith("/study-guide") || location === "/scholarships" || location === "/equivalence" || location === "/visa-guide" || location === "/important-info"
                         ? "text-navy dark:text-emerald bg-gray-50 dark:bg-white/5"
                         : "text-gray-600 dark:text-gray-300"
                     }`}

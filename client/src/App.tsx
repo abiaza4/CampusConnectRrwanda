@@ -16,6 +16,7 @@ const CostCalculator = lazy(() => import("./pages/CostCalculator"));
 const Compare = lazy(() => import("./pages/Compare"));
 const Events = lazy(() => import("./pages/Events"));
 const Equivalence = lazy(() => import("./pages/Equivalence"));
+const ImportantInfo = lazy(() => import("./pages/ImportantInfo"));
 const Blog = lazy(() => import("./pages/Blog"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const About = lazy(() => import("./pages/About"));
@@ -45,6 +46,7 @@ function Router() {
           <Route path="/compare" component={Compare} />
           <Route path="/events" component={Events} />
           <Route path="/equivalence" component={Equivalence} />
+          <Route path="/important-info" component={ImportantInfo} />
           <Route path="/blog" component={Blog} />
           <Route path="/faq" component={FAQ} />
           <Route path="/about" component={About} />

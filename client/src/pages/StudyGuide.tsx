@@ -170,6 +170,9 @@ export default function StudyGuide() {
                   <Link href="/visa-guide" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald hover:bg-emerald/5 rounded-lg transition-colors">
                     Student Visa Guide
                   </Link>
+                  <Link href="/important-info" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald hover:bg-emerald/5 rounded-lg transition-colors">
+                    Important Info
+                  </Link>
                 </nav>
               </div>
             </aside>
