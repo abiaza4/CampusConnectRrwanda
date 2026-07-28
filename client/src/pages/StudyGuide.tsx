@@ -18,6 +18,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -156,6 +157,19 @@ export default function StudyGuide() {
                       {s.title}
                     </a>
                   ))}
+                </nav>
+                <hr className="my-3 border-gray-100 dark:border-white/10" />
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Related Guides</h4>
+                <nav className="space-y-1">
+                  <Link href="/scholarships" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald hover:bg-emerald/5 rounded-lg transition-colors">
+                    Scholarship Center
+                  </Link>
+                  <Link href="/equivalence" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald hover:bg-emerald/5 rounded-lg transition-colors">
+                    Equivalence Application
+                  </Link>
+                  <Link href="/visa-guide" className="block px-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald hover:bg-emerald/5 rounded-lg transition-colors">
+                    Student Visa Guide
+                  </Link>
                 </nav>
               </div>
             </aside>

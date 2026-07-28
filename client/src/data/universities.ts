@@ -3878,7 +3878,7 @@ export const universities: University[] = [  {
     ownership: "Private (For-profit)",
     email: "info@eaur.ac.rw",
     telephone: "+250 788 491 333",
-    physicalAddress: "KG 203 St, Remera, Kigali, Rwanda
+    physicalAddress: "KG 203 St, Remera, Kigali, Rwanda",
     googleMapsLocation: "",
     socialMedia: { facebook: "https://www.facebook.com/eastafricanuniversityrwanda/", twitter: "https://twitter.com/eauniversityrw", instagram: "https://www.instagram.com/eastafricanuniversityrwanda/", linkedin: "", youtube: "https://www.youtube.com/channel/UCibbPd8fYp-nY-pMMnBpXrQ" },
     overview: {

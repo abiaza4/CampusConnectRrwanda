@@ -1,47 +1,34 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { FileText, CreditCard, Clock, RefreshCw, ExternalLink, AlertCircle, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { FileText, CreditCard, Clock, AlertCircle, Check, Shield, MapPin, Passport, GraduationCap } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
-const visaSteps = [
-  { step: 1, title: "Gather Required Documents", description: "Collect your passport, admission letter, financial evidence, photos, and medical insurance before applying." },
-  { step: 2, title: "Complete Application Form", description: "Fill out the student visa application form online through the Rwanda Immigration portal or at your nearest Rwandan embassy." },
-  { step: 3, title: "Submit Application", description: "Submit your application with all supporting documents. You may apply online or through a Rwandan embassy in your country." },
-  { step: 4, title: "Pay Application Fee", description: "Pay the required visa processing fee. Fees vary by country and visa type." },
-  { step: 5, title: "Wait for Processing", description: "Processing typically takes 2-4 weeks. You may be contacted for additional information." },
-  { step: 6, title: "Receive Visa", description: "Once approved, collect your visa or receive it electronically. Check the validity dates carefully." },
-  { step: 7, title: "Travel to Rwanda", description: "Arrive in Rwanda with your visa. Apply for a residence permit within 30 days of arrival." },
-];
-
-const visaFaqs = [
-  { q: "Who needs a student visa for Rwanda?", a: "All foreign nationals except East African Community (EAC) citizens (Rwanda, Kenya, Uganda, Tanzania, Burundi, South Sudan) who can enter visa-free. Other international students need a student visa." },
-  { q: "How long is a student visa valid?", a: "Student visas are typically valid for one academic year and must be renewed annually. You can apply for renewal 30 days before expiry." },
-  { q: "Can I travel in and out of Rwanda with a student visa?", a: "Yes, a valid student visa allows multiple entries. However, you must ensure your visa remains valid during your travels." },
-  { q: "What is a residence permit?", a: "A residence permit is required for stays longer than 3 months. After arriving on a student visa, you must apply for a residence permit at the Rwanda Immigration headquarters within 30 days." },
-  { q: "How much does a student visa cost?", a: "Visa fees vary by country. Generally, single-entry student visas cost around $50-100 USD. Check with the nearest Rwandan embassy for current fees." },
-  { q: "What if my visa application is rejected?", a: "You can reapply with additional documentation or appeal the decision. Contact the Rwanda Immigration office or the embassy where you applied for guidance." },
+const visaProcess = [
+  { step: 1, text: "Complete the equivalence process." },
+  { step: 2, text: "Receive your university admission letter." },
+  { step: 3, text: "Travel to Rwanda with all required entry documents." },
+  { step: 4, text: "Complete your university registration." },
+  { step: 5, text: "Obtain a recommendation letter from your university." },
+  { step: 6, text: "Submit your student visa application." },
+  { step: 7, text: "Receive your one-year student visa." },
 ];
 
 export default function VisaGuide() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   return (
     <div>
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
+        <div className="absolute inset-0 opacity-15">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80" alt="" className="w-full h-full object-cover" />
+        </div>
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
               <Badge className="bg-white/10 text-white border-white/20 mb-4">Informational Guide</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Student Visa & Immigration Guide
+                Student Visa Guide
               </h1>
               <p className="text-white/70 text-lg">
-                Everything you need to know about obtaining a student visa for Rwanda — requirements, process, and helpful resources.
-              </p>
-              <p className="text-white/50 text-sm mt-4 flex items-center justify-center gap-1">
-                <AlertCircle size={14} /> This is an informational guide only. Always confirm with official sources.
+                After receiving admission and completing the equivalence process, international students are required to apply for a Rwandan Student Visa.
               </p>
             </div>
           </ScrollReveal>
@@ -49,143 +36,156 @@ export default function VisaGuide() {
       </section>
 
       <section className="py-12 md:py-16 bg-gray-50 dark:bg-background">
-        <div className="container space-y-12">
-          {/* Visa Overview */}
+        <div className="container space-y-10">
+          {/* Entry Requirements */}
           <ScrollReveal>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Student Visa Overview
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-4 rounded-xl bg-emerald/5 border border-emerald/10">
-                  <h4 className="font-semibold text-sm text-emerald mb-2">Who Needs a Student Visa</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">All international students from outside the East African Community (EAC) require a student visa. EAC citizens (Kenya, Uganda, Tanzania, Burundi, South Sudan) can enter Rwanda visa-free.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-navy/5 dark:bg-navy/20 border border-navy/10">
-                  <h4 className="font-semibold text-sm text-navy dark:text-emerald mb-2">Types of Visas</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Student Visa (single or multiple entry), Residence Permit (for stays over 3 months), and Transit Visa (for passing through Rwanda).</p>
-                </div>
+              <div className="flex items-center gap-3 mb-6">
+                <MapPin className="w-6 h-6 text-emerald" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                  Entry Requirements
+                </h2>
               </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Visa Requirements */}
-          <ScrollReveal>
-            <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6" style={{ fontFamily: "'Fraunces', serif" }}>
-                Visa Requirements
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  { icon: CreditCard, text: "Valid passport (6+ months validity)" },
-                  { icon: FileText, text: "Admission letter from Rwandan university" },
-                  { icon: "bank" as any, text: "Financial support evidence (bank statements, sponsor letter)" },
-                  { icon: FileText, text: "Passport-size photographs (2-4 copies)" },
-                  { icon: "shield" as any, text: "Medical insurance certificate" },
-                  { icon: FileText, text: "Completed visa application form" },
-                  { icon: FileText, text: "Academic transcripts and certificates" },
-                  { icon: "file" as any, text: "Additional documents as required by embassy" },
-                ].map((req, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 dark:bg-background">
-                    <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center">
-                      <req.icon size={16} className="text-emerald" />
-                    </div>
-                    <span className="text-sm text-gray-700 dark:text-gray-300">{req.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Application Process */}
-          <div>
-            <ScrollReveal>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6" style={{ fontFamily: "'Fraunces', serif" }}>
-                Application Process
-              </h2>
-            </ScrollReveal>
-            <div className="space-y-4">
-              {visaSteps.map((step, i) => (
-                <ScrollReveal key={i} delay={i * 0.05}>
-                  <div className="flex gap-4 bg-white dark:bg-card rounded-xl p-5 border border-gray-100 dark:border-white/5">
-                    <div className="w-10 h-10 rounded-full bg-navy/5 dark:bg-navy/20 flex items-center justify-center shrink-0">
-                      <span className="text-sm font-bold text-navy dark:text-emerald">{step.step}</span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 dark:text-white mb-1">{step.title}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{step.description}</p>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-
-          {/* Processing & Renewal */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <ScrollReveal>
-              <div className="bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5">
-                <Clock className="w-8 h-8 text-emerald mb-3" />
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">Processing Timeline</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Standard processing takes 2-4 weeks. Expedited processing may be available in some countries. Apply well in advance of your intended travel date.</p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <div className="bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5">
-                <RefreshCw className="w-8 h-8 text-navy mb-3" />
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">Renewal Information</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Student visas can be renewed annually. Apply for renewal at least 30 days before expiry. You'll need updated enrollment proof and financial documentation.</p>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Immigration Information */}
-          <ScrollReveal>
-            <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Immigration Information
-              </h2>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">At the Rwanda–Uganda Border or Kigali International Airport</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Before entering Rwanda, students should have the following:</p>
               <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-1">Residence Permit</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">After arriving in Rwanda on a student visa, you must apply for a residence permit within 30 days. Visit the Rwanda Immigration and Emigration Office in Kigali with your passport, visa, admission letter, and proof of accommodation.</p>
+                <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">1. University Admission Letter</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 ml-4">Official admission letter from a Rwandan higher learning institution.</p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-1">Arrival Procedures</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Upon arrival, present your passport, student visa, admission letter, and proof of financial support. Register with your university's international student office within 7 days.</p>
+                <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">2. Valid Passport</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 ml-4">Minimum validity of six months is recommended.</p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-1">Immigration Office Contacts</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Rwanda Immigration and Emigration Headquarters: Kigali, Remera. Phone: +250 788 311 033. Website: <a href="https://www.migration.gov.rw" target="_blank" rel="noopener noreferrer" className="text-emerald hover:underline flex items-center gap-1 inline">migration.gov.rw <ExternalLink size={12} /></a></p>
+                <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">3. Proof of Payment of School Fees</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 ml-4">A bank slip or payment receipt showing payment of at least one academic term.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">4. Residence Information</h3>
+                  <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400 ml-4 list-disc">
+                    <li>The address of your accommodation in Rwanda, or</li>
+                    <li>The contact details of the person or agency assisting with your admission and registration process.</li>
+                  </ul>
                 </div>
               </div>
             </div>
           </ScrollReveal>
 
-          {/* FAQ */}
+          {/* Entry Important Notes */}
+          <ScrollReveal>
+            <div className="bg-amber-50 dark:bg-amber-900/10 rounded-2xl p-6 md:p-8 border border-amber-200 dark:border-amber-800">
+              <div className="flex items-center gap-3 mb-6">
+                <AlertCircle className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                  Important Notes
+                </h2>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">A <strong>valid passport</strong>, <strong>admission letter</strong>, and <strong>proof of payment for at least one academic term</strong> are essential for entry into Rwanda.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CreditCard className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">If you do not have a bank payment receipt, you should carry sufficient funds to pay the required tuition fees upon arrival, where applicable.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Travelers without a <strong>valid passport</strong> may be denied entry and could be returned to their country of departure.</span>
+                </li>
+              </ul>
+            </div>
+          </ScrollReveal>
+
+          {/* Student Visa Requirements */}
           <ScrollReveal>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6" style={{ fontFamily: "'Fraunces', serif" }}>
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-3">
-                {visaFaqs.map((faq, i) => (
-                  <div key={i} className="border border-gray-100 dark:border-white/5 rounded-xl overflow-hidden">
-                    <button
-                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 dark:hover:bg-background transition-colors"
-                    >
-                      <span className="font-medium text-sm text-gray-900 dark:text-white pr-4">{faq.q}</span>
-                      {openFaq === i ? <ChevronUp size={16} className="shrink-0 text-emerald" /> : <ChevronDown size={16} className="shrink-0 text-gray-400" />}
-                    </button>
-                    {openFaq === i && (
-                      <div className="px-4 pb-4">
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{faq.a}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
+              <div className="flex items-center gap-3 mb-6">
+                <FileText className="w-6 h-6 text-emerald" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                  Student Visa Application Requirements
+                </h2>
               </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">After arriving in Rwanda, prepare the following documents to apply for your student visa:</p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center shrink-0">
+                    <CreditCard size={16} className="text-emerald" />
+                  </div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Valid Passport.</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center shrink-0">
+                    <FileText size={16} className="text-emerald" />
+                  </div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Recommendation Letter from your University.</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center shrink-0">
+                    <FileText size={16} className="text-emerald" />
+                  </div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">One recent passport-size photograph with a <strong>white background</strong>.</span>
+                </div>
+                <div className="flex items-center gap-3 p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
+                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center shrink-0">
+                    <Shield size={16} className="text-emerald" />
+                  </div>
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Certificate of Good Conduct (Police Clearance Certificate / Fingerprint Certificate).</span>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Important Visa Information */}
+          <ScrollReveal>
+            <div className="bg-blue-50 dark:bg-blue-900/10 rounded-2xl p-6 md:p-8 border border-blue-200 dark:border-blue-800">
+              <div className="flex items-center gap-3 mb-6">
+                <AlertCircle className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                  Important Visa Information
+                </h2>
+              </div>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">The student visa application should be submitted <strong>within the first two (2) weeks after arriving in Rwanda and completing your university registration</strong>.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300"><strong>The Rwandan Student Visa is issued free of charge and is valid for one (1) year.</strong></span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Students are responsible for renewing their visa before it expires.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-700 dark:text-gray-300">Failure to apply for or renew your student visa on time may result in <strong>penalties, fines, or immigration sanctions</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </ScrollReveal>
+
+          {/* Visa Process */}
+          <ScrollReveal>
+            <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
+              <div className="flex items-center gap-3 mb-6">
+                <GraduationCap className="w-6 h-6 text-emerald" />
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                  Student Visa Process
+                </h2>
+              </div>
+              <ol className="space-y-4">
+                {visaProcess.map((item) => (
+                  <li key={item.step} className="flex items-start gap-4">
+                    <span className="w-8 h-8 rounded-full bg-emerald/10 flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold text-emerald">{item.step}</span>
+                    </span>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 pt-1.5">{item.text}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
           </ScrollReveal>
 
