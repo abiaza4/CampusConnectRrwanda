@@ -3865,10 +3865,10 @@ export const universities: University[] = [  {
   {
     id: "eaur",
     name: "East African University Rwanda (EAUR)",
-    location: "Nyagatare, Eastern Province, Rwanda",
-    city: "Nyagatare",
+    location: "Kigali, Rwanda",
+    city: "Kigali",
     type: "Private",
-    description: "A private university in Nyagatare offering affordable undergraduate programs in business, education, communication, tourism, and creative arts with a focus on practical skills and industry readiness.",
+    description: "A private university in Kigali offering affordable undergraduate programs in business, education, communication, tourism, and creative arts with a focus on practical skills and industry readiness.",
     logo: "https://eaur.ac.rw/wp-content/uploads/2019/07/edited-logo.png",
     coverImage: "https://eaur.ac.rw/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-16-at-12.37.49.jpeg",
     website: "https://eaur.ac.rw",
@@ -3878,21 +3878,20 @@ export const universities: University[] = [  {
     ownership: "Private (For-profit)",
     email: "info@eaur.ac.rw",
     telephone: "+250 788 491 333",
-    physicalAddress: "EN 16 AV, Nyagatare, Eastern Province, Rwanda — PO Box 179, Nyagatare",
+    physicalAddress: "KG 203 St, Remera, Kigali, Rwanda
     googleMapsLocation: "",
     socialMedia: { facebook: "https://www.facebook.com/eastafricanuniversityrwanda/", twitter: "https://twitter.com/eauniversityrw", instagram: "https://www.instagram.com/eastafricanuniversityrwanda/", linkedin: "", youtube: "https://www.youtube.com/channel/UCibbPd8fYp-nY-pMMnBpXrQ" },
     overview: {
-      history: "East African University Rwanda (EAUR) was established in 2016 as a private higher education institution in Nyagatare, Eastern Province. The university focuses on providing affordable, career-oriented education with a practical approach to learning.",
+      history: "East African University Rwanda (EAUR) was established in 2016 as a private higher education institution in Remera, Kigali. The university focuses on providing affordable, career-oriented education with a practical approach to learning.",
       mission: "To provide accessible, quality higher education that equips students with practical skills and knowledge for professional success.",
       vision: "To be a leading private university in the East African region known for academic excellence and innovation.",
       coreValues: ["Excellence", "Innovation", "Integrity", "Diversity", "Community Engagement"],
       chancellor: "",
       viceChancellor: "",
-      campusDescription: "Main campus in Nyagatare with modern academic buildings, library, and student facilities. Also has a Kigali office in Kisementi."
+      campusDescription: "Main campus in Remera, Kigali with modern academic buildings, library, and student facilities."
     },
     campuses: [
-      { name: "Nyagatare Main Campus", location: "EN 16 AV, Nyagatare, Eastern Province", description: "Main campus in Nyagatare with academic buildings and student services." },
-      { name: "Kigali Office", location: "Kisementi KG 11 Ave, Florida House 3rd Floor, Kigali", description: "Administrative office and admissions center in Kigali." }
+      { name: "Remera Main Campus", location: "KG 203 St, Remera, Kigali", description: "Main campus in Remera with academic buildings and student services." }
     ],
     academicInfo: {
       schools: [
@@ -3953,7 +3952,7 @@ export const universities: University[] = [  {
       internationalRequirements: ["Valid passport", "Academic transcripts", "Student visa documentation"],
       applicationDeadlines: "Rolling admissions with intakes in September and January",
       intakePeriods: ["September", "January"],
-      howToApply: "Apply online at https://eaur.ac.rw or visit the admissions office in Nyagatare or Kigali.",
+      howToApply: "Apply online at https://eaur.ac.rw or visit the admissions office in Remera, Kigali.",
       applicationFees: "35,000 RWF"
     },
     tuitionDetails: [
@@ -3981,7 +3980,7 @@ export const universities: University[] = [  {
     },
     accommodation: {
       hostels: true,
-      nearbyApartments: "Private apartments available in Nyagatare.",
+      nearbyApartments: "Private apartments available in Remera, Kigali.",
       privateHostels: "Private hostels near campus.",
       estimatedCost: "RWF 60,000 - 100,000/month",
       onCampusHostels: "Student hostels available",
@@ -4024,7 +4023,7 @@ export const universities: University[] = [  {
     },
     faq: [
       { question: "What programs does EAUR offer?", answer: "EAUR offers undergraduate programs in Business Studies, Mass Communication, Education, Tourism & Hotel Management, Film Making, and Industrial Fine Art & Design." },
-      { question: "Where is EAUR located?", answer: "Main campus is in Nyagatare, Eastern Province. EAUR also has a Kigali office in Kisementi." },
+      { question: "Where is EAUR located?", answer: "Main campus is in Remera, Kigali." },
       { question: "What is the tuition at EAUR?", answer: "Tuition ranges from 480,000 to 600,000 RWF per year depending on the program." },
       { question: "Is EAUR accredited?", answer: "Yes, EAUR is recognized by the Higher Education Council (HEC) of Rwanda." }
     ],
@@ -4034,9 +4033,9 @@ export const universities: University[] = [  {
       { name: "University Prospectus", url: "https://eaur.ac.rw/prospectus", type: "PDF" }
     ],
     nearbyPlaces: [
-      { name: "Nyagatare Town Center", type: "Shopping", distance: "1 km" },
-      { name: "Nyagatare Hospital", type: "Healthcare", distance: "2 km" },
-      { name: "Akagera National Park", type: "Tourism", distance: "30 km" }
+      { name: "Remera Business Center", type: "Shopping", distance: "5 min walk" },
+      { name: "King Faisal Hospital", type: "Healthcare", distance: "10 min drive" },
+      { name: "Kigali Convention Centre", type: "Tourism", distance: "10 min drive" }
     ],
     reviews: [
       { name: "Patrick N.", rating: 4, comment: "Affordable tuition and practical programs. Good for students in Eastern Province.", date: "2025-07-15" }
@@ -4044,7 +4043,7 @@ export const universities: University[] = [  {
     quickFacts: {
       Established: "2016",
       Type: "Private",
-      Location: "Nyagatare, Eastern Province",
+      Location: "Remera, Kigali",
       Programs: "7+",
       Faculties: "5",
       "Tuition Range": "480K - 600K RWF/yr",
@@ -4056,14 +4055,14 @@ export const universities: University[] = [  {
       phone: "+250 788 491 333",
       email: "info@eaur.ac.rw",
       website: "https://eaur.ac.rw",
-      address: "EN 16 AV, Nyagatare, Eastern Province, Rwanda — PO Box 179"
+      address: "KG 203 St, Remera, Kigali, Rwanda"
     },
     about: {
-      history: "Founded in 2016, EAUR provides affordable higher education in Nyagatare with a focus on practical skill development.",
+      history: "Founded in 2016, EAUR provides affordable higher education in Remera, Kigali with a focus on practical skill development.",
       mission: "To provide accessible, quality higher education.",
       vision: "To be a leading private university in East Africa.",
       accreditation: "Accredited by HEC Rwanda",
-      achievements: ["7+ undergraduate programs", "Kigali satellite office", "Industry partnerships"]
+      achievements: ["7+ undergraduate programs", "Located in Remera, Kigali", "Industry partnerships"]
     },
     images: [
       "https://eaur.ac.rw/wp-content/uploads/2026/05/EAUR-CULTURAL-410x260.jpg",

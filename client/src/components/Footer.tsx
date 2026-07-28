@@ -9,12 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4 group">
-              <div className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-navy to-emerald p-1.5 shadow-lg shadow-navy/20">
+            <Link href="/" className="flex items-center gap-2 mb-3 group">
+              <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-navy to-emerald p-0.5 shadow shadow-navy/20">
                 <img
                   src="/campusconnect logo.jpg"
                   alt="CampusConnect Rwanda"
-                  className="h-12 md:h-14 w-auto rounded-full object-cover transition-transform duration-200 group-hover:scale-105"
+                  className="h-8 w-8 rounded-full object-cover transition-transform duration-200 group-hover:scale-105"
                 />
               </div>
             </Link>
