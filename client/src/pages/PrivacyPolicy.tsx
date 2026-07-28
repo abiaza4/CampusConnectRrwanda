@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">
           <img
-            src="/manus-storage/hero-university_0bff8a07.png"
+            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />

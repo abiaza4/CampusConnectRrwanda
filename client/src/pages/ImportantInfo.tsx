@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
-import { AlertCircle, Check, Shield, Ban, FileText, BookOpen } from "lucide-react";
+import { AlertCircle, Check, Shield, Ban, FileText, BookOpen, DollarSign, CreditCard, Landmark, Globe } from "lucide-react";
 
 export default function ImportantInfo() {
   return (
@@ -31,28 +31,26 @@ export default function ImportantInfo() {
           <ScrollReveal>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald/10 flex items-center justify-center shrink-0">
-                  <span className="text-xl">💰</span>
-                </div>
+                <DollarSign className="w-6 h-6 text-emerald" />
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
                   Currency
                 </h2>
               </div>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
-                  <span className="shrink-0">🇷🇼</span>
+                  <Globe size={16} className="text-emerald shrink-0 mt-0.5" />
                   <span>The official currency of Rwanda is the <strong>Rwandan Franc (RWF)</strong>.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
-                  <span className="shrink-0">💵</span>
+                  <DollarSign size={16} className="text-emerald shrink-0 mt-0.5" />
                   <span>Most daily transactions, including transport, shopping, accommodation, and other services, are conducted in <strong>Rwandan Francs (RWF)</strong>.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
-                  <span className="shrink-0">💳</span>
+                  <CreditCard size={16} className="text-emerald shrink-0 mt-0.5" />
                   <span>Major hotels, supermarkets, and some businesses may accept international bank cards, but it is advisable to have some local currency for everyday expenses.</span>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
-                  <span className="shrink-0">🏦</span>
+                  <Landmark size={16} className="text-emerald shrink-0 mt-0.5" />
                   <span>You can exchange foreign currency at banks, licensed forex bureaus, or withdraw Rwandan Francs from ATMs after arrival.</span>
                 </li>
               </ul>

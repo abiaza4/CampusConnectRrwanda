@@ -9,7 +9,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">
-          <img src="/manus-storage/hero-university_0bff8a07.png" alt="" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c7f1?w=1200&q=80" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="container relative">
           <ScrollReveal>
