@@ -98,6 +98,14 @@ export default function Footer() {
                 <span className="text-sm text-white/50">Kigali, Rwanda</span>
               </li>
               <li className="flex items-start gap-2.5">
+                <MapPin size={14} className="text-emerald mt-0.5 shrink-0" />
+                <span className="text-sm text-white/50">Musanze, Rwanda</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <MapPin size={14} className="text-emerald mt-0.5 shrink-0" />
+                <span className="text-sm text-white/50">Juba, South Sudan</span>
+              </li>
+              <li className="flex items-start gap-2.5">
                 <Phone size={14} className="text-emerald mt-0.5 shrink-0" />
                 <a href="tel:+250791902058" className="text-sm text-white/50 hover:text-emerald transition-colors">
                   +250 791 902 058
@@ -111,14 +119,14 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={14} className="text-emerald mt-0.5 shrink-0" />
-                <a href="mailto:info@campusconnect.rw" className="text-sm text-white/50 hover:text-emerald transition-colors">
-                  info@campusconnect.rw
+                <a href="mailto:abiazaawari@gmail.com" className="text-sm text-white/50 hover:text-emerald transition-colors">
+                  abiazaawari@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={14} className="text-emerald mt-0.5 shrink-0" />
-                <a href="mailto:abiazaawari@gmail.com" className="text-sm text-white/50 hover:text-emerald transition-colors">
-                  abiazaawari@gmail.com
+                <a href="mailto:campusconnectrwa@gmail.com" className="text-sm text-white/50 hover:text-emerald transition-colors">
+                  campusconnectrwa@gmail.com
                 </a>
               </li>
             </ul>

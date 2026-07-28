@@ -101,7 +101,7 @@ export default function About() {
                 We work with universities, government agencies, and education organizations across Rwanda and East Africa.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                {["HEC Rwanda", "University of Rwanda", "Ministry of Education", "Rwanda Immigration", "EAC Education Secretariat"].map((partner) => (
+                {["HEC Rwanda", "University of Rwanda", "Ministry of Education", "Rwanda Immigration", "EAC Education Secretariat", "NESA", "RIB"].map((partner) => (
                   <div key={partner} className="px-4 py-2 rounded-lg bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5 text-sm text-gray-600 dark:text-gray-400">
                     {partner}
                   </div>
@@ -122,20 +122,24 @@ export default function About() {
                   <div>
                     <p className="font-medium text-sm text-gray-900 dark:text-white">Location</p>
                     <p className="text-sm text-gray-500">Kigali, Rwanda</p>
+                    <p className="text-sm text-gray-500">Musanze, Rwanda</p>
+                    <p className="text-sm text-gray-500">Juba, South Sudan</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail size={18} className="text-emerald shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-sm text-gray-900 dark:text-white">Email</p>
-                    <p className="text-sm text-gray-500">info@campusconnect.rw</p>
+                    <p className="text-sm text-gray-500">abiazaawari@gmail.com</p>
+                    <p className="text-sm text-gray-500">campusconnectrwa@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone size={18} className="text-emerald shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-sm text-gray-900 dark:text-white">Phone</p>
-                    <p className="text-sm text-gray-500">+250 788 000 000</p>
+                    <p className="text-sm text-gray-500">+250 791 902 058</p>
+                    <p className="text-sm text-gray-500">+211 922 257 944</p>
                   </div>
                 </div>
               </div>

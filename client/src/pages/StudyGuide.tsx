@@ -125,7 +125,7 @@ export default function StudyGuide() {
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-dark via-navy to-deep-navy">
         <div className="absolute inset-0 opacity-15">
-          <img src="/manus-storage/hero-library_c2bb86c0.png" alt="" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&q=80" alt="" className="w-full h-full object-cover" />
         </div>
         <div className="container relative">
           <ScrollReveal>

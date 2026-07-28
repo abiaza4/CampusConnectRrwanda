@@ -45,7 +45,7 @@ export default function Universities() {
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="/manus-storage/campus-aerial_2217042e.png"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80"
             alt=""
             className="w-full h-full object-cover"
           />

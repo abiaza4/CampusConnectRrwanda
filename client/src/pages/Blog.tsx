@@ -75,6 +75,9 @@ export default function Blog() {
     <div>
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
+        <div className="absolute inset-0 opacity-15">
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&q=80" alt="" className="w-full h-full object-cover" />
+        </div>
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
