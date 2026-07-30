@@ -1081,10 +1081,10 @@ export const universities: University[] = [  {
   {
     id: "ruhengeri-rtc",
     name: "INES-Ruhengeri (Institute of Applied Sciences)",
-    location: "Ruhengeri, Rwanda",
-    city: "Ruhengeri",
+    location: "Musanze, Rwanda",
+    city: "Musanze",
     type: "Private",
-    description: "A private higher education institution located in Ruhengeri (Musanze), Northern Province of Rwanda, offering programs in various fields of study.",
+    description: "A leading private higher education institution in Musanze, Northern Province, offering a wide range of undergraduate and postgraduate programs across six faculties with a strong focus on applied sciences, research, and community engagement.",
     logo: "https://www.ines.ac.rw/static/images/ines-logo-100px.png",
     coverImage: "https://www.ines.ac.rw/media/banners/PIC_2311.jpg",
     website: "https://www.ines.ac.rw",
@@ -1092,66 +1092,161 @@ export const universities: University[] = [  {
     motto: "Education for Sustainable Development",
     accreditationStatus: "Accredited by the Higher Education Council (HEC) of Rwanda",
     ownership: "Private",
-    email: "info@ines-rwanda.ac.rw",
-    telephone: "+250 788 789 012",
-    physicalAddress: "Musanze, Northern Province, Rwanda",
+    email: "info@ines.ac.rw",
+    telephone: "+250 788 903 030",
+    physicalAddress: "Musanze, Street NM 155, Northern Province, Rwanda — PO Box 155, Ruhengeri",
     googleMapsLocation: "",
-    socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
+    socialMedia: { facebook: "https://www.facebook.com/INESRuhengeriOfficial", twitter: "https://twitter.com/INES_Ruhengeri", instagram: "https://www.instagram.com/ines_ruhengeri/", linkedin: "https://www.linkedin.com/company/inesruhengeri", youtube: "https://www.youtube.com/channel/UC9Q5s5L_Z9SJr3rsVz8UUug" },
     overview: {
-      history: "Founded in 2005, INES provides higher education access to the northern region of Rwanda.",
-      mission: "To provide quality education that contributes to the socio-economic development of the northern region.",
-      vision: "To be a leading private university in northern Rwanda.",
-      coreValues: ["Quality education", "Community development", "Integrity", "Innovation"],
+      history: "Founded in 2005, INES-Ruhengeri (Institute of Applied Sciences) is a private higher education institution located in Musanze District, Northern Province of Rwanda. Over the years, it has grown into a center of academic excellence, offering applied sciences programs that respond to national and regional development needs. The university celebrated its 20th anniversary in 2023.",
+      mission: "To provide quality education that contributes to the socio-economic development of the region through teaching, research, and community engagement.",
+      vision: "To be a leading center of applied sciences and technology in the region.",
+      coreValues: ["Quality education", "Community development", "Integrity", "Innovation", "Sustainability"],
       chancellor: "",
       viceChancellor: "",
-      campusDescription: "Campus in Musanze with classroom buildings, library, computer lab, and sports facilities."
+      campusDescription: "Smart campus in Musanze with modern academic buildings, well-equipped laboratories, comprehensive library, and sports facilities. Over 8,200 current students including 1,670+ international students from 21 countries."
     },
     campuses: [
-      { name: "Main Campus", location: "Musanze, Northern Province", description: "Main campus with academic and administrative buildings." }
+      { name: "Main Campus", location: "Musanze, Northern Province", description: "Main smart campus with academic buildings, laboratories, library, and sports facilities." }
     ],
     academicInfo: {
       schools: [
-        { name: "School of Business", description: "Accounting, Management, Marketing." },
-        { name: "School of ICT", description: "Computer Science, IT." },
-        { name: "School of Education", description: "Teacher Training, Educational Studies." },
-        { name: "School of Social Sciences", description: "Sociology, Psychology, Communication." }
+        { name: "Faculty of Sciences and Information Technology", description: "Computer Science, Statistics, Land Management, Library Sciences." },
+        { name: "Faculty of Economics, Social Sciences & Management", description: "Economics, Management, Microfinance, Taxation, Cooperatives, Entrepreneurship." },
+        { name: "Faculty of Education", description: "Biology & Chemistry, Mathematics & Physics, Mathematics & Computer Science, French & English." },
+        { name: "Faculty of Engineering and Technology", description: "Civil Engineering, Architecture, Biotechnologies, Water Engineering, Electrical Power, Renewable Energy, Crop Production." },
+        { name: "Faculty of Law and Public Administration", description: "Law, Public Administration, Criminal Law." },
+        { name: "Faculty of Health Sciences", description: "Pharmacy, General Nursing, Midwifery, Anaesthesia, Biomedical Laboratory Sciences." }
       ],
       departments: [
-        { name: "Department of Business", school: "School of Business", description: "Business programs." },
-        { name: "Department of ICT", school: "School of ICT", description: "IT programs." },
-        { name: "Department of Education", school: "School of Education", description: "Teacher training." }
+        { name: "Department of Sciences", school: "Faculty of Sciences and IT", description: "Computer Science, Statistics, Land Management programs." },
+        { name: "Department of IT", school: "Faculty of Sciences and IT", description: "Computer System Technology, Computer Applications." },
+        { name: "Department of Economics and Management", school: "Faculty of Economics, Social Sciences & Management", description: "Economics, Management, Microfinance, Taxation." },
+        { name: "Department of Education Sciences", school: "Faculty of Education", description: "Teacher training programs." },
+        { name: "Department of Engineering", school: "Faculty of Engineering and Technology", description: "Civil Engineering, Architecture, Water Engineering, Electrical Power." },
+        { name: "Department of Law", school: "Faculty of Law and Public Administration", description: "Law and public administration programs." },
+        { name: "Department of Health Sciences", school: "Faculty of Health Sciences", description: "Pharmacy, Nursing, Midwifery, Anaesthesia, Biomedical Lab Sciences." }
       ],
       undergraduatePrograms: [
-        { name: "BBA", duration: "3 years", description: "Bachelor of Business Administration." },
-        { name: "BSc IT", duration: "4 years", description: "Bachelor in Information Technology." },
-        { name: "BSc Education", duration: "3 years", description: "Bachelor in Education." }
+        { name: "Computer Science", duration: "4 years", description: "Bachelor in Computer Science." },
+        { name: "Statistics Applied to Economy", duration: "3 years", description: "Bachelor in Statistics." },
+        { name: "Computer System Technology", duration: "3 years", description: "Bachelor in Computer System Technology." },
+        { name: "Computer Applications", duration: "3 years", description: "Bachelor in Computer Applications." },
+        { name: "Information Sciences and Library Management", duration: "3 years", description: "Bachelor in Library and Information Sciences." },
+        { name: "Land Management and Valuation", duration: "3 years", description: "Bachelor in Land Management." },
+        { name: "Applied Economics", duration: "4 years", description: "Bachelor in Applied Economics." },
+        { name: "Enterprises Management", duration: "4 years", description: "Bachelor in Enterprises Management." },
+        { name: "Microfinance", duration: "3 years", description: "Bachelor in Microfinance." },
+        { name: "Taxation", duration: "3 years", description: "Bachelor in Taxation." },
+        { name: "Cooperatives Management", duration: "3 years", description: "Bachelor in Cooperatives Management." },
+        { name: "Entrepreneurship and SME Management", duration: "3 years", description: "Bachelor in Entrepreneurship." },
+        { name: "French and English", duration: "3 years", description: "Bachelor in French and English." },
+        { name: "Education in Biology and Chemistry", duration: "4 years", description: "Bachelor of Education in Biology and Chemistry." },
+        { name: "Education in Mathematics and Physics", duration: "4 years", description: "Bachelor of Education in Mathematics and Physics." },
+        { name: "Education in Mathematics and Computer Science", duration: "4 years", description: "Bachelor of Education in Mathematics and Computer Science." },
+        { name: "Civil Engineering", duration: "5 years", description: "Bachelor in Civil Engineering." },
+        { name: "Biotechnologies", duration: "4 years", description: "Bachelor in Biotechnologies." },
+        { name: "Land Survey", duration: "3 years", description: "Bachelor in Land Survey." },
+        { name: "Architecture", duration: "5 years", description: "Bachelor in Architecture." },
+        { name: "Water Engineering", duration: "4 years", description: "Bachelor in Water Engineering." },
+        { name: "Electrical Power Engineering", duration: "5 years", description: "Bachelor of Science in Electrical Power Engineering." },
+        { name: "Renewable Energy Engineering", duration: "4 years", description: "Bachelor of Science in Renewable Energy Engineering." },
+        { name: "Crop Production", duration: "4 years", description: "Bachelor of Science in Crop Production." },
+        { name: "Law", duration: "4 years", description: "Bachelor in Law." },
+        { name: "Public Administration and Good Governance", duration: "3 years", description: "Bachelor in Public Administration." },
+        { name: "Pharmacy", duration: "5 years", description: "Bachelor of Science in Pharmacy." },
+        { name: "Anaesthesia", duration: "4 years", description: "Bachelor of Science in Anaesthesia." },
+        { name: "Midwifery", duration: "4 years", description: "Bachelor of Science in Midwifery." },
+        { name: "General Nursing", duration: "4 years", description: "Bachelor of Science in General Nursing." },
+        { name: "Biomedical Laboratory Sciences", duration: "4 years", description: "Bachelor in Biomedical Laboratory Sciences." }
       ],
-      postgraduatePrograms: [],
+      postgraduatePrograms: [
+        { name: "MSc in Software Engineering", duration: "2 years", description: "Master of Science in Software Engineering." },
+        { name: "MSc in Valuation and Property Management", duration: "2 years", description: "Master in Valuation." },
+        { name: "MSc in Land Administration Management", duration: "2 years", description: "Master in Land Administration." },
+        { name: "MSc in Food Science and Technology", duration: "2 years", description: "Master in Food Science and Technology." },
+        { name: "MSc in Geo-Informatics", duration: "2 years", description: "Master in Geo-Informatics." },
+        { name: "MSc in Construction Technology and Management", duration: "2 years", description: "Master in Construction Technology and Management." },
+        { name: "MSc in Geotechnical Engineering", duration: "2 years", description: "Master in Geotechnical Engineering." },
+        { name: "MSc in Biomedical Laboratory Sciences", duration: "2 years", description: "Master in Biomedical Laboratory Sciences." },
+        { name: "Master of Applied Criminal Law", duration: "2 years", description: "Master in Applied Criminal Law." }
+      ],
       phdPrograms: [],
       diplomaPrograms: [
-        { name: "Diploma in Accounting", duration: "2 years", description: "Diploma in Accounting." }
+        { name: "Domestic Electricity", duration: "2 years", description: "Advanced Diploma in Domestic Electricity." },
+        { name: "Masonry", duration: "2 years", description: "Advanced Diploma in Masonry." },
+        { name: "Welding", duration: "2 years", description: "Advanced Diploma in Welding." },
+        { name: "Domestic Plumbing", duration: "2 years", description: "Advanced Diploma in Domestic Plumbing." },
+        { name: "Surveying", duration: "2 years", description: "Advanced Diploma in Surveying." },
+        { name: "Advanced Diploma in Nursing", duration: "3 years", description: "Advanced Diploma in General Nursing." },
+        { name: "Advanced Diploma in Midwifery", duration: "3 years", description: "Advanced Diploma in Midwifery." }
       ],
       certificatePrograms: [],
       modeOfStudy: ["Full-time", "Part-time", "Evening"]
     },
     faculties: [
-      { name: "Business", description: "Accounting, Management, Marketing", icon: "briefcase" },
-      { name: "ICT", description: "Computer Science, IT", icon: "cpu" },
-      { name: "Education", description: "Teacher Training, Educational Studies", icon: "graduation-cap" },
-      { name: "Social Sciences", description: "Sociology, Psychology, Communication", icon: "book-open" }
+      { name: "Sciences and Information Technology", description: "Computer Science, Statistics, Land Management, Library Sciences", icon: "cpu" },
+      { name: "Economics, Social Sciences & Management", description: "Economics, Management, Microfinance, Taxation", icon: "briefcase" },
+      { name: "Education", description: "Biology & Chemistry, Mathematics & Physics, French & English", icon: "graduation-cap" },
+      { name: "Engineering and Technology", description: "Civil Engineering, Architecture, Water, Electrical Power", icon: "building2" },
+      { name: "Law and Public Administration", description: "Law, Public Administration, Criminal Law", icon: "scale" },
+      { name: "Health Sciences", description: "Pharmacy, Nursing, Midwifery, Anaesthesia, Biomedical Lab", icon: "stethoscope" }
     ],
     programs: [
-      { name: "BBA", level: "Bachelor", duration: "3 years", faculty: "Business" },
-      { name: "BSc IT", level: "Bachelor", duration: "4 years", faculty: "ICT" },
-      { name: "BSc Education", level: "Bachelor", duration: "3 years", faculty: "Education" },
-      { name: "Diploma in Accounting", level: "Diploma", duration: "2 years", faculty: "Business" }
+      { name: "Computer Science", level: "Bachelor", duration: "4 years", faculty: "Sciences and Information Technology" },
+      { name: "Statistics Applied to Economy", level: "Bachelor", duration: "3 years", faculty: "Sciences and Information Technology" },
+      { name: "Computer System Technology", level: "Bachelor", duration: "3 years", faculty: "Sciences and Information Technology" },
+      { name: "Computer Applications", level: "Bachelor", duration: "3 years", faculty: "Sciences and Information Technology" },
+      { name: "Info Sciences and Library Management", level: "Bachelor", duration: "3 years", faculty: "Sciences and Information Technology" },
+      { name: "Land Management and Valuation", level: "Bachelor", duration: "3 years", faculty: "Sciences and Information Technology" },
+      { name: "Applied Economics", level: "Bachelor", duration: "4 years", faculty: "Economics, Social Sciences & Management" },
+      { name: "Enterprises Management", level: "Bachelor", duration: "4 years", faculty: "Economics, Social Sciences & Management" },
+      { name: "Microfinance", level: "Bachelor", duration: "3 years", faculty: "Economics, Social Sciences & Management" },
+      { name: "Taxation", level: "Bachelor", duration: "3 years", faculty: "Economics, Social Sciences & Management" },
+      { name: "Cooperatives Management", level: "Bachelor", duration: "3 years", faculty: "Economics, Social Sciences & Management" },
+      { name: "Entrepreneurship and SME Management", level: "Bachelor", duration: "3 years", faculty: "Economics, Social Sciences & Management" },
+      { name: "French and English", level: "Bachelor", duration: "3 years", faculty: "Education" },
+      { name: "Education in Biology and Chemistry", level: "Bachelor", duration: "4 years", faculty: "Education" },
+      { name: "Education in Mathematics and Physics", level: "Bachelor", duration: "4 years", faculty: "Education" },
+      { name: "Education in Mathematics and Comp Sci", level: "Bachelor", duration: "4 years", faculty: "Education" },
+      { name: "Civil Engineering", level: "Bachelor", duration: "5 years", faculty: "Engineering and Technology" },
+      { name: "Biotechnologies", level: "Bachelor", duration: "4 years", faculty: "Engineering and Technology" },
+      { name: "Land Survey", level: "Bachelor", duration: "3 years", faculty: "Engineering and Technology" },
+      { name: "Architecture", level: "Bachelor", duration: "5 years", faculty: "Engineering and Technology" },
+      { name: "Water Engineering", level: "Bachelor", duration: "4 years", faculty: "Engineering and Technology" },
+      { name: "Electrical Power Engineering", level: "Bachelor", duration: "5 years", faculty: "Engineering and Technology" },
+      { name: "Renewable Energy Engineering", level: "Bachelor", duration: "4 years", faculty: "Engineering and Technology" },
+      { name: "Crop Production", level: "Bachelor", duration: "4 years", faculty: "Engineering and Technology" },
+      { name: "Law", level: "Bachelor", duration: "4 years", faculty: "Law and Public Administration" },
+      { name: "Public Administration and Good Governance", level: "Bachelor", duration: "3 years", faculty: "Law and Public Administration" },
+      { name: "Pharmacy", level: "Bachelor", duration: "5 years", faculty: "Health Sciences" },
+      { name: "Anaesthesia", level: "Bachelor", duration: "4 years", faculty: "Health Sciences" },
+      { name: "Midwifery", level: "Bachelor", duration: "4 years", faculty: "Health Sciences" },
+      { name: "General Nursing", level: "Bachelor", duration: "4 years", faculty: "Health Sciences" },
+      { name: "Biomedical Laboratory Sciences", level: "Bachelor", duration: "4 years", faculty: "Health Sciences" },
+      { name: "MSc Software Engineering", level: "Master", duration: "2 years", faculty: "Sciences and Information Technology" },
+      { name: "MSc Valuation and Property Management", level: "Master", duration: "2 years", faculty: "Sciences and Information Technology" },
+      { name: "MSc Land Administration Management", level: "Master", duration: "2 years", faculty: "Sciences and Information Technology" },
+      { name: "MSc Food Science and Technology", level: "Master", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "MSc Geo-Informatics", level: "Master", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "MSc Construction Technology and Management", level: "Master", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "MSc Geotechnical Engineering", level: "Master", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "MSc Biomedical Laboratory Sciences", level: "Master", duration: "2 years", faculty: "Health Sciences" },
+      { name: "Master of Applied Criminal Law", level: "Master", duration: "2 years", faculty: "Law and Public Administration" },
+      { name: "Advanced Diploma in Nursing", level: "Diploma", duration: "3 years", faculty: "Health Sciences" },
+      { name: "Advanced Diploma in Midwifery", level: "Diploma", duration: "3 years", faculty: "Health Sciences" },
+      { name: "Domestic Electricity", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "Masonry", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "Welding", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "Domestic Plumbing", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" },
+      { name: "Surveying", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" }
     ],
     tuition: {
-      localMin: "645,000",
+      localMin: "450,000",
       localMax: "2,850,000",
-      internationalMin: "1,800",
-      internationalMax: "3,500",
-      currency: "RWF/year (UG) / USD/year"
+      internationalMin: "1,200",
+      internationalMax: "5,000",
+      currency: "RWF/year (UG) / USD/year (PG)"
     },
     admission: {
       requirements: ["A-Level certificate with at least two principal passes", "English proficiency", "Program-specific requirements", "Equivalent international qualifications recognized by HEC"],
@@ -1160,7 +1255,7 @@ export const universities: University[] = [  {
       internationalRequirements: ["Valid passport", "Student visa", "HEC equivalence", "Financial proof"],
       applicationDeadlines: "Rolling admissions. Applications open before each intake.",
       intakePeriods: ["January", "September"],
-      howToApply: "Apply in person at the admissions office or by mail. Contact info@ines-rwanda.ac.rw for details.",
+      howToApply: "Apply online at https://digitalcampus.ines.ac.rw/admission/ or visit the admissions office in Musanze.",
       applicationFees: "RWF 10,000"
     },
     tuitionDetails: [
@@ -1173,14 +1268,14 @@ export const universities: University[] = [  {
       { name: "Regional Scholarships", type: "NGO", description: "Sponsored by local organizations" }
     ],
     internationalStudent: {
-      welcomeGuide: false,
-      internationalAdmissions: "Limited international student capacity.",
+      welcomeGuide: true,
+      internationalAdmissions: "1670+ international students from 21 countries. Dedicated support for international students.",
       equivalenceGuidance: "HEC equivalence required.",
       visaInfo: "Student visa required.",
       residencePermit: "Required for extended stays.",
-      airportArrival: "",
-      orientationWeek: false,
-      languageSupport: "",
+      airportArrival: "Airport pickup can be arranged.",
+      orientationWeek: true,
+      languageSupport: "English instruction. Language center available.",
       exchangePrograms: []
     },
     accommodation: {
@@ -1190,49 +1285,52 @@ export const universities: University[] = [  {
       estimatedCost: "RWF 60,000 - 150,000/month"
     },
     studentLife: {
-      clubs: ["Student Clubs", "Debate Club", "Cultural Group"],
+      clubs: ["Debate Club", "Drama Club", "Cultural Group", "Business Club"],
       sports: ["Football", "Basketball", "Volleyball"],
-      events: ["Cultural Events", "Community Service", "Career Days"],
+      events: ["Intercultural Day", "Community Service", "Career Days", "Research Seminars"],
       organizations: ["Student Council", "Alumni Association"]
     },
     facilities: {
-      libraries: ["INES Library"],
-      labs: ["Computer Lab", "Science Lab"],
+      libraries: ["INES Library", "E-Library"],
+      labs: ["Computer Lab", "Science Lab", "Biotechnology Lab", "Health Sciences Lab"],
       sports: ["Sports Field"],
-      other: ["Wi-Fi", "Auditorium", "Cafeteria", "Student Lounge"]
+      other: ["Wi-Fi", "Auditorium", "Cafeteria", "Student Lounge", "Conference Hall"]
     },
     careerDevelopment: {
       internships: true,
       industrialAttachment: true,
-      careerOffice: false,
-      jobPlacementSupport: "Faculty assists with job placements.",
-      alumniNetwork: "Growing alumni network in northern Rwanda."
+      careerOffice: true,
+      jobPlacementSupport: "Faculty assists with job placements and career guidance.",
+      alumniNetwork: "13,000+ alumni worldwide."
     },
     research: {
-      centers: [],
+      centers: ["Research Clusters"],
       innovationLabs: [],
-      publications: ["INES Research Journal"],
-      conferences: [],
-      partnerships: ["Local NGOs", "Community organizations"]
+      publications: ["INES Scientific Journal", "INES Research Journal"],
+      conferences: ["Annual Research Seminars"],
+      partnerships: ["University of KwaZulu-Natal", "Local NGOs", "Community organizations"]
     },
     gallery: [
-      { image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200", caption: "INES Campus" }
+      { image: "https://www.ines.ac.rw/media/banners/PIC_2311.jpg", caption: "INES Campus" }
     ],
     videos: [],
     rankings: {
-      national: "Private university serving northern Rwanda",
+      national: "Leading private university in Northern Rwanda",
       international: "",
       awards: [],
       accreditations: ["Higher Education Council (HEC) of Rwanda"],
       memberships: []
     },
     faq: [
-      { question: "Where is INES located?", answer: "INES is located in Musanze, Northern Province of Rwanda." }
+      { question: "Where is INES located?", answer: "INES-Ruhengeri is located in Musanze District, Northern Province of Rwanda — Street NM 155, PO Box 155 Ruhengeri." },
+      { question: "How many students does INES have?", answer: "INES has over 8,200 current students including more than 1,670 international students from 21 countries." },
+      { question: "What programs does INES offer?", answer: "INES offers programs across six faculties: Sciences & IT, Economics & Management, Education, Engineering & Technology, Law & Public Administration, and Health Sciences." },
+      { question: "How do I apply to INES?", answer: "Apply online at https://digitalcampus.ines.ac.rw/admission/ or visit the admissions office in Musanze." }
     ],
     downloads: [
-      { name: "Fee Structure (2025/2026)", url: "https://ines.ac.rw/admissions/fees", type: "PDF" },
-      { name: "Undergraduate Application Form", url: "https://ines.ac.rw/apply", type: "PDF" },
-      { name: "University Prospectus", url: "https://ines.ac.rw/prospectus", type: "PDF" }
+      { name: "Fee Structure (2025/2026)", url: "https://ines.ac.rw/tuition-fees", type: "PDF" },
+      { name: "Online Application", url: "https://digitalcampus.ines.ac.rw/admission/", type: "Link" },
+      { name: "International Students Guide", url: "https://www.ines.ac.rw/international-students", type: "Link" }
     ],
     nearbyPlaces: [
       { name: "Musanze Town Center", type: "Shopping", distance: "10 min walk" },
@@ -1244,27 +1342,28 @@ export const universities: University[] = [  {
       Established: "2005",
       Type: "Private",
       Campuses: "1 (Musanze)",
-      Students: "2,500+",
-      "Teaching Staff": "80+",
-      Faculties: "4 Schools",
-      Programs: "10+",
+      Students: "8,200+",
+      "International Students": "1,670+",
+      "Teaching Staff": "200+",
+      Faculties: "6",
+      Programs: "40+",
       Intakes: "January, September",
       Language: "English",
       Accommodation: "Not on campus (private)",
       Scholarships: "Available"
     },
     contact: {
-      phone: "+250 788 789 012",
-      email: "info@ines-rwanda.ac.rw",
-      website: "",
-      address: "Musanze, Northern Province, Rwanda"
+      phone: "+250 788 903 030",
+      email: "info@ines.ac.rw",
+      website: "https://www.ines.ac.rw",
+      address: "Musanze, Street NM 155, Northern Province, Rwanda — PO Box 155, Ruhengeri"
     },
     about: {
-      history: "Founded in 2005, INES provides higher education access to the northern region of Rwanda.",
-      mission: "To provide quality education that contributes to the socio-economic development of the northern region.",
-      vision: "To be a leading private university in northern Rwanda.",
+      history: "Founded in 2005, INES-Ruhengeri provides higher education access to the northern region of Rwanda with a focus on applied sciences, research, and community engagement.",
+      mission: "To provide quality education that contributes to the socio-economic development of the region through teaching, research, and community engagement.",
+      vision: "To be a leading center of applied sciences and technology in the region.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
-      achievements: ["Growing enrollment", "Regional impact", "Alumni network", "Community partnerships"]
+      achievements: ["8,200+ current students", "1,670+ international students from 21 countries", "13,000+ total graduates", "6 faculties with 40+ programs", "20+ years of academic excellence"]
     },
     images: [
       "https://www.ines.ac.rw/media/banners/PIC_2311.jpg",
