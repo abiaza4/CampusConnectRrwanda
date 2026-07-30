@@ -1,9 +1,10 @@
-const CACHE_NAME = "campusconnect-v1";
-const STATIC_CACHE = "campusconnect-static-v1";
-const PAGE_CACHE = "campusconnect-pages-v1";
+const CACHE_NAME = "campusconnect-v2";
+const STATIC_CACHE = "campusconnect-static-v2";
+const PAGE_CACHE = "campusconnect-pages-v2";
 
 const STATIC_ASSETS = [
   "/",
+  "/search",
   "/universities",
   "/study-guide",
   "/scholarships",
@@ -47,6 +48,10 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
+
+  if (url.protocol !== "http:" && url.protocol !== "https:") {
+    return;
+  }
 
   if (url.origin !== self.location.origin) {
     if (request.method === "GET") {
