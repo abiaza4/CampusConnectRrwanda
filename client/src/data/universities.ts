@@ -3690,7 +3690,7 @@ export const universities: University[] = [  {
       { name: "Fee Structure (2025/2026)", url: "https://auca.ac.rw/tuition-fees", type: "PDF" },
       { name: "Undergraduate Application Form", url: "https://auca.ac.rw/apply", type: "PDF" },
       { name: "Postgraduate Application Form", url: "https://auca.ac.rw/postgraduate-apply", type: "PDF" },
-      { name: "ASOME Medical Program Guide", url: "https://asome.rw/prospectus", type: "PDF" },
+      { name: "ASOME Medical Program Guide", url: "https://share.google/hk77xl2Ja06rouRqh", type: "PDF" },
       { name: "University Prospectus", url: "https://auca.ac.rw/prospectus", type: "PDF" }
     ],
     nearbyPlaces: [
