@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -109,7 +110,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <Link href="/cost-calculator">
             <Button
               variant="ghost"
@@ -119,6 +120,7 @@ export default function Navbar() {
               Cost Calculator
             </Button>
           </Link>
+          <LanguageSwitcher />
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg transition-all text-gray-500 hover:text-navy hover:bg-gray-100 dark:text-gray-400 dark:hover:text-emerald dark:hover:bg-white/5"

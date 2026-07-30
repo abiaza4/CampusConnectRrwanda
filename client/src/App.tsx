@@ -4,7 +4,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { LanguageProvider } from "./contexts/LanguageContext";
 import Layout from "./components/Layout";
+import OfflineBanner from "./components/OfflineBanner";
 
 const Home = lazy(() => import("./pages/Home"));
 const Universities = lazy(() => import("./pages/Universities"));
@@ -17,6 +19,7 @@ const Compare = lazy(() => import("./pages/Compare"));
 const Events = lazy(() => import("./pages/Events"));
 const Equivalence = lazy(() => import("./pages/Equivalence"));
 const ImportantInfo = lazy(() => import("./pages/ImportantInfo"));
+const CurrencyConverter = lazy(() => import("./pages/CurrencyConverter"));
 const Blog = lazy(() => import("./pages/Blog"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const About = lazy(() => import("./pages/About"));
@@ -43,6 +46,7 @@ function Router() {
           <Route path="/visa-guide" component={VisaGuide} />
           <Route path="/scholarships" component={Scholarships} />
           <Route path="/cost-calculator" component={CostCalculator} />
+          <Route path="/currency-converter" component={CurrencyConverter} />
           <Route path="/compare" component={Compare} />
           <Route path="/events" component={Events} />
           <Route path="/equivalence" component={Equivalence} />
@@ -65,10 +69,13 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light" switchable>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+            <OfflineBanner />
+          </TooltipProvider>
+        </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

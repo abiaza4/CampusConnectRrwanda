@@ -1,0 +1,17 @@
+{
+  "name": "CampusConnect Rwanda",
+  "short_name": "CampusConnect",
+  "description": "Your Gateway to Higher Education in Rwanda — Universities, Scholarships, Equivalence, Visa Guide & More",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a365d",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "scope": "/",
+  "categories": ["education", "university", "scholarships"],
+  "icons": [
+    { "src": "/campusconnect logo.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any" },
+    { "src": "/campusconnect logo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
+  ]
+}

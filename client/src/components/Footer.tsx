@@ -47,6 +47,7 @@ export default function Footer() {
                 { label: "Scholarships", href: "/scholarships" },
                 { label: "Compare Programs", href: "/compare" },
                 { label: "Events", href: "/events" },
+                { label: "Currency Converter", href: "/currency-converter" },
                 { label: "Equivalence", href: "/equivalence" },
                 { label: "Blog", href: "/blog" },
                 { label: "About Us", href: "/about" },
