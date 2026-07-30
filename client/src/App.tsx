@@ -26,6 +26,7 @@ const About = lazy(() => import("./pages/About"));
 const Team = lazy(() => import("./pages/Team"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const Search = lazy(() => import("./pages/Search"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function Router() {
@@ -57,6 +58,7 @@ function Router() {
           <Route path="/team" component={Team} />
           <Route path="/privacy-policy" component={PrivacyPolicy} />
           <Route path="/terms-and-conditions" component={TermsAndConditions} />
+          <Route path="/search" component={Search} />
           <Route path="/404" component={NotFound} />
           <Route component={NotFound} />
         </Switch>

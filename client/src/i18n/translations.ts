@@ -639,4 +639,13 @@ export const translations: Translations = {
   "home.cta-explore-btn": { en: "Explore Universities", rw: "Shakisha Kaminuza", fr: "Explorer les Universités", sw: "Gundua Vyuo Vikuu", ar: "استكشف الجامعات" },
   "home.cta-guide-btn": { en: "Read Study Guide", rw: "Soma Ubuyobozi bw'Amasomo", fr: "Lire le Guide d'Études", sw: "Soma Mwongozo wa Masomo", ar: "اقرأ دليل الدراسة" },
 
+  // SEARCH PAGE
+  "search.title": { en: "Search", rw: "Shakisha", fr: "Rechercher", sw: "Tafuta", ar: "بحث" },
+  "search.description": { en: "Find universities, programs, and study opportunities across Rwanda.", rw: "Shakisha amashuri makuru, porogaramu, n'amahirwe y'amasomo ku mugorigo w'u Rwanda.", fr: "Trouver des universités, des programmes et des opportunités d'études au Rwanda.", sw: "Gundua vyuo vikuu, programu, na fursa za masomo kote mu Rwanda.", ar: "ابحث عن الجامعات والبرامج وفرص الدراسة في جميع أنحاء رواندا." },
+  "search.placeholder": { en: "Search by name, city, or program...", rw: "Shakisha ijina, umurwa, cyangwa porogaramu...", fr: "Rechercher par nom, ville ou programme...", sw: "Tafuta kwa jina, mji, au programu...", ar: "ابحث بالاسم أو المدينة أو البرنامج..." },
+  "search.result": { en: "result found", rw: "itabiri ryakunzwe", fr: "résultat trouvé", sw: "takuli imelezwa", ar: "نتيجة تم العثور عليها" },
+  "search.results": { en: "results found", rw: "ibitabiri bikunzwe", fr: "résultats trouvés", sw: "takuli zimelezwa", ar: "نتائج تم العثور عليها" },
+  "search.view_details": { en: "View Details", rw: "Menya Izindi", fr: "Voir Détails", sw: "Angalia Maelezo", ar: "عرض التفاصيل" },
+  "search.no_results": { en: "No results found. Try a different search term.", rw: "Nta matembere yakunzwe. Gerageza ijina rinyinzwa.", fr: "Aucun résultat trouvé. Essayez un terme de recherche différent.", sw: "Hakuna matokeo yaliyopata. Jaribu maneno tofauti ya utafutaji.", ar: "لم يتم العثور على نتائج. جرب مصطلح بحث مختلف." },
+  "search.enter_query": { en: "Enter a search term to find universities.", rw: "Andinzijwe ijinto rukangurira no kumenya amashuri makuru.", fr: "Entrez un terme de recherche pour trouver des universités.", sw: "Andika maneno ya utafutaji gundua vyuo vikuu.", ar: "أدخل مصطلح بحث للعثور على الجامعات." },
 };
