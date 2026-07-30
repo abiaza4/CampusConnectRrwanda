@@ -1,7 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PrivacyPolicy() {
+  const { t } = useLanguage();
   return (
     <div>
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
@@ -15,12 +17,12 @@ export default function PrivacyPolicy() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Privacy Policy</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("privacy.badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Your Privacy Matters
+                {t("privacy.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Learn how we collect, use, and protect your personal information.
+                {t("privacy.hero-subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -32,10 +34,10 @@ export default function PrivacyPolicy() {
           <ScrollReveal>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                1. Information We Collect
+                {t("privacy.section1-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                We collect information you provide directly when you create an account, fill out a form, or contact us. This may include your name, email address, phone number, institution details, and any other information you choose to share. We also collect anonymized usage data to improve our services.
+                {t("privacy.section1-text")}
               </p>
             </div>
           </ScrollReveal>
@@ -43,17 +45,17 @@ export default function PrivacyPolicy() {
           <ScrollReveal delay={0.1}>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                2. How We Use Your Information
+                {t("privacy.section2-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-                We use the information we collect to:
+                {t("privacy.section2-intro")}
               </p>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Provide and maintain our services</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Improve and personalize your experience</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Respond to your inquiries and support requests</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Send relevant updates and communications (with your consent)</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Analyze usage patterns to enhance our platform</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.use1")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.use2")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.use3")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.use4")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.use5")}</li>
               </ul>
             </div>
           </ScrollReveal>
@@ -61,10 +63,10 @@ export default function PrivacyPolicy() {
           <ScrollReveal delay={0.2}>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                3. Data Storage and Security
+                {t("privacy.section3-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                We implement industry-standard security measures to protect your personal information. Data is stored securely and is only accessible to authorized personnel. We use encryption for sensitive data and conduct regular security assessments to ensure your information remains safe.
+                {t("privacy.section3-text")}
               </p>
             </div>
           </ScrollReveal>
@@ -72,10 +74,10 @@ export default function PrivacyPolicy() {
           <ScrollReveal delay={0.3}>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                4. Cookies and Tracking
+                {t("privacy.section4-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Our website uses cookies to enhance your browsing experience and understand how our platform is used. You can manage cookie preferences through your browser settings. Continuing to use our site constitutes acceptance of our cookie practices.
+                {t("privacy.section4-text")}
               </p>
             </div>
           </ScrollReveal>
@@ -83,10 +85,10 @@ export default function PrivacyPolicy() {
           <ScrollReveal delay={0.4}>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                5. Third-Party Links
+                {t("privacy.section5-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                Our platform may contain links to third-party websites (such as university portals, scholarship databases, and visa application sites). We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before sharing any personal information.
+                {t("privacy.section5-text")}
               </p>
             </div>
           </ScrollReveal>
@@ -94,17 +96,17 @@ export default function PrivacyPolicy() {
           <ScrollReveal delay={0.5}>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                6. Your Rights
+                {t("privacy.section6-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-                You have the right to:
+                {t("privacy.section6-intro")}
               </p>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Access the personal data we hold about you</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Request correction of inaccurate information</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Request deletion of your personal data</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Withdraw consent for data processing</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />Object to or restrict processing of your data</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.right1")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.right2")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.right3")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.right4")}</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 rounded-full bg-emerald mt-2 shrink-0" />{t("privacy.right5")}</li>
               </ul>
             </div>
           </ScrollReveal>
@@ -112,10 +114,10 @@ export default function PrivacyPolicy() {
           <ScrollReveal delay={0.6}>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                7. Contact Us
+                {t("privacy.section7-title")}
               </h2>
               <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at <a href="mailto:info@campusconnect.rw" className="text-emerald hover:underline">info@campusconnect.rw</a> or reach us by phone at <a href="tel:+250791902058" className="text-emerald hover:underline">+250 791 902 058</a>.
+                {t("privacy.contact-before-email")} <a href="mailto:info@campusconnect.rw" className="text-emerald hover:underline">info@campusconnect.rw</a>{t("privacy.contact-between")} <a href="tel:+250791902058" className="text-emerald hover:underline">+250 791 902 058</a>{t("privacy.contact-after-phone")}
               </p>
             </div>
           </ScrollReveal>

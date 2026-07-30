@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
 import { useLocation } from "wouter";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-white dark:from-deep-navy dark:to-background">
@@ -15,19 +17,17 @@ export default function NotFound() {
           404
         </h1>
         <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3" style={{ fontFamily: "'Fraunces', serif" }}>
-          Page Not Found
+          {t("not-found.heading")}
         </h2>
         <p className="text-gray-500 dark:text-gray-400 mb-8 leading-relaxed">
-          Sorry, the page you are looking for doesn't exist.
-          <br />
-          It may have been moved or deleted.
+          {t("not-found.description")}
         </p>
         <Button
           onClick={() => setLocation("/")}
           className="bg-emerald hover:bg-emerald-dark text-white px-8 py-3 rounded-xl font-medium shadow-lg shadow-emerald/20"
         >
           <Home className="w-4 h-4 mr-2" />
-          Go Home
+          {t("not-found.button")}
         </Button>
       </div>
     </div>

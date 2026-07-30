@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
@@ -19,6 +20,7 @@ export default function Scholarships() {
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState<typeof types[number]>("All");
   const [uniFilter, setUniFilter] = useState("All");
+  const { t } = useLanguage();
 
   const filtered = useMemo(() => {
     return allScholarships.filter((s) => {
@@ -39,12 +41,12 @@ export default function Scholarships() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Funding Opportunities</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("scholarships.hero-badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Scholarship Center
+                {t("scholarships.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Find scholarships for studying in Rwanda — from government grants to international awards.
+                {t("scholarships.hero-description")}
               </p>
             </div>
           </ScrollReveal>
@@ -59,24 +61,24 @@ export default function Scholarships() {
               <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search scholarships..."
+                placeholder={t("scholarships.search-placeholder")}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-white dark:bg-card border border-gray-200 dark:border-white/10 text-gray-800 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald/30 text-sm"
               />
             </div>
             <div className="flex flex-wrap gap-3">
-              {types.map((t) => (
+              {types.map((type) => (
                 <button
-                  key={t}
-                  onClick={() => setTypeFilter(t)}
+                  key={type}
+                  onClick={() => setTypeFilter(type)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    typeFilter === t
+                    typeFilter === type
                       ? "bg-navy dark:bg-emerald text-white"
                       : "bg-white dark:bg-card text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:border-emerald/30"
                   }`}
                 >
-                  {t}
+                  {t(`scholarships.filter-${type.toLowerCase()}`)}
                 </button>
               ))}
               <select
@@ -84,7 +86,7 @@ export default function Scholarships() {
                 onChange={(e) => setUniFilter(e.target.value)}
                 className="px-4 py-2 rounded-lg text-sm bg-white dark:bg-card border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald/30"
               >
-                <option value="All">All Universities</option>
+                <option value="All">{t("scholarships.all-universities")}</option>
                 {universities.map((u) => (
                   <option key={u.id} value={u.name}>{u.name}</option>
                 ))}
@@ -94,7 +96,7 @@ export default function Scholarships() {
 
           {/* Results */}
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-            Showing {filtered.length} scholarship{filtered.length !== 1 ? "s" : ""}
+            {t("scholarships.showing")} {filtered.length} {filtered.length === 1 ? t("scholarships.scholarship") : t("scholarships.scholarships")}
           </p>
 
           <div className="space-y-4">
@@ -118,22 +120,22 @@ export default function Scholarships() {
           <ScrollReveal>
             <div className="mt-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6" style={{ fontFamily: "'Fraunces', serif" }}>
-                External Scholarship Opportunities
+                {t("scholarships.external-title")}
               </h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { name: "Rwanda Government Scholarship", org: "Ministry of Education", desc: "Full scholarships for top-performing students including tuition, accommodation, and stipend.", type: "Government" },
-                  { name: "DAAD Scholarship", org: "German Academic Exchange", desc: "Scholarships for graduate programs at Rwandan universities for African students.", type: "International" },
-                  { name: "Mastercard Foundation Scholars Program", org: "Mastercard Foundation", desc: "Full scholarships for undergraduate and graduate studies at partner universities.", type: "International" },
-                  { name: "RCA Fellowship", org: "Rwanda Cooperation Agency", desc: "Scholarships for students from Rwanda's partner countries to study in Rwanda.", type: "Government" },
+                  { nameKey: "scholarships.external-1-name", orgKey: "scholarships.external-1-org", descKey: "scholarships.external-1-desc", typeKey: "scholarships.external-1-type" },
+                  { nameKey: "scholarships.external-2-name", orgKey: "scholarships.external-2-org", descKey: "scholarships.external-2-desc", typeKey: "scholarships.external-2-type" },
+                  { nameKey: "scholarships.external-3-name", orgKey: "scholarships.external-3-org", descKey: "scholarships.external-3-desc", typeKey: "scholarships.external-3-type" },
+                  { nameKey: "scholarships.external-4-name", orgKey: "scholarships.external-4-org", descKey: "scholarships.external-4-desc", typeKey: "scholarships.external-4-type" },
                 ].map((sch, i) => (
                   <div key={i} className="p-5 rounded-xl bg-white dark:bg-card border border-gray-100 dark:border-white/5">
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-semibold text-gray-900 dark:text-white text-sm">{sch.name}</h4>
-                      <Badge variant="outline" className="text-xs">{sch.type}</Badge>
+                      <h4 className="font-semibold text-gray-900 dark:text-white text-sm">{t(sch.nameKey)}</h4>
+                      <Badge variant="outline" className="text-xs">{t(sch.typeKey)}</Badge>
                     </div>
-                    <p className="text-xs text-emerald mb-1">{sch.org}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{sch.desc}</p>
+                    <p className="text-xs text-emerald mb-1">{t(sch.orgKey)}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{t(sch.descKey)}</p>
                   </div>
                 ))}
               </div>

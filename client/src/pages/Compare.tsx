@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,6 +8,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { universities } from "@/data/universities";
 
 export default function Compare() {
+  const { t } = useLanguage();
   const [selected, setSelected] = useState<string[]>([]);
 
   const selectedUniversities = universities.filter((u) => selected.includes(u.id));
@@ -20,14 +22,14 @@ export default function Compare() {
   };
 
   const fields = [
-    { label: "Location", key: "location" as const, icon: MapPin },
-    { label: "Type", key: "type" as const, icon: Building2 },
-    { label: "Founded", key: "founded" as const, icon: Building2 },
-    { label: "Faculties", key: "facultiesCount" as const, icon: BookOpen },
-    { label: "Programs", key: "programsCount" as const, icon: GraduationCap },
-    { label: "Tuition (Local)", key: "tuitionLocal" as const, icon: Building2 },
-    { label: "Hostels", key: "hostels" as const, icon: Building2 },
-    { label: "Accommodation Cost", key: "accommodationCost" as const, icon: Building2 },
+    { label: t("compare.field-location"), key: "location" as const, icon: MapPin },
+    { label: t("compare.field-type"), key: "type" as const, icon: Building2 },
+    { label: t("compare.field-founded"), key: "founded" as const, icon: Building2 },
+    { label: t("compare.field-faculties"), key: "facultiesCount" as const, icon: BookOpen },
+    { label: t("compare.field-programs"), key: "programsCount" as const, icon: GraduationCap },
+    { label: t("compare.field-tuition-local"), key: "tuitionLocal" as const, icon: Building2 },
+    { label: t("compare.field-hostels"), key: "hostels" as const, icon: Building2 },
+    { label: t("compare.field-accommodation-cost"), key: "accommodationCost" as const, icon: Building2 },
   ];
 
   return (
@@ -40,12 +42,12 @@ export default function Compare() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Side by Side</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("compare.hero-badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Compare Universities
+                {t("compare.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Select up to 3 universities and compare them side by side to make the best decision.
+                {t("compare.hero-description")}
               </p>
             </div>
           </ScrollReveal>
@@ -58,7 +60,7 @@ export default function Compare() {
           <ScrollReveal>
             <div className="bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5 mb-8">
               <h3 className="font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Select Universities to Compare
+                {t("compare.select-title")}
               </h3>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {universities.map((u) => (
@@ -94,7 +96,7 @@ export default function Compare() {
                   <table className="w-full">
                     <thead>
                       <tr className="border-b border-gray-100 dark:border-white/5">
-                        <th className="p-4 text-left text-sm font-semibold text-gray-500 w-[140px]">Feature</th>
+                        <th className="p-4 text-left text-sm font-semibold text-gray-500 w-[140px]">{t("compare.feature")}</th>
                         {selectedUniversities.map((u) => (
                           <th key={u.id} className="p-4 text-center">
                             <Link href={`/university/${u.id}`}>
@@ -119,7 +121,7 @@ export default function Compare() {
                               {field.key === "facultiesCount" && u.faculties.length}
                               {field.key === "programsCount" && u.programs.length}
                               {field.key === "tuitionLocal" && `${u.tuition.localMin} - ${u.tuition.localMax} RWF`}
-                              {field.key === "hostels" && (u.accommodation.hostels ? "Available" : "Not available")}
+                              {field.key === "hostels" && (u.accommodation.hostels ? t("compare.available") : t("compare.not-available"))}
                               {field.key === "accommodationCost" && u.accommodation.estimatedCost}
                             </td>
                           ))}
@@ -128,7 +130,7 @@ export default function Compare() {
                       {/* Programs row */}
                       <tr className="border-b border-gray-50 dark:border-white/5">
                         <td className="p-4 text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                          <BookOpen size={14} className="text-emerald" /> Key Programs
+                          <BookOpen size={14} className="text-emerald" /> {t("compare.key-programs")}
                         </td>
                         {selectedUniversities.map((u) => (
                           <td key={u.id} className="p-4 text-center">
@@ -143,7 +145,7 @@ export default function Compare() {
                       {/* Scholarships row */}
                       <tr>
                         <td className="p-4 text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center gap-2">
-                          <GraduationCap size={14} className="text-emerald" /> Scholarships
+                          <GraduationCap size={14} className="text-emerald" /> {t("compare.scholarships")}
                         </td>
                         {selectedUniversities.map((u) => (
                           <td key={u.id} className="p-4 text-center">
@@ -165,8 +167,8 @@ export default function Compare() {
           {selectedUniversities.length === 0 && (
             <div className="text-center py-16">
               <ArrowLeftRight className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">Select universities to compare</h3>
-              <p className="text-sm text-gray-500">Choose 2-3 universities from the list above to see them side by side.</p>
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">{t("compare.empty-title")}</h3>
+              <p className="text-sm text-gray-500">{t("compare.empty-description")}</p>
             </div>
           )}
         </div>

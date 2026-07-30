@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin, ExternalLink } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const teamMembers = [
   {
@@ -35,7 +36,12 @@ const teamMembers = [
   },
 ];
 
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").replace(/-+/g, "-");
+}
+
 export default function Team() {
+  const { t } = useLanguage();
   return (
     <div>
       {/* Hero */}
@@ -46,12 +52,12 @@ export default function Team() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Our People</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("team.badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Meet the Team
+                {t("team.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                A dedicated group of education professionals, technologists, and researchers working to make higher education information accessible.
+                {t("team.hero-description")}
               </p>
             </div>
           </ScrollReveal>
@@ -83,7 +89,7 @@ export default function Team() {
           <ScrollReveal delay={0.3}>
             <div className="mt-16 bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center" style={{ fontFamily: "'Fraunces', serif" }}>
-                Our Values
+                {t("team.values-title")}
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {[
@@ -93,8 +99,8 @@ export default function Team() {
                   { value: "Innovation", desc: "We use technology to simplify the education research process." },
                 ].map((v) => (
                   <div key={v.value} className="text-center">
-                    <h4 className="font-semibold text-emerald text-sm mb-1">{v.value}</h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">{v.desc}</p>
+                    <h4 className="font-semibold text-emerald text-sm mb-1">{t("team.value-" + slugify(v.value))}</h4>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">{t("team.value-" + slugify(v.value) + "-desc")}</p>
                   </div>
                 ))}
               </div>

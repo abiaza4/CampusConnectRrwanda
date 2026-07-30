@@ -50,7 +50,9 @@ const whyRwanda = [
   {
     icon: Award,
     title: "Quality Education",
+    titleKey: "home.why-quality-education",
     description: "Accredited institutions meeting international standards of academic excellence.",
+    descKey: "home.why-quality-education-desc",
     color: "text-navy",
     bg: "bg-navy/5 dark:bg-navy/20",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80",
@@ -58,7 +60,9 @@ const whyRwanda = [
   {
     icon: Shield,
     title: "Safe Environment",
+    titleKey: "home.why-safe-environment",
     description: "Rwanda ranks among the safest countries in Africa with a welcoming culture.",
+    descKey: "home.why-safe-environment-desc",
     color: "text-emerald",
     bg: "bg-emerald/5 dark:bg-emerald/20",
     image: "https://images.unsplash.com/photo-1579541814924-28ee2e4a2b4e?w=600&q=80",
@@ -66,7 +70,9 @@ const whyRwanda = [
   {
     icon: Wallet,
     title: "Affordable Tuition",
+    titleKey: "home.why-affordable-tuition",
     description: "Competitive fees compared to Western universities with scholarship options.",
+    descKey: "home.why-affordable-tuition-desc",
     color: "text-gold",
     bg: "bg-gold/5 dark:bg-gold/20",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80",
@@ -74,7 +80,9 @@ const whyRwanda = [
   {
     icon: Building2,
     title: "Modern Campuses",
+    titleKey: "home.why-modern-campuses",
     description: "State-of-the-art facilities, libraries, laboratories, and technology hubs.",
+    descKey: "home.why-modern-campuses-desc",
     color: "text-navy",
     bg: "bg-navy/5 dark:bg-navy/20",
     image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80",
@@ -82,7 +90,9 @@ const whyRwanda = [
   {
     icon: Languages,
     title: "English/French Learning",
+    titleKey: "home.why-english-french-learning",
     description: "Study in English or French with bilingual academic environments.",
+    descKey: "home.why-english-french-learning-desc",
     color: "text-emerald",
     bg: "bg-emerald/5 dark:bg-emerald/20",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80",
@@ -90,7 +100,9 @@ const whyRwanda = [
   {
     icon: Globe,
     title: "East African Hub",
+    titleKey: "home.why-east-african-hub",
     description: "Gateway to opportunities across the East African Community region.",
+    descKey: "home.why-east-african-hub-desc",
     color: "text-gold",
     bg: "bg-gold/5 dark:bg-gold/20",
     image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80",
@@ -98,31 +110,37 @@ const whyRwanda = [
 ];
 
 const studyProcess = [
-  { step: 1, title: "Explore Universities", description: "Browse our directory of accredited Rwandan universities", icon: Search, image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" },
-  { step: 2, title: "Compare Programs", description: "Compare courses, fees, and facilities side by side", icon: BookOpen, image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80" },
-  { step: 3, title: "Understand Requirements", description: "Learn admission criteria and document needs", icon: GraduationCap, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" },
-  { step: 4, title: "Prepare Documents", description: "Gather certificates, transcripts, and required papers", icon: Award, image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" },
-  { step: 5, title: "Contact University", description: "Reach out directly to your chosen institution", icon: Handshake, image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80" },
-  { step: 6, title: "Apply Directly", description: "Submit your application through the university's official process", icon: ExternalLink, image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" },
+  { step: 1, title: "Explore Universities", titleKey: "home.step-explore-universities", description: "Browse our directory of accredited Rwandan universities", descKey: "home.step-explore-universities-desc", icon: Search, image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" },
+  { step: 2, title: "Compare Programs", titleKey: "home.step-compare-programs", description: "Compare courses, fees, and facilities side by side", descKey: "home.step-compare-programs-desc", icon: BookOpen, image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80" },
+  { step: 3, title: "Understand Requirements", titleKey: "home.step-understand-requirements", description: "Learn admission criteria and document needs", descKey: "home.step-understand-requirements-desc", icon: GraduationCap, image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" },
+  { step: 4, title: "Prepare Documents", titleKey: "home.step-prepare-documents", description: "Gather certificates, transcripts, and required papers", descKey: "home.step-prepare-documents-desc", icon: Award, image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80" },
+  { step: 5, title: "Contact University", titleKey: "home.step-contact-university", description: "Reach out directly to your chosen institution", descKey: "home.step-contact-university-desc", icon: Handshake, image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80" },
+  { step: 6, title: "Apply Directly", titleKey: "home.step-apply-directly", description: "Submit your application through the university's official process", descKey: "home.step-apply-directly-desc", icon: ExternalLink, image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" },
 ];
 
 const platformFeatures = [
   {
     icon: Shield,
     title: "Verified Information",
+    titleKey: "home.feature-verified-info",
     description: "Every university profile, program, and scholarship is verified and regularly updated to ensure accuracy.",
+    descKey: "home.feature-verified-info-desc",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
   },
   {
     icon: Wallet,
     title: "Free Cost Tools",
+    titleKey: "home.feature-free-cost-tools",
     description: "Our cost calculator and comparison tools help you plan your budget without any hidden fees or charges.",
+    descKey: "home.feature-free-cost-tools-desc",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80",
   },
   {
     icon: Globe,
     title: "International Ready",
+    titleKey: "home.feature-international-ready",
     description: "Comprehensive visa guides, accommodation info, and student life details for international applicants.",
+    descKey: "home.feature-international-ready-desc",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&q=80",
   },
 ];
@@ -295,16 +313,16 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-12 relative">
               <Badge variant="outline" className="text-emerald border-emerald/30 mb-4">
-                Featured Institutions
+                {t("home.featured-badge")}
               </Badge>
               <h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
-                Explore Top Universities
+                {t("home.featured-title")}
               </h2>
               <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mb-6">
-                Discover Rwanda's leading accredited institutions offering world-class education.
+                {t("home.featured-subtitle")}
               </p>
               {/* Accent image behind heading */}
               <img
@@ -355,14 +373,14 @@ export default function Home() {
                       <div className="flex items-center justify-between">
                         <div className="flex gap-4 text-xs text-gray-500">
                           <span className="flex items-center gap-1">
-                            <BookOpen size={12} /> {uni.faculties.length} Faculties
+                            <BookOpen size={12} /> {uni.faculties.length} {t("home.faculties")}
                           </span>
                           <span className="flex items-center gap-1">
-                            <GraduationCap size={12} /> {uni.programs.length} Programs
+                            <GraduationCap size={12} /> {uni.programs.length} {t("home.programs")}
                           </span>
                         </div>
                         <span className="text-sm text-emerald font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                          View Details <ArrowRight size={14} />
+                          {t("home.view-details")} <ArrowRight size={14} />
                         </span>
                       </div>
                     </div>
@@ -376,7 +394,7 @@ export default function Home() {
             <div className="text-center mt-10">
               <Link href="/universities">
                 <Button variant="outline" className="text-navy dark:text-emerald border-navy/20 dark:border-emerald/20 hover:bg-navy/5 dark:hover:bg-emerald/5 px-8 py-3 rounded-xl font-medium">
-                  View All Universities <ArrowRight size={16} className="ml-2" />
+                  {t("home.view-all-universities")} <ArrowRight size={16} className="ml-2" />
                 </Button>
               </Link>
             </div>
@@ -397,16 +415,16 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <Badge variant="outline" className="text-gold border-gold/30 mb-4">
-                Why Rwanda
+                {t("home.why-badge")}
               </Badge>
               <h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
-                Why Choose Rwanda for Your Education?
+                {t("home.why-title")}
               </h2>
               <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-                Rwanda is rapidly becoming East Africa's premier education destination.
+                {t("home.why-subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -429,10 +447,10 @@ export default function Home() {
                       <item.icon className={`w-5 h-5 ${item.color}`} />
                     </div>
                     <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">
-                      {item.title}
+                      {t(item.titleKey)}
                     </h3>
                     <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                      {item.description}
+                      {t(item.descKey)}
                     </p>
                   </div>
                 </div>
@@ -448,16 +466,16 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <Badge variant="outline" className="text-navy border-navy/30 mb-4">
-                Step by Step
+                {t("home.steps-badge")}
               </Badge>
               <h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
-                Your Study Journey
+                {t("home.steps-title")}
               </h2>
               <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-                A clear path from exploration to enrollment.
+                {t("home.steps-subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -480,9 +498,9 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                        {item.title}
+                        {t(item.titleKey)}
                       </h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t(item.descKey)}</p>
                     </div>
                   </div>
                 </div>
@@ -504,16 +522,16 @@ export default function Home() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <Badge variant="outline" className="text-emerald border-emerald/30 mb-4">
-                Why CampusConnect
+                {t("home.features-badge")}
               </Badge>
               <h2
                 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-3"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
-                Built for Your Education Journey
+                {t("home.features-title")}
               </h2>
               <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-                Everything you need to research, compare, and plan your studies in Rwanda—all in one free platform.
+                {t("home.features-subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -536,10 +554,10 @@ export default function Home() {
                   </div>
                   <div className="p-5">
                     <h3 className="font-bold text-gray-900 dark:text-white mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
-                      {f.title}
+                      {t(f.titleKey)}
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                      {f.description}
+                      {t(f.descKey)}
                     </p>
                   </div>
                 </div>
@@ -566,20 +584,20 @@ export default function Home() {
                 className="text-3xl md:text-4xl font-bold text-white mb-4"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
-                Ready to Begin Your Education Journey?
+                {t("home.cta-title")}
               </h2>
               <p className="text-white/70 mb-8 text-lg">
-                Explore all accredited universities, compare programs, and find the perfect fit for your future.
+                {t("home.cta-subtitle")}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Link href="/universities">
                   <Button className="bg-emerald hover:bg-emerald-dark text-white px-8 py-3 rounded-xl font-medium shadow-lg shadow-emerald/20">
-                    Explore Universities
+                    {t("home.cta-explore-btn")}
                   </Button>
                 </Link>
                 <Link href="/study-guide">
                   <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-xl font-medium">
-                    Read Study Guide
+                    {t("home.cta-guide-btn")}
                   </Button>
                 </Link>
               </div>

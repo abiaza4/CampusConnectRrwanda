@@ -4,9 +4,11 @@ import { Search, MapPin, BookOpen, GraduationCap, Filter, Building2 } from "luci
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { universities, getAllCities } from "@/data/universities";
 
 export default function Universities() {
+  const { t } = useLanguage();
   const [location] = useLocation();
   const [search, setSearch] = useState("");
   const [typeFilter, setTypeFilter] = useState<"All" | "Public" | "Private">("All");
@@ -54,16 +56,16 @@ export default function Universities() {
           <ScrollReveal>
             <div className="text-center max-w-2xl mx-auto">
               <Badge className="bg-white/10 text-white border-white/20 mb-4">
-                {universities.length} Accredited Institutions
+                {universities.length} {t("universities.accredited")}
               </Badge>
               <h1
                 className="text-4xl md:text-5xl font-bold text-white mb-4"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
-                Universities Directory
+                {t("universities.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Explore every accredited university in Rwanda with detailed information about programs, facilities, and admissions.
+                {t("universities.hero-subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -80,7 +82,7 @@ export default function Universities() {
                 <Search size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search universities..."
+                  placeholder={t("universities.search-placeholder")}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full pl-11 pr-4 py-3 rounded-xl bg-white dark:bg-card border border-gray-200 dark:border-white/10 text-gray-800 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald/30 text-sm"
@@ -91,24 +93,24 @@ export default function Universities() {
                 onClick={() => setShowFilters(!showFilters)}
                 className="md:hidden border-gray-200 dark:border-white/10"
               >
-                <Filter size={16} className="mr-2" /> Filters
+                <Filter size={16} className="mr-2" /> {t("universities.filters")}
               </Button>
             </div>
 
             {/* Filter Chips */}
             <div className={`flex flex-wrap gap-3 mt-4 ${showFilters ? "block" : "hidden md:flex"}`}>
               <div className="flex gap-2">
-                {(["All", "Public", "Private"] as const).map((t) => (
+                {(["All", "Public", "Private"] as const).map((type) => (
                   <button
-                    key={t}
-                    onClick={() => setTypeFilter(t)}
+                    key={type}
+                    onClick={() => setTypeFilter(type)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                      typeFilter === t
+                      typeFilter === type
                         ? "bg-navy dark:bg-emerald text-white"
                         : "bg-white dark:bg-card text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 hover:border-emerald/30"
                     }`}
                   >
-                    {t}
+                    {t(`universities.filter-${type.toLowerCase()}`)}
                   </button>
                 ))}
               </div>
@@ -117,7 +119,7 @@ export default function Universities() {
                 onChange={(e) => setCityFilter(e.target.value)}
                 className="px-4 py-2 rounded-lg text-sm bg-white dark:bg-card border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald/30"
               >
-                <option value="All">All Cities</option>
+                <option value="All">{t("universities.all-cities")}</option>
                 {cities.map((c) => (
                   <option key={c} value={c}>{c}</option>
                 ))}
@@ -127,7 +129,7 @@ export default function Universities() {
 
           {/* Results Count */}
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-            Showing {filtered.length} of {universities.length} universities
+            {t("universities.showing")} {filtered.length} {t("universities.of")} {universities.length} {t("universities.universities")}
           </p>
 
           {/* University Cards */}
@@ -170,23 +172,23 @@ export default function Universities() {
                       <div className="grid grid-cols-3 gap-3 text-center mb-4">
                         <div className="p-2 rounded-lg bg-gray-50 dark:bg-background">
                           <BookOpen size={14} className="text-emerald mx-auto mb-1" />
-                          <p className="text-xs text-gray-500 dark:text-gray-400">{uni.faculties.length} Faculties</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">{uni.faculties.length} {t("universities.faculties")}</p>
                         </div>
                         <div className="p-2 rounded-lg bg-gray-50 dark:bg-background">
                           <GraduationCap size={14} className="text-navy mx-auto mb-1" />
-                          <p className="text-xs text-gray-500 dark:text-gray-400">{uni.programs.length} Programs</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">{uni.programs.length} {t("universities.programs")}</p>
                         </div>
                         <div className="p-2 rounded-lg bg-gray-50 dark:bg-background">
                           <Building2 size={14} className="text-gold mx-auto mb-1" />
-                          <p className="text-xs text-gray-500 dark:text-gray-400">Est. {uni.founded}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400">{t("universities.est")} {uni.founded}</p>
                         </div>
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5">
                         <span className="text-xs text-gray-500">
-                          Tuition: {uni.tuition.localMin} RWF
+                          {t("universities.tuition")}: {uni.tuition.localMin} RWF
                         </span>
                         <span className="text-sm text-emerald font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                          Learn More
+                          {t("universities.learn-more")}
                         </span>
                       </div>
                     </div>
@@ -199,8 +201,8 @@ export default function Universities() {
           {filtered.length === 0 && (
             <div className="text-center py-16">
               <Search className="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">No universities found</h3>
-              <p className="text-sm text-gray-500">Try adjusting your search or filters.</p>
+              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">{t("universities.no-results-title")}</h3>
+              <p className="text-sm text-gray-500">{t("universities.no-results-description")}</p>
             </div>
           )}
         </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const faqCategories = [
   {
@@ -44,7 +45,12 @@ const faqCategories = [
   },
 ];
 
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").replace(/-+/g, "-");
+}
+
 export default function FAQ() {
+  const { t } = useLanguage();
   const [openItems, setOpenItems] = useState<Record<string, number | null>>({});
 
   const toggle = (category: string, index: number) => {
@@ -64,12 +70,12 @@ export default function FAQ() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Got Questions?</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("faq.badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Frequently Asked Questions
+                {t("faq.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Common questions from international students and parents about studying in Rwanda.
+                {t("faq.hero-description")}
               </p>
             </div>
           </ScrollReveal>
@@ -85,16 +91,16 @@ export default function FAQ() {
                   <span className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center">
                     <HelpCircle size={16} className="text-emerald" />
                   </span>
-                  {cat.category}
+                  {t("faq.category-" + slugify(cat.category))}
                 </h2>
                 <div className="space-y-2">
-                  {cat.questions.map((faq, i) => (
+                  {cat.questions.map((item, i) => (
                     <div key={i} className="bg-white dark:bg-card rounded-xl border border-gray-100 dark:border-white/5 overflow-hidden">
                       <button
                         onClick={() => toggle(cat.category, i)}
                         className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 dark:hover:bg-background transition-colors"
                       >
-                        <span className="font-medium text-sm text-gray-900 dark:text-white pr-4">{faq.q}</span>
+                        <span className="font-medium text-sm text-gray-900 dark:text-white pr-4">{t("faq.q-" + slugify(item.q))}</span>
                         {openItems[cat.category] === i ? (
                           <ChevronUp size={16} className="shrink-0 text-emerald" />
                         ) : (
@@ -103,7 +109,7 @@ export default function FAQ() {
                       </button>
                       {openItems[cat.category] === i && (
                         <div className="px-4 pb-4">
-                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{t("faq.a-" + slugify(item.q))}</p>
                         </div>
                       )}
                     </div>
@@ -117,13 +123,13 @@ export default function FAQ() {
           <ScrollReveal>
             <div className="bg-white dark:bg-card rounded-2xl p-6 md:p-8 border border-gray-100 dark:border-white/5 text-center">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
-                Still Have Questions?
+                {t("faq.still-questions-title")}
               </h3>
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                Contact us directly and we'll help you find the answers you need.
+                {t("faq.still-questions-description")}
               </p>
               <a href="mailto:info@campusconnect.rw" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald hover:bg-emerald-dark text-white font-medium rounded-xl transition-all text-sm">
-                Get in Touch
+                {t("faq.get-in-touch")}
               </a>
             </div>
           </ScrollReveal>

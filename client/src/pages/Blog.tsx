@@ -1,63 +1,72 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const posts = [
   {
-    title: "How to Choose the Right University in Rwanda",
-    excerpt: "A comprehensive guide to evaluating universities based on programs, facilities, location, and your career goals.",
     category: "Study Tips",
-    date: "July 15, 2026",
-    readTime: "5 min read",
+    titleKey: "blog.post-1-title",
+    excerptKey: "blog.post-1-excerpt",
+    categoryKey: "blog.category-study-tips",
+    dateKey: "blog.post-1-date",
+    readTimeKey: "blog.post-1-read-time",
   },
   {
-    title: "Rwanda's Education System: What International Students Need to Know",
-    excerpt: "Understanding the semester system, grading, accreditation, and academic expectations at Rwandan universities.",
     category: "Visa Updates",
-    date: "July 10, 2026",
-    readTime: "7 min read",
+    titleKey: "blog.post-2-title",
+    excerptKey: "blog.post-2-excerpt",
+    categoryKey: "blog.category-visa-updates",
+    dateKey: "blog.post-2-date",
+    readTimeKey: "blog.post-2-read-time",
   },
   {
-    title: "Top 5 Affordable Universities in Rwanda for 2026",
-    excerpt: "Comparing tuition fees, living costs, and scholarship opportunities across Rwanda's most accessible institutions.",
     category: "University Rankings",
-    date: "July 5, 2026",
-    readTime: "6 min read",
+    titleKey: "blog.post-3-title",
+    excerptKey: "blog.post-3-excerpt",
+    categoryKey: "blog.category-university-rankings",
+    dateKey: "blog.post-3-date",
+    readTimeKey: "blog.post-3-read-time",
   },
   {
-    title: "Student Visa Process: Step-by-Step Guide for 2026",
-    excerpt: "Updated requirements, processing times, and tips for a smooth student visa application to Rwanda.",
     category: "Visa Updates",
-    date: "June 28, 2026",
-    readTime: "8 min read",
+    titleKey: "blog.post-4-title",
+    excerptKey: "blog.post-4-excerpt",
+    categoryKey: "blog.category-visa-updates",
+    dateKey: "blog.post-4-date",
+    readTimeKey: "blog.post-4-read-time",
   },
   {
-    title: "From South Sudan to Kigali: A Student Success Story",
-    excerpt: "How James Ochieng navigated the application process and found his dream program at University of Rwanda.",
     category: "Success Stories",
-    date: "June 20, 2026",
-    readTime: "4 min read",
+    titleKey: "blog.post-5-title",
+    excerptKey: "blog.post-5-excerpt",
+    categoryKey: "blog.category-success-stories",
+    dateKey: "blog.post-5-date",
+    readTimeKey: "blog.post-5-read-time",
   },
   {
-    title: "Career Opportunities After Graduating in Rwanda",
-    excerpt: "The growing job market in East Africa and how a Rwandan degree opens doors across the region.",
     category: "Career Advice",
-    date: "June 15, 2026",
-    readTime: "6 min read",
+    titleKey: "blog.post-6-title",
+    excerptKey: "blog.post-6-excerpt",
+    categoryKey: "blog.category-career-advice",
+    dateKey: "blog.post-6-date",
+    readTimeKey: "blog.post-6-read-time",
   },
   {
-    title: "New Government Scholarship Program for East African Students",
-    excerpt: "Rwanda announces expanded scholarship opportunities for students from EAC member countries.",
     category: "Education News",
-    date: "June 10, 2026",
-    readTime: "3 min read",
+    titleKey: "blog.post-7-title",
+    excerptKey: "blog.post-7-excerpt",
+    categoryKey: "blog.category-education-news",
+    dateKey: "blog.post-7-date",
+    readTimeKey: "blog.post-7-read-time",
   },
   {
-    title: "Living in Kigali: A Student's Complete Guide",
-    excerpt: "Neighborhoods, food, transport, entertainment, and everything else you need to know about student life in the capital.",
     category: "Study Tips",
-    date: "June 5, 2026",
-    readTime: "10 min read",
+    titleKey: "blog.post-8-title",
+    excerptKey: "blog.post-8-excerpt",
+    categoryKey: "blog.category-study-tips",
+    dateKey: "blog.post-8-date",
+    readTimeKey: "blog.post-8-read-time",
   },
 ];
 
@@ -71,6 +80,7 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function Blog() {
+  const { t } = useLanguage();
   return (
     <div>
       {/* Hero */}
@@ -81,12 +91,12 @@ export default function Blog() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Latest Updates</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("blog.hero-badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Blog & Education News
+                {t("blog.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Study tips, visa updates, university rankings, success stories, and career advice.
+                {t("blog.hero-description")}
               </p>
             </div>
           </ScrollReveal>
@@ -100,15 +110,15 @@ export default function Blog() {
               <ScrollReveal key={i} delay={i * 0.05}>
                 <article className="bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5 hover:shadow-lg transition-all group cursor-pointer">
                   <Badge className={`text-xs mb-3 ${categoryColors[post.category] || "bg-gray-100 text-gray-600"}`}>
-                    {post.category}
+                    {t(post.categoryKey)}
                   </Badge>
                   <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald transition-colors" style={{ fontFamily: "'Fraunces', serif" }}>
-                    {post.title}
+                    {t(post.titleKey)}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">{post.excerpt}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">{t(post.excerptKey)}</p>
                   <div className="flex items-center gap-4 text-xs text-gray-400">
-                    <span className="flex items-center gap-1"><Calendar size={10} /> {post.date}</span>
-                    <span className="flex items-center gap-1"><Clock size={10} /> {post.readTime}</span>
+                    <span className="flex items-center gap-1"><Calendar size={10} /> {t(post.dateKey)}</span>
+                    <span className="flex items-center gap-1"><Clock size={10} /> {t(post.readTimeKey)}</span>
                   </div>
                 </article>
               </ScrollReveal>

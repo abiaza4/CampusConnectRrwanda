@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, GraduationCap, Home, Bus, Utensils, Wifi, ShoppingBag, DollarSign } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const categories = [
   { key: "tuition", label: "Tuition", icon: GraduationCap, default: 1200000, min: 450000, max: 5000000, step: 50000 },
@@ -13,6 +14,7 @@ const categories = [
 ];
 
 export default function CostCalculator() {
+  const { t } = useLanguage();
   const [costs, setCosts] = useState<Record<string, number>>(
     Object.fromEntries(categories.map((c) => [c.key, c.default]))
   );
@@ -40,12 +42,12 @@ export default function CostCalculator() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Cost Estimator</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("calculator.badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Cost Calculator
+                {t("calculator.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                Estimate your monthly and annual costs of studying in Rwanda. Adjust the sliders to match your needs.
+                {t("calculator.hero-subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -65,7 +67,7 @@ export default function CostCalculator() {
                         <div className="w-9 h-9 rounded-lg bg-emerald/10 flex items-center justify-center">
                           <cat.icon className="w-4 h-4 text-emerald" />
                         </div>
-                        <span className="font-medium text-sm text-gray-900 dark:text-white">{cat.label}</span>
+                        <span className="font-medium text-sm text-gray-900 dark:text-white">{t(`calculator.label-${cat.key}`)}</span>
                       </div>
                       <span className="text-sm font-bold text-navy dark:text-emerald">
                         RWF {costs[cat.key].toLocaleString()}
@@ -94,26 +96,26 @@ export default function CostCalculator() {
               <div className="sticky top-24">
                 <div className="bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5 shadow-lg">
                   <h3 className="font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2" style={{ fontFamily: "'Fraunces', serif" }}>
-                    <Calculator size={18} className="text-emerald" /> Your Estimate
+                    <Calculator size={18} className="text-emerald" /> {t("calculator.summary-title")}
                   </h3>
                   <div className="space-y-4">
                     <div className="p-4 rounded-xl bg-emerald/5 border border-emerald/10">
-                      <p className="text-xs text-gray-500 mb-1">Monthly Total</p>
+                      <p className="text-xs text-gray-500 mb-1">{t("calculator.monthly-total")}</p>
                       <p className="text-2xl font-bold text-emerald">RWF {monthlyTotal.toLocaleString()}</p>
                       <p className="text-xs text-gray-400">~ ${usdMonthly.toLocaleString()} USD</p>
                     </div>
                     <div className="p-4 rounded-xl bg-navy/5 dark:bg-navy/20 border border-navy/10">
-                      <p className="text-xs text-gray-500 mb-1">Annual Total</p>
+                      <p className="text-xs text-gray-500 mb-1">{t("calculator.annual-total")}</p>
                       <p className="text-2xl font-bold text-navy dark:text-emerald">RWF {annualTotal.toLocaleString()}</p>
                       <p className="text-xs text-gray-400">~ ${usdAnnual.toLocaleString()} USD</p>
                     </div>
                     <div className="p-4 rounded-xl bg-gold/5 border border-gold/20">
-                      <p className="text-xs text-gray-500 mb-1">Per Semester (6 months)</p>
+                      <p className="text-xs text-gray-500 mb-1">{t("calculator.per-semester")}</p>
                       <p className="text-lg font-bold text-gold">RWF {Math.round(monthlyTotal * 6).toLocaleString()}</p>
                     </div>
                   </div>
                   <p className="text-xs text-gray-400 mt-4 text-center">
-                    Exchange rate: ~1,500 RWF = 1 USD (approximate)
+                    {t("calculator.exchange-rate")}
                   </p>
                 </div>
               </div>
@@ -124,21 +126,21 @@ export default function CostCalculator() {
           <ScrollReveal delay={0.3}>
             <div className="mt-12 bg-white dark:bg-card rounded-2xl p-6 border border-gray-100 dark:border-white/5 overflow-x-auto">
               <h3 className="font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Cost Breakdown Summary
+                {t("calculator.breakdown-title")}
               </h3>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-gray-100 dark:border-white/5">
-                    <th className="text-left p-3 font-semibold text-gray-700 dark:text-gray-300">Category</th>
-                    <th className="text-right p-3 font-semibold text-gray-700 dark:text-gray-300">Monthly (RWF)</th>
-                    <th className="text-right p-3 font-semibold text-gray-700 dark:text-gray-300 hidden md:table-cell">Annual (RWF)</th>
+                    <th className="text-left p-3 font-semibold text-gray-700 dark:text-gray-300">{t("calculator.table-category")}</th>
+                    <th className="text-right p-3 font-semibold text-gray-700 dark:text-gray-300">{t("calculator.table-monthly")}</th>
+                    <th className="text-right p-3 font-semibold text-gray-700 dark:text-gray-300 hidden md:table-cell">{t("calculator.table-annual")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {categories.map((cat) => (
                     <tr key={cat.key} className="border-b border-gray-50 dark:border-white/5">
                       <td className="p-3 flex items-center gap-2 text-gray-700 dark:text-gray-300">
-                        <cat.icon size={14} className="text-emerald" /> {cat.label}
+                        <cat.icon size={14} className="text-emerald" /> {t(`calculator.label-${cat.key}`)}
                       </td>
                       <td className="p-3 text-right font-medium text-gray-900 dark:text-white">
                         {costs[cat.key].toLocaleString()}
@@ -149,7 +151,7 @@ export default function CostCalculator() {
                     </tr>
                   ))}
                   <tr className="font-bold bg-gray-50 dark:bg-background">
-                    <td className="p-3 text-gray-900 dark:text-white">Total</td>
+                    <td className="p-3 text-gray-900 dark:text-white">{t("calculator.table-total")}</td>
                     <td className="p-3 text-right text-emerald">{monthlyTotal.toLocaleString()}</td>
                     <td className="p-3 text-right text-emerald hidden md:table-cell">{annualTotal.toLocaleString()}</td>
                   </tr>

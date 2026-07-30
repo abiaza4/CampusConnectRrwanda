@@ -1,8 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Check, Clock, AlertCircle, FileText, User, Shield } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Equivalence() {
+  const { t } = useLanguage();
+
   return (
     <div>
       {/* Hero */}
@@ -13,12 +16,12 @@ export default function Equivalence() {
         <div className="container relative">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
-              <Badge className="bg-white/10 text-white border-white/20 mb-4">Required for All International Students</Badge>
+              <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("equivalence.badge")}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                Equivalence Application
+                {t("equivalence.hero-title")}
               </h1>
               <p className="text-white/70 text-lg">
-                All international students must complete the equivalence process before proceeding with university registration in Rwanda.
+                {t("equivalence.hero-description")}
               </p>
             </div>
           </ScrollReveal>
@@ -33,49 +36,49 @@ export default function Equivalence() {
               <div className="flex items-center gap-3 mb-6">
                 <FileText className="w-6 h-6 text-emerald" />
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
-                  Required Documents
+                  {t("equivalence.documents-title")}
                 </h2>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
-                Please prepare the following documents before submitting your equivalence application:
+                {t("equivalence.documents-desc")}
               </p>
               <div className="space-y-4">
                 <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">1. Academic Certificates</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{t("equivalence.doc-1-title")}</h3>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400 ml-4 list-disc">
-                    <li><strong className="text-gray-800 dark:text-gray-200">South Sudan and Kenya:</strong> Senior 2 (S2), Senior 3 (S3), and Senior 4 (S4) certificates.</li>
-                    <li><strong className="text-gray-800 dark:text-gray-200">Other East African Countries:</strong> Senior 4 (S4), Senior 5 (S5), and Senior 6 (S6) certificates.</li>
+                    <li><strong className="text-gray-800 dark:text-gray-200">{t("equivalence.doc-1-item1-label")}</strong> {t("equivalence.doc-1-item1-value")}</li>
+                    <li><strong className="text-gray-800 dark:text-gray-200">{t("equivalence.doc-1-item2-label")}</strong> {t("equivalence.doc-1-item2-value")}</li>
                   </ul>
                 </div>
                 <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">2. Copy of a valid Passport</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 ml-4">Bio-data page.</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{t("equivalence.doc-2-title")}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 ml-4">{t("equivalence.doc-2-desc")}</p>
                 </div>
                 <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">3. Recent Passport-Size Photograph</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{t("equivalence.doc-3-title")}</h3>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400 ml-4 list-disc">
-                    <li>Clear, colored photo with a plain white background.</li>
-                    <li>JPEG or PNG format (if applying online).</li>
+                    <li>{t("equivalence.doc-3-item1")}</li>
+                    <li>{t("equivalence.doc-3-item2")}</li>
                   </ul>
                 </div>
                 <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">4. Student Information</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{t("equivalence.doc-4-title")}</h3>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400 ml-4 list-disc">
-                    <li>Full Name (as it appears on the passport)</li>
-                    <li>Email Address</li>
-                    <li>Phone Number / WhatsApp Number</li>
-                    <li>Nationality</li>
+                    <li>{t("equivalence.doc-4-item1")}</li>
+                    <li>{t("equivalence.doc-4-item2")}</li>
+                    <li>{t("equivalence.doc-4-item3")}</li>
+                    <li>{t("equivalence.doc-4-item4")}</li>
                   </ul>
                 </div>
                 <div className="p-4 rounded-xl bg-gray-50 dark:bg-background border border-gray-100 dark:border-white/5">
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">5. Parent/Guardian Information</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{t("equivalence.doc-5-title")}</h3>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400 ml-4 list-disc">
-                    <li>Father's Full Name</li>
-                    <li>Father's Phone Number</li>
-                    <li>Father's Email Address (if available)</li>
-                    <li>Mother's Full Name</li>
-                    <li>Mother's Phone Number</li>
-                    <li>Mother's Email Address (if available)</li>
+                    <li>{t("equivalence.doc-5-item1")}</li>
+                    <li>{t("equivalence.doc-5-item2")}</li>
+                    <li>{t("equivalence.doc-5-item3")}</li>
+                    <li>{t("equivalence.doc-5-item4")}</li>
+                    <li>{t("equivalence.doc-5-item5")}</li>
+                    <li>{t("equivalence.doc-5-item6")}</li>
                   </ul>
                 </div>
               </div>
@@ -88,15 +91,15 @@ export default function Equivalence() {
               <div className="flex items-center gap-3 mb-6">
                 <AlertCircle className="w-6 h-6 text-amber-600 dark:text-amber-400" />
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
-                  Important Notes
+                  {t("equivalence.important-notes-title")}
                 </h2>
               </div>
               <ul className="space-y-4">
                 {[
-                  { text: "All academic certificates must be notarized (officially stamped) before submission.", icon: Shield },
-                  { text: "The equivalence process takes approximately 7 working days.", icon: Clock },
-                  { text: "University registration cannot begin until the equivalence certificate has been issued.", icon: AlertCircle },
-                  { text: "Ensure that all submitted documents are clear, complete, and legible to avoid processing delays.", icon: Check },
+                  { text: t("equivalence.important-1"), icon: Shield },
+                  { text: t("equivalence.important-2"), icon: Clock },
+                  { text: t("equivalence.important-3"), icon: AlertCircle },
+                  { text: t("equivalence.important-4"), icon: Check },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <item.icon className="w-5 h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
@@ -113,16 +116,16 @@ export default function Equivalence() {
               <div className="flex items-center gap-3 mb-6">
                 <User className="w-6 h-6 text-emerald" />
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
-                  Application Process
+                  {t("equivalence.process-title")}
                 </h2>
               </div>
               <ol className="space-y-4">
                 {[
-                  { step: 1, text: "Submit all the required documents through CampusConnect Rwanda." },
-                  { step: 2, text: "Your documents will be reviewed and submitted for equivalence processing." },
-                  { step: 3, text: "Wait approximately 7 working days for the equivalence certificate to be issued." },
-                  { step: 4, text: "Once the equivalence certificate is approved, proceed with university admission and registration." },
-                  { step: 5, text: "Complete the registration process with your chosen university." },
+                  { step: 1, text: t("equivalence.process-step1") },
+                  { step: 2, text: t("equivalence.process-step2") },
+                  { step: 3, text: t("equivalence.process-step3") },
+                  { step: 4, text: t("equivalence.process-step4") },
+                  { step: 5, text: t("equivalence.process-step5") },
                 ].map((item) => (
                   <li key={item.step} className="flex items-start gap-4">
                     <span className="w-8 h-8 rounded-full bg-emerald/10 flex items-center justify-center shrink-0">
