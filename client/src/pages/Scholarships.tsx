@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { universities } from "@/data/universities";
+import PageSEO from "@/components/PageSEO";
 
 const allScholarships = universities.flatMap((u) =>
   u.scholarships.map((s) => ({
@@ -33,6 +34,7 @@ export default function Scholarships() {
 
   return (
     <div>
+      <PageSEO title="Scholarships — CampusConnect Rwanda" description="Find government, university, NGO, and international scholarships for studying in Rwanda. Filter by type and university." path="/scholarships" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-gold/20 via-navy to-deep-navy">
         <div className="absolute inset-0 opacity-15">

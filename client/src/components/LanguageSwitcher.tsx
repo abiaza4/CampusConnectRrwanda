@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { languages } from "@/i18n/translations";
+import { languages, type Language } from "@/i18n/translations";
 import { Globe } from "lucide-react";
 
 export default function LanguageSwitcher() {
@@ -10,7 +10,7 @@ export default function LanguageSwitcher() {
       <Globe size={16} className="shrink-0" />
       <select
         value={language}
-        onChange={(e) => setLanguage(e.target.value)}
+        onChange={(e) => setLanguage(e.target.value as Language)}
         className="text-xs font-medium bg-transparent border-none outline-none cursor-pointer text-inherit appearance-none"
         aria-label="Switch language"
       >

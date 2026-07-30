@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeftRight, Check, X, MapPin, Building2, GraduationCap, BookOpen } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { universities } from "@/data/universities";
+import PageSEO from "@/components/PageSEO";
 
 export default function Compare() {
   const { t } = useLanguage();
@@ -34,6 +35,7 @@ export default function Compare() {
 
   return (
     <div>
+      <PageSEO title="Compare Universities — CampusConnect Rwanda" description="Compare up to 3 universities side by side — faculties, tuition, locations, and more. Make informed decisions." path="/compare" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

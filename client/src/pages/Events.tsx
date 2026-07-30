@@ -2,6 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageSEO from "@/components/PageSEO";
 
 const events = [
   {
@@ -72,6 +73,7 @@ export default function Events() {
   const { t } = useLanguage();
   return (
     <div>
+      <PageSEO title="Events — CampusConnect Rwanda" description="Stay updated with education events, fairs, and opportunities in Rwanda and across East Africa." path="/events" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

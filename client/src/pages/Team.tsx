@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin, ExternalLink } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 const teamMembers = [
   {
@@ -44,6 +45,7 @@ export default function Team() {
   const { t } = useLanguage();
   return (
     <div>
+      <PageSEO title="Our Team — CampusConnect Rwanda" description="Meet the dedicated team behind CampusConnect Rwanda, committed to providing accurate education information." path="/team" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

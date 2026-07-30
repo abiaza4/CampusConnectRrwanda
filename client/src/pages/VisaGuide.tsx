@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { FileText, CreditCard, Clock, AlertCircle, Check, Shield, MapPin, GraduationCap } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function VisaGuide() {
   const { t } = useLanguage();
@@ -18,6 +19,7 @@ export default function VisaGuide() {
 
   return (
     <div>
+      <PageSEO title="Visa Guide — CampusConnect Rwanda" description="Complete guide to the Rwandan student visa process, requirements, and important information for international applicants." path="/visa-guide" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

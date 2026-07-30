@@ -25,6 +25,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { universities } from "@/data/universities";
+import PageSEO from "@/components/PageSEO";
 
 const heroSlides = [
   {
@@ -170,6 +171,7 @@ export default function Home() {
 
   return (
     <div>
+      <PageSEO title="CampusConnect Rwanda — Your Gateway to Higher Education" description="Discover accredited universities in Rwanda, compare programs, calculate costs, and plan your study journey. Trusted by thousands of students and parents." path="/" />
       {/* Hero Section */}
       <section
         className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] max-h-[900px] overflow-hidden bg-black"
@@ -327,7 +329,7 @@ export default function Home() {
               {/* Accent image behind heading */}
               <img
                 src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80"
-                alt=""
+                alt="" loading="lazy" decoding="async"
                 className="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 md:w-48 md:h-48 object-cover rounded-2xl opacity-30 mix-blend-multiply"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
               />
@@ -341,10 +343,10 @@ export default function Home() {
                   <div className="group bg-white dark:bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-white/5">
                     <div className="h-52 bg-gradient-to-br from-navy to-emerald relative overflow-hidden">
                       {uni.images.length > 0 && (
-                        <img
-                          src={uni.images[0]}
-                          alt={uni.name}
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+<img
+                           src={uni.images[0]}
+                           alt={uni.name} loading="lazy" decoding="async"
+                           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                         />
                       )}
@@ -407,7 +409,7 @@ export default function Home() {
         {/* Background image */}
         <img
           src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80"
-          alt=""
+          alt="" loading="lazy" decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
           onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
         />
@@ -436,7 +438,7 @@ export default function Home() {
                   <div className="relative h-36 overflow-hidden">
                     <img
                       src={item.image}
-                      alt={item.title}
+                      alt={item.title} loading="lazy" decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                     />
@@ -488,7 +490,7 @@ export default function Home() {
                     <div className="relative w-12 h-12 shrink-0">
                       <img
                         src={item.image}
-                        alt={item.title}
+                        alt={item.title} loading="lazy" decoding="async"
                         className="w-full h-full rounded-xl object-cover"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                       />
@@ -514,7 +516,7 @@ export default function Home() {
       <section className="py-20 md:py-24 bg-gradient-to-br from-navy/5 via-white to-emerald/5 dark:from-deep-navy dark:to-background relative overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1600&q=80"
-          alt=""
+          alt="" loading="lazy" decoding="async"
           className="absolute inset-0 w-full h-full object-cover opacity-5"
           onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
         />
@@ -543,7 +545,7 @@ export default function Home() {
                   <div className="relative h-40 overflow-hidden">
                     <img
                       src={f.image}
-                      alt={f.title}
+                      alt={f.title} loading="lazy" decoding="async"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                     />
@@ -572,7 +574,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10">
           <img
             src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80"
-            alt=""
+            alt="" loading="lazy" decoding="async"
             className="w-full h-full object-cover"
             onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
           />

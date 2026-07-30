@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { universities, getAllCities } from "@/data/universities";
+import PageSEO from "@/components/PageSEO";
 
 export default function Universities() {
   const { t } = useLanguage();
@@ -43,6 +44,7 @@ export default function Universities() {
 
   return (
     <div>
+      <PageSEO title="Universities — CampusConnect Rwanda" description="Explore all accredited universities in Rwanda. Search and filter by type, city, and program to find the right fit." path="/universities" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-20">

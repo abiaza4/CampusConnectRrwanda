@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRightLeft, RefreshCw, AlertCircle } from "lucide-react";
+import PageSEO from "@/components/PageSEO";
 
 const currencies = [
   { code: "RWF", name: "Rwandan Franc", flag: "🇷🇼" },
@@ -78,6 +79,7 @@ export default function CurrencyConverter() {
 
   return (
     <div>
+      <PageSEO title="Currency Converter — CampusConnect Rwanda" description="Convert currencies using live exchange rates. Supports offline fallback rates for when you are without internet." path="/currency-converter" />
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">
           <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80" alt="" className="w-full h-full object-cover" />

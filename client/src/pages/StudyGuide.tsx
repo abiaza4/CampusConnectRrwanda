@@ -22,6 +22,7 @@ import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function StudyGuide() {
   const { t } = useLanguage();
@@ -125,6 +126,7 @@ export default function StudyGuide() {
 
   return (
     <div>
+      <PageSEO title="Study Guide — CampusConnect Rwanda" description="Essential guide for international students planning to study in Rwanda — covering costs, visas, culture, and practical advice." path="/study-guide" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-dark via-navy to-deep-navy">
         <div className="absolute inset-0 opacity-15">

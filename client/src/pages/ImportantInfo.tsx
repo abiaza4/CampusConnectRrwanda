@@ -2,12 +2,14 @@ import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { AlertCircle, Check, Shield, Ban, FileText, BookOpen, DollarSign, CreditCard, Landmark, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function ImportantInfo() {
   const { t } = useLanguage();
 
   return (
     <div>
+      <PageSEO title="Important Information — CampusConnect Rwanda" description="Critical information for students in Rwanda — laws, drug policies, responsibilities, currency, and emergency contacts." path="/important-info" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

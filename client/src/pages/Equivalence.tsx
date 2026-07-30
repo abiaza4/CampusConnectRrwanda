@@ -2,12 +2,14 @@ import { Badge } from "@/components/ui/badge";
 import { Check, Clock, AlertCircle, FileText, User, Shield } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function Equivalence() {
   const { t } = useLanguage();
 
   return (
     <div>
+      <PageSEO title="Academic Equivalence — CampusConnect Rwanda" description="Guide to getting your foreign academic qualifications recognized in Rwanda through the Rwanda Qualifications Framework." path="/equivalence" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

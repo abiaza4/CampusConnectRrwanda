@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 const faqCategories = [
   {
@@ -62,6 +63,7 @@ export default function FAQ() {
 
   return (
     <div>
+      <PageSEO title="FAQ — CampusConnect Rwanda" description="Find answers to the most common questions about studying in Rwanda, visas, universities, and the CampusConnect platform." path="/faq" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

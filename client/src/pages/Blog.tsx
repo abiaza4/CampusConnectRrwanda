@@ -2,6 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import PageSEO from "@/components/PageSEO";
 
 const posts = [
   {
@@ -83,6 +84,7 @@ export default function Blog() {
   const { t } = useLanguage();
   return (
     <div>
+      <PageSEO title="Education Blog — CampusConnect Rwanda" description="Insights, tips, and updates about studying in Rwanda. Study tips, visa updates, success stories, and career advice." path="/blog" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

@@ -3,11 +3,13 @@ import { Link } from "wouter";
 import { Target, Eye, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function About() {
   const { t } = useLanguage();
   return (
     <div>
+      <PageSEO title="About — CampusConnect Rwanda" description="Learn about CampusConnect Rwanda's mission to make higher education information accessible across East Africa." path="/about" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">

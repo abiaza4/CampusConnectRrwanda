@@ -1,11 +1,13 @@
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function PrivacyPolicy() {
   const { t } = useLanguage();
   return (
     <div>
+      <PageSEO title="Privacy Policy — CampusConnect Rwanda" description="Learn how CampusConnect Rwanda collects, uses, and protects your personal data." path="/privacy-policy" />
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-navy via-navy-dark to-deep-navy">
         <div className="absolute inset-0 opacity-15">
           <img

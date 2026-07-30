@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
 import { useLocation } from "wouter";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 export default function NotFound() {
   const [, setLocation] = useLocation();
@@ -9,6 +10,7 @@ export default function NotFound() {
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-white dark:from-deep-navy dark:to-background">
+      <PageSEO title="Page Not Found — CampusConnect Rwanda" description="The page you're looking for doesn't exist on CampusConnect Rwanda." path="/404" />
       <div className="container py-12 text-center max-w-lg">
         <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald/10 to-navy/10 flex items-center justify-center mx-auto mb-6">
           <Home className="w-10 h-10 text-emerald" />

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calculator, GraduationCap, Home, Bus, Utensils, Wifi, ShoppingBag, DollarSign } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import PageSEO from "@/components/PageSEO";
 
 const categories = [
   { key: "tuition", label: "Tuition", icon: GraduationCap, default: 1200000, min: 450000, max: 5000000, step: 50000 },
@@ -34,6 +35,7 @@ export default function CostCalculator() {
 
   return (
     <div>
+      <PageSEO title="Cost Calculator — CampusConnect Rwanda" description="Estimate living costs for studying in Rwanda with our interactive cost calculator. Breakdown by category with RWF/USD conversion." path="/cost-calculator" />
       {/* Hero */}
       <section className="relative py-20 md:py-28 bg-gradient-to-br from-emerald-dark via-navy to-deep-navy">
         <div className="absolute inset-0 opacity-15">
