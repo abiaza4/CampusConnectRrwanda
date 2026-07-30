@@ -23,23 +23,24 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { universities } from "@/data/universities";
 
 const heroSlides = [
   {
     image: "https://ulk.ac.rw/wp-content/uploads/2016/08/ULK-Masters-Programmes-min.jpg",
-    title: "Discover Rwanda's Universities with Confidence",
-    subtitle: "Everything you need to know about studying in Rwanda—all in one place.",
+    titleKey: "hero.slide1-title",
+    subtitleKey: "hero.slide1-sub",
   },
   {
     image: "https://media.licdn.com/dms/image/v2/D4E22AQFEh1BPOBwgSA/feedshare-shrink_800/B4EZ7_Zej_KAAk-/0/1782401333386?e=2147483647&v=beta&t=Z7mS-asKIhqwRK_a-Wtufkkd9N1chaX0SKPEWuswL2w",
-    title: "Your Future Starts Here",
-    subtitle: "From admission to graduation, we guide you every step of the way.",
+    titleKey: "hero.slide2-title",
+    subtitleKey: "hero.slide2-sub",
   },
   {
     image: "https://uok.ac.rw/wp-content/uploads/2026/05/Web-banner-2-02-scaled-1.jpg",
-    title: "World-Class Education in the Heart of Africa",
-    subtitle: "Explore accredited universities with modern facilities, vibrant campuses, and endless opportunities.",
+    titleKey: "hero.slide3-title",
+    subtitleKey: "hero.slide3-sub",
   },
 ];
 
@@ -128,6 +129,7 @@ const platformFeatures = [
 
 export default function Home() {
   const [, setLocation] = useLocation();
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [paused, setPaused] = useState(false);
@@ -191,10 +193,10 @@ export default function Home() {
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
                   style={{ fontFamily: "'Fraunces', serif" }}
                 >
-                  {heroSlides[currentSlide].title}
+                  {t(heroSlides[currentSlide].titleKey)}
                 </h1>
                 <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                  {heroSlides[currentSlide].subtitle}
+                  {t(heroSlides[currentSlide].subtitleKey)}
                 </p>
               </motion.div>
             </AnimatePresence>
@@ -210,7 +212,7 @@ export default function Home() {
                 <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search university, course, city, or program..."
+                  placeholder={t("hero.search-placeholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyDown={(e) => {

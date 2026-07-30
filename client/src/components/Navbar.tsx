@@ -3,22 +3,23 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Sun, Moon, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Universities", href: "/universities" },
-  { label: "Study Guide", href: "/study-guide", dropdown: [
-    { label: "Study Guide", href: "/study-guide" },
-    { label: "Scholarships", href: "/scholarships" },
-    { label: "Equivalence", href: "/equivalence" },
-    { label: "Visa Guide", href: "/visa-guide" },
-    { label: "Important Info", href: "/important-info" },
+  { tKey: "nav.home", href: "/" },
+  { tKey: "nav.universities", href: "/universities" },
+  { tKey: "nav.study-guide", href: "/study-guide", dropdown: [
+    { tKey: "nav.study-guide", href: "/study-guide" },
+    { tKey: "nav.scholarships", href: "/scholarships" },
+    { tKey: "nav.equivalence", href: "/equivalence" },
+    { tKey: "nav.visa-guide", href: "/visa-guide" },
+    { tKey: "nav.important-info", href: "/important-info" },
   ]},
-  { label: "Compare", href: "/compare" },
-  { label: "Events", href: "/events" },
-  { label: "Blog", href: "/blog" },
-  { label: "About", href: "/about" },
+  { tKey: "nav.compare", href: "/compare" },
+  { tKey: "nav.events", href: "/events" },
+  { tKey: "nav.blog", href: "/blog" },
+  { tKey: "nav.about", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -26,6 +27,7 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const { t } = useLanguage();
   const [location] = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -72,7 +74,7 @@ export default function Navbar() {
                       : "text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-emerald hover:bg-gray-100 dark:hover:bg-white/5"
                   }`}
                 >
-                  {link.label}
+                  {t(link.tKey)}
                   <ChevronDown size={14} className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
                 </button>
                 {dropdownOpen && (
@@ -86,7 +88,7 @@ export default function Navbar() {
                               : "text-gray-600 dark:text-gray-300 hover:text-emerald hover:bg-emerald/5"
                           }`}
                         >
-                          {sub.label}
+                          {t(sub.tKey)}
                         </span>
                       </Link>
                     ))}
@@ -102,7 +104,7 @@ export default function Navbar() {
                       : "text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-emerald hover:bg-gray-100 dark:hover:bg-white/5"
                   }`}
                 >
-                  {link.label}
+                  {t(link.tKey)}
                 </span>
               </Link>
             )
@@ -117,7 +119,7 @@ export default function Navbar() {
               size="sm"
               className="hidden md:flex items-center gap-1.5 text-sm font-medium transition-all text-navy hover:bg-gray-100 dark:text-emerald dark:hover:bg-white/5"
             >
-              Cost Calculator
+              {t("nav.cost-calculator")}
             </Button>
           </Link>
           <LanguageSwitcher />
@@ -153,7 +155,7 @@ export default function Navbar() {
                         : "text-gray-600 dark:text-gray-300"
                     }`}
                   >
-                    {link.label}
+                    {t(link.tKey)}
                     <ChevronDown size={16} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
                   </button>
                   {mobileDropdownOpen && (
@@ -167,7 +169,7 @@ export default function Navbar() {
                                 : "text-gray-600 dark:text-gray-300 hover:text-emerald"
                             }`}
                           >
-                            {sub.label}
+                            {t(sub.tKey)}
                           </span>
                         </Link>
                       ))}
@@ -183,24 +185,24 @@ export default function Navbar() {
                         : "text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-emerald hover:bg-gray-50 dark:hover:bg-white/5"
                     }`}
                   >
-                    {link.label}
+                    {t(link.tKey)}
                   </span>
                 </Link>
               )
             )}
             <Link href="/cost-calculator">
               <span className="block px-4 py-3 text-sm font-medium text-emerald hover:bg-gray-50 dark:hover:bg-white/5 rounded-lg">
-                Cost Calculator
+                {t("nav.cost-calculator")}
               </span>
             </Link>
             <Link href="/faq">
               <span className="block px-4 py-3 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-emerald hover:bg-gray-50 dark:hover:bg-white/5 rounded-lg">
-                FAQ
+                {t("nav.faq")}
               </span>
             </Link>
             <Link href="/team">
               <span className="block px-4 py-3 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-navy dark:hover:text-emerald hover:bg-gray-50 dark:hover:bg-white/5 rounded-lg">
-                Our Team
+                {t("nav.team")}
               </span>
             </Link>
           </div>
