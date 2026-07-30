@@ -1207,7 +1207,7 @@ export default function UniversityProfile() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] flex items-end overflow-hidden">
         <img
           src={heroImages[0]}
           alt={university.name}
@@ -1216,13 +1216,13 @@ export default function UniversityProfile() {
         <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/40 to-transparent" />
 
-        <div className="relative w-full pb-8 md:pb-12 pt-32">
+        <div className="relative w-full pb-6 md:pb-8 pt-16 sm:pt-20 md:pt-32">
           <div className="container">
             <Link href="/universities" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-4 transition-colors">
               <ArrowLeft size={14} /> Back to Universities
             </Link>
 
-            <div className="grid lg:grid-cols-3 gap-8 items-end">
+            <div className="grid lg:grid-cols-3 gap-6 md:gap-8 items-end">
               {/* Main Info */}
               <div className="lg:col-span-2">
                 <div className="flex items-center gap-1 text-white/60 text-xs mb-2">
@@ -1302,7 +1302,7 @@ export default function UniversityProfile() {
               </div>
 
               {/* Quick Facts Panel */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10">
                 <h3 className="text-white font-semibold text-sm mb-3 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-gold" /> Quick Facts
                 </h3>

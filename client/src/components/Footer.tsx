@@ -144,16 +144,20 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/40">
+        <div className="container py-6 flex flex-col md:flex-row justify-between items-center gap-4 pb-[env(safe-area-inset-bottom)]">
+          <p className="text-xs text-white/40 text-center md:text-left">
             &copy; {new Date().getFullYear()} CampusConnect Rwanda. Developed by <strong className="text-emerald/60">MEGA DEV TECH</strong>. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy-policy">
-              <span className="text-xs text-white/40 hover:text-emerald transition-colors">{t("footer.privacy-policy")}</span>
+              <span className="text-xs text-white/40 hover:text-emerald transition-colors">
+                {t("footer.privacy-policy")}
+              </span>
             </Link>
             <Link href="/terms-and-conditions">
-              <span className="text-xs text-white/40 hover:text-emerald transition-colors">{t("footer.terms")}</span>
+              <span className="text-xs text-white/40 hover:text-emerald transition-colors">
+                {t("footer.terms")}
+              </span>
             </Link>
           </div>
         </div>
