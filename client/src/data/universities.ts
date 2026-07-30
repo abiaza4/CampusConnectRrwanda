@@ -603,10 +603,9 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "ULK was founded in 1996 by Prof. Dr. RWIGAMBA Balinda to provide quality higher education in Rwanda and the region. Since its inception, ULK has grown from a single campus to multiple campuses serving thousands of students.",
-      mission: "To provide quality education that fosters academic excellence, innovation, and ethical leadership for national and regional development.",
-      vision: "To be a leading center of academic excellence in Africa, producing graduates with strong ethical values and professional competence.",
+      mission: "To educate, teach, conduct research and serve the community. The fundamental mission of ULK is to provide the students with a training which will enable them to become actors and organizers of a complete development of the nation.",
+      vision: "Kigali Independent University ULK is destined to stand out as a remarkable university for excellence at the heart of Africa with highly motivated students and high qualified personnel endowed with elevated ethical values.",
       coreValues: ["Academic excellence", "Ethical leadership", "Innovation and creativity", "Inclusivity and diversity", "Community engagement"],
-      chancellor: "Prof. Dr. KARANGWA Chrysologue",
       viceChancellor: "Prof. Dr ONUORAH, Martins Onyekwelu (Ag. Vice-Chancellor)",
       campusDescription: "ULK operates multiple campuses in Kigali and Gisenyi, featuring modern buildings, well-equipped libraries, computer labs, and sports facilities."
     },
@@ -741,7 +740,7 @@ export const universities: University[] = [  {
       ],
       applicationDeadlines: "Applications open 3 months before each intake. Deadline: 1 month before intake start.",
       intakePeriods: ["January", "September"],
-      howToApply: "Submit application online via ULK admissions portal or in person at the admissions office. Applications are reviewed on a rolling basis.",
+      howToApply: "Submit application online via ULK online at https://ulk.schoolgear.co.rw/ or apply at INES using https://share.google/x8mfMEJVXaDElsrXI. Applications are reviewed on a rolling basis.",
       applicationFees: "RWF 10,000 for local applicants, USD 50 for international applicants"
     },
     tuitionDetails: [
@@ -833,9 +832,9 @@ export const universities: University[] = [  {
       { question: "What intakes are available?", answer: "ULK has two main intakes: January and September each year." }
     ],
     downloads: [
-      { name: "Fee Structure", url: "https://ulk.ac.rw/admissions/tuition-fees", type: "PDF" },
-      { name: "Undergraduate Application Form", url: "https://ulk.ac.rw/apply", type: "PDF" },
-      { name: "University Prospectus", url: "https://ulk.ac.rw/prospectus", type: "PDF" }
+      { name: "Fee Structure", url: "https://ulk.ac.rw/ulk-fees-structure/", type: "PDF" },
+      { name: "Undergraduate Application Form", url: "https://ulk.schoolgear.co.rw/", type: "PDF" },
+      { name: "Postgraduate Application Form", url: "https://share.google/x8mfMEJVXaDElsrXI", type: "PDF" }
     ],
     nearbyPlaces: [
       { name: "Kigali International Airport", type: "Transport", distance: "20 min drive" },
@@ -870,8 +869,8 @@ export const universities: University[] = [  {
     },
     about: {
       history: "ULK was founded in 1996 by Prof. Dr. RWIGAMBA Balinda to provide quality higher education in Rwanda and the region.",
-      mission: "To provide quality education that fosters academic excellence, innovation, and ethical leadership for national and regional development.",
-      vision: "To be a leading center of academic excellence in Africa, producing graduates with strong ethical values and professional competence.",
+      mission: "To educate, teach, conduct research and serve the community. The fundamental mission of ULK is to provide the students with a training which will enable them to become actors and organizers of a complete development of the nation.",
+      vision: "Kigali Independent University ULK is destined to stand out as a remarkable university for excellence at the heart of Africa with highly motivated students and high qualified personnel endowed with elevated ethical values.",
       accreditation: "Fully accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["42,958+ graduates", "5 schools offering diverse programs", "211 teaching staff", "1,326 computers for student use", "28+ years of educational excellence"]
     },
