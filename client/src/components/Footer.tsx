@@ -11,13 +11,25 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-3 group">
+            <Link href="/" className="flex items-center gap-2 md:gap-3 mb-3 group">
               <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-navy to-emerald p-0.5 shadow shadow-navy/20">
                 <img
                   src="/campusconnect logo.jpg"
                   alt="CampusConnect Rwanda"
                   className="h-8 w-8 rounded-full object-cover transition-transform duration-200 group-hover:scale-105"
                 />
+              </div>
+              <div className="leading-tight">
+                <span
+                  className="block font-bold text-base md:text-lg text-white"
+                  style={{ fontFamily: "'Fraunces', serif" }}
+                >
+                  <span className="text-white">Campus</span>
+                  <span className="text-emerald">Connect</span>
+                </span>
+                <span className="block text-[11px] md:text-xs font-semibold tracking-wide text-white">
+                  Rwanda
+                </span>
               </div>
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-4">

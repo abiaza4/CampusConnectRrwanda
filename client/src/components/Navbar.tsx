@@ -51,13 +51,25 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-deep-navy/90 backdrop-blur-xl shadow-lg shadow-black/5 transition-all duration-300">
       <nav className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
           <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-navy to-emerald p-0.5 shadow shadow-navy/20">
             <img
               src="/campusconnect logo.jpg"
               alt="CampusConnect Rwanda"
               className="h-8 w-8 rounded-full object-cover transition-transform duration-200 group-hover:scale-105"
             />
+          </div>
+          <div className="leading-tight">
+            <span
+              className="block font-bold text-base md:text-lg"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
+              <span className="text-navy dark:text-white">Campus</span>
+              <span className="text-emerald">Connect</span>
+            </span>
+            <span className="block text-[11px] md:text-xs font-semibold tracking-wide text-navy dark:text-white">
+              Rwanda
+            </span>
           </div>
         </Link>
 
