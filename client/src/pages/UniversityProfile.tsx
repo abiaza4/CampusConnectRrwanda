@@ -274,6 +274,7 @@ export default function UniversityProfile() {
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{o.history}</p>
         </SectionCard>
 
+        {o.mission && o.vision && (
         <div className="grid md:grid-cols-2 gap-6">
           <SectionCard title="Mission">
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{o.mission}</p>
@@ -282,6 +283,7 @@ export default function UniversityProfile() {
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{o.vision}</p>
           </SectionCard>
         </div>
+        )}
 
         {o.coreValues && o.coreValues.length > 0 && (
           <SectionCard title="Core Values">
@@ -512,8 +514,18 @@ export default function UniversityProfile() {
   function TuitionSection({ uni }: { uni: NonNullable<ReturnType<typeof getUniversityById>> }) {
     const t = uni.tuition;
     const td = uni.tuitionDetails;
+    if (!t && (!td || td.length === 0)) {
+      return (
+        <SectionCard title="Tuition">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            Please visit the university's official website for tuition fee information.
+          </p>
+        </SectionCard>
+      );
+    }
     return (
       <div className="space-y-6">
+        {t && (
         <SectionCard title="Tuition Overview">
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="p-5 rounded-xl bg-emerald/5 border border-emerald/10">
@@ -532,6 +544,7 @@ export default function UniversityProfile() {
             </div>
           </div>
         </SectionCard>
+        )}
 
         {td && td.length > 0 && (
           <SectionCard title="Detailed Tuition Breakdown">
@@ -562,7 +575,7 @@ export default function UniversityProfile() {
           </SectionCard>
         )}
 
-        {t.currency && (
+        {t?.currency && (
           <SectionCard title="Currency Information">
             <p className="text-sm text-gray-600 dark:text-gray-400">
               Tuition fees are charged in <strong>{t.currency}</strong> depending on student category.

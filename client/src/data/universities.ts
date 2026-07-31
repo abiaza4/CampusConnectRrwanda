@@ -126,8 +126,8 @@ export interface ContactInfo {
 
 export interface AboutInfo {
   history: string;
-  mission: string;
-  vision: string;
+  mission?: string;
+  vision?: string;
   accreditation: string;
   achievements: string[];
 }
@@ -155,12 +155,12 @@ export interface University {
 
   overview: {
     history: string;
-    mission: string;
-    vision: string;
-    coreValues: string[];
-    chancellor: string;
-    viceChancellor: string;
     campusDescription: string;
+    mission?: string;
+    vision?: string;
+    coreValues?: string[];
+    chancellor?: string;
+    viceChancellor?: string;
   };
 
   campuses: Campus[];
@@ -178,7 +178,7 @@ export interface University {
 
   faculties: Faculty[];
   programs: Program[];
-  tuition: TuitionInfo;
+  tuition?: TuitionInfo;
 
   admission: {
     requirements: string[];
@@ -188,10 +188,10 @@ export interface University {
     applicationDeadlines: string;
     intakePeriods: string[];
     howToApply: string;
-    applicationFees: string;
+    applicationFees?: string;
   };
 
-  tuitionDetails: TuitionDetail[];
+  tuitionDetails?: TuitionDetail[];
 
   scholarships: Scholarship[];
 
@@ -284,11 +284,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "The University of Rwanda was established in 2013 through the merger of seven former public higher education institutions, with the original National University of Rwanda dating back to 1963. UR is the largest public university in Rwanda.",
-      mission: "To advance knowledge through education, research, and innovation for national and global development — actively pursuing solutions to urgent developmental challenges.",
-      vision: "To be a leading center of excellence in higher education, research, and innovation in Rwanda and Africa, producing graduates with strong ethical values and professional competence.",
-      coreValues: ["Academic excellence", "Integrity", "Innovation", "Professionalism", "Inclusivity", "Community engagement"],
-      chancellor: "Chancellor of the University of Rwanda",
-      viceChancellor: "Prof. Kayihura Muganga Didas",
       campusDescription: "UR operates 8 colleges across multiple campuses including Huye, Nyarugenge, Gikondo, Remera, Busogo, Rukara, and Nyagatare — each with specialized academic facilities."
     },
     campuses: [
@@ -566,8 +561,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Established in 2013 through the merger of seven former higher education institutions, with its earliest predecessor (National University of Rwanda) founded in 1963. UR is the largest public university in the country.",
-      mission: "To advance knowledge through education, research, and innovation for national and global development.",
-      vision: "To be a leading center of excellence in higher education, research, and innovation in Rwanda and Africa.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda — originally recognized since 1963",
       achievements: ["Ranked in world's top 100 young universities", "33,344+ students enrolled", "8 colleges with 444+ programs", "International partnerships with 100+ universities worldwide"]
     },
@@ -603,6 +596,10 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "ULK was founded in 1996 by Prof. Dr. RWIGAMBA Balinda to provide quality higher education in Rwanda and the region. Since its inception, ULK has grown from a single campus to multiple campuses serving thousands of students.",
+      mission: "To educate, teach, conduct research and serve the community. The fundamental mission of ULK is to provide the students with a training which will enable them to become actors and organizers of a complete development of the nation.",
+      vision: "Kigali Independent University ULK is destined to stand out as a remarkable university for excellence at the heart of Africa with highly motivated students and high qualified personnel endowed with elevated ethical values.",
+      coreValues: ["Academic excellence", "Ethical leadership", "Innovation and creativity", "Inclusivity and diversity", "Community engagement"],
+      viceChancellor: "Prof. Dr ONUORAH, Martins Onyekwelu (Ag. Vice-Chancellor)",
       campusDescription: "ULK operates multiple campuses in Kigali and Gisenyi, featuring modern buildings, well-equipped libraries, computer labs, and sports facilities."
     },
     campuses: [
@@ -735,7 +732,7 @@ export const universities: University[] = [  {
         "Health insurance coverage"
       ],
       applicationDeadlines: "Applications open 3 months before each intake. Deadline: 1 month before intake start.",
-      intakePeriods: ["January", "September"],
+      intakePeriods: ["January", "May", "September"],
       howToApply: "Submit application online via ULK online at https://ulk.schoolgear.co.rw/ or apply at INES using https://share.google/x8mfMEJVXaDElsrXI. Applications are reviewed on a rolling basis.",
       applicationFees: "RWF 10,000 for local applicants, USD 50 for international applicants"
     },
@@ -767,15 +764,15 @@ export const universities: University[] = [  {
     },
     accommodation: {
       hostels: true,
-      nearbyApartments: "Available within 1-3km, RWF 150,000-400,000/month",
-      privateHostels: "Multiple private hostels in Kicukiro and nearby areas",
-      estimatedCost: "RWF 100,000 - 300,000/month",
-      onCampusHostels: "ULK has on-campus hostels with unlimited space for students. All students are guaranteed accommodation upon request.",
+      nearbyApartments: "Available in Gisozi Cafe, Chipanza, Musezero, Kacyiru and nearby areas",
+      privateHostels: "Private hostels in Gisozi, Chipanza, Musezero, and Kacyiru areas",
+      estimatedCost: "RWF 50,000 - 180,000/month",
+      onCampusHostels: "ULK has on-campus hostels with WiFi, ranging from RWF 50,000 to 180,000 per month depending on the room category. Hostel rooms are available in different categories.",
       accommodationOffice: "Student Affairs Office handles accommodation inquiries",
       applicationProcess: "Apply early through the Student Affairs office, typically 2 months before intake"
     },
     studentLife: {
-      clubs: ["Debate Club", "Drama and Arts Club", "Music Club", "Entrepreneurship Club", "Book Club", "Environmental Club"],
+      clubs: ["CELA Club"],
       sports: ["Football", "Basketball", "Volleyball", "Athletics", "Table Tennis", "Handball"],
       events: ["ULK Cultural Week", "Career Fair", "Research Symposium", "Sports Day", "Graduation Ceremony"],
       organizations: ["Student Government Association", "ULK Alumni Association", "Peer Mentoring Program", "Community Service Initiative"]
@@ -821,11 +818,11 @@ export const universities: University[] = [  {
       memberships: ["Association of African Universities (AAU)", "Inter-University Council of East Africa (IUCEA)", "Rwanda Association of Private Universities (RAPU)"]
     },
     faq: [
-      { question: "What are the admission requirements for undergraduate programs?", answer: "Applicants need a Rwandan A-Level certificate with at least two principal passes or equivalent international qualifications. Specific requirements vary by program." },
-      { question: "Does ULK offer scholarships?", answer: "Yes, ULK provides financial support programs. Over 2,882 students have received financial assistance through various scholarship and bursary programs." },
+      { question: "What are the admission requirements for undergraduate programs?", answer: "A student needs an A-Level certificate or an equivalence certificate with at least two principal passes." },
+      { question: "Does ULK offer scholarships?", answer: "For scholarship information, please visit the official ULK website at https://ulk.ac.rw." },
       { question: "What is the medium of instruction?", answer: "The medium of instruction is English, with some programs also available in French." },
-      { question: "Are there accommodation facilities?", answer: "Yes, ULK has on-campus hostels with unlimited space for all students. Every student is guaranteed accommodation upon request." },
-      { question: "What intakes are available?", answer: "ULK has two main intakes: January and September each year." }
+      { question: "Are there accommodation facilities?", answer: "Yes, ULK has on-campus hostels with WiFi, ranging from RWF 50,000 to 180,000 per month depending on the room category." },
+      { question: "What intakes are available?", answer: "ULK has three main intakes: January, May, and September each year." }
     ],
     downloads: [
       { name: "Fee Structure", url: "https://ulk.ac.rw/ulk-fees-structure/", type: "PDF" },
@@ -833,6 +830,10 @@ export const universities: University[] = [  {
       { name: "Postgraduate Application Form", url: "https://share.google/x8mfMEJVXaDElsrXI", type: "PDF" }
     ],
     nearbyPlaces: [
+      { name: "Gisozi Cafe", type: "Accommodation", distance: "Near campus" },
+      { name: "Chipanza", type: "Accommodation", distance: "Near campus" },
+      { name: "Musezero", type: "Accommodation", distance: "Near campus" },
+      { name: "Kacyiru", type: "Accommodation", distance: "Near campus" },
       { name: "Kigali International Airport", type: "Transport", distance: "20 min drive" },
       { name: "Kicukiro Market", type: "Shopping", distance: "10 min walk" },
       { name: "BK Arena", type: "Sports", distance: "15 min drive" },
@@ -852,10 +853,10 @@ export const universities: University[] = [  {
       "Teaching Staff": "211",
       Faculties: "5 Schools",
       Programs: "30+",
-      Intakes: "January, September",
+      Intakes: "January, May, September",
       Language: "English, French",
-      Accommodation: "Available (On-campus hostels + private)",
-      Scholarships: "Available (2,882+ recipients)"
+      Accommodation: "On-campus hostels with WiFi (RWF 50,000 - 180,000/month)",
+      Scholarships: "Available (visit ULK official website)"
     },
     contact: {
       phone: "+250 788 304 086",
@@ -865,6 +866,8 @@ export const universities: University[] = [  {
     },
     about: {
       history: "ULK was founded in 1996 by Prof. Dr. RWIGAMBA Balinda to provide quality higher education in Rwanda and the region.",
+      mission: "To educate, teach, conduct research and serve the community. The fundamental mission of ULK is to provide the students with a training which will enable them to become actors and organizers of a complete development of the nation.",
+      vision: "Kigali Independent University ULK is destined to stand out as a remarkable university for excellence at the heart of Africa with highly motivated students and high qualified personnel endowed with elevated ethical values.",
       accreditation: "Fully accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["42,958+ graduates", "5 schools offering diverse programs", "211 teaching staff", "1,326 computers for student use", "28+ years of educational excellence"]
     },
@@ -896,11 +899,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "ALU Rwanda campus opened in September 2017 in Kigali Innovation City with 270 founding students. The university is part of the African Leadership Group, a network of institutions with campuses in Mauritius and Rwanda. ALU Rwanda is a residential campus that has grown to serve hundreds of students from across Africa. In 2026, ALU Rwanda achieved its first-ever Top Employer certification in Rwanda.",
-      mission: "To produce 3 million young African leaders over the next 50 years through innovative, hands-on education that combines real-world internships with academic learning.",
-      vision: "To transform Africa by developing ethical, entrepreneurial leaders who create lasting impact.",
-      coreValues: ["Leadership", "Entrepreneurship", "Innovation", "Integrity", "Pan-African Identity"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "ALU Rwanda is located in Kigali Innovation City, approximately 9km from Kigali International Airport. The campus is a modern facility with collaborative learning spaces, tech labs, and student common areas. It neighbors Carnegie Mellon University Africa."
     },
     campuses: [
@@ -1060,8 +1058,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "ALU Rwanda opened in September 2017 in Kigali Innovation City as part of the African Leadership Group, a network with campuses in Mauritius and Rwanda. ALU's mission is to produce 3 million African leaders over 50 years.",
-      mission: "To produce 3 million young African leaders over the next 50 years.",
-      vision: "To transform Africa by developing ethical, entrepreneurial leaders.",
       accreditation: "Fully accredited by HEC Rwanda. ALU Mauritius accredited by Glasgow Caledonian University.",
       achievements: ["Top Employer in Rwanda (2026)", "Mastercard Foundation Scholars Program partner", "Kigali Innovation City location", "Pan-African student body", "Innovation-driven curriculum"]
     },
@@ -1092,11 +1088,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "https://www.facebook.com/INESRuhengeriOfficial", twitter: "https://twitter.com/INES_Ruhengeri", instagram: "https://www.instagram.com/ines_ruhengeri/", linkedin: "https://www.linkedin.com/company/inesruhengeri", youtube: "https://www.youtube.com/channel/UC9Q5s5L_Z9SJr3rsVz8UUug" },
     overview: {
       history: "Founded in 2005, INES-Ruhengeri (Institute of Applied Sciences) is a private higher education institution located in Musanze District, Northern Province of Rwanda. Over the years, it has grown into a center of academic excellence, offering applied sciences programs that respond to national and regional development needs. The university celebrated its 20th anniversary in 2023.",
-      mission: "To provide quality education that contributes to the socio-economic development of the region through teaching, research, and community engagement.",
-      vision: "To be a leading center of applied sciences and technology in the region.",
-      coreValues: ["Quality education", "Community development", "Integrity", "Innovation", "Sustainability"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Smart campus in Musanze with modern academic buildings, well-equipped laboratories, comprehensive library, and sports facilities. Over 8,200 current students including 1,670+ international students from 21 countries."
     },
     campuses: [
@@ -1234,13 +1225,6 @@ export const universities: University[] = [  {
       { name: "Domestic Plumbing", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" },
       { name: "Surveying", level: "Diploma", duration: "2 years", faculty: "Engineering and Technology" }
     ],
-    tuition: {
-      localMin: "450,000",
-      localMax: "2,850,000",
-      internationalMin: "1,200",
-      internationalMax: "5,000",
-      currency: "RWF/year (UG) / USD/year (PG)"
-    },
     admission: {
       requirements: ["A-Level certificate with at least two principal passes", "English proficiency", "Program-specific requirements", "Equivalent international qualifications recognized by HEC"],
       entryQualifications: ["A-Level certificate with relevant subjects", "Foundation programs", "Equivalent international qualifications"],
@@ -1250,11 +1234,6 @@ export const universities: University[] = [  {
       intakePeriods: ["January", "September"],
       howToApply: "Apply online at https://digitalcampus.ines.ac.rw/admission/ or visit the admissions office in Musanze."
     },
-    tuitionDetails: [
-      { program: "Undergraduate (Full Tuition)", level: "Bachelor", localAmount: "645,000 - 2,850,000 RWF/year", internationalAmount: "1,800 - 3,500 USD/year" },
-      { program: "Undergraduate (Subsidized Rate)", level: "Bachelor", localAmount: "From 450,000 RWF/year (eligible students)", internationalAmount: "1,200 - 2,500 USD/year" },
-      { program: "Postgraduate (Full Tuition)", level: "Master", localAmount: "2,500,000 - 3,700,000 RWF total (2 years)", internationalAmount: "3,000 - 5,000 USD total" }
-    ],
     scholarships: [
       { name: "INES Merit Scholarship", type: "University", description: "For academic excellence" },
       { name: "Regional Scholarships", type: "NGO", description: "Sponsored by local organizations" }
@@ -1352,8 +1331,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 2005, INES-Ruhengeri provides higher education access to the northern region of Rwanda with a focus on applied sciences, research, and community engagement.",
-      mission: "To provide quality education that contributes to the socio-economic development of the region through teaching, research, and community engagement.",
-      vision: "To be a leading center of applied sciences and technology in the region.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["8,200+ current students", "1,670+ international students from 21 countries", "13,000+ total graduates", "6 faculties with 40+ programs", "20+ years of academic excellence"]
     },
@@ -1390,11 +1367,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "Founded in 2010 as a campus of Mount Kenya University, Mount Kigali University received its own Charter from the Higher Education Council of Rwanda in 2023, becoming an independent chartered university. The Board of Directors has invested over 30 billion RWF in state-of-the-art infrastructure including modern laboratories, AI-powered classrooms, a 4-star training hotel, and student residences.",
-      mission: "To provide quality education that transforms lives and empowers communities through innovative teaching, research, and community engagement.",
-      vision: "To be a leading center of academic excellence in Africa, producing graduates who are globally competitive and socially responsible.",
-      coreValues: ["Quality", "Accessibility", "Innovation", "Integrity", "Professionalism", "Excellence"],
-      chancellor: "Prof. Kabaji (Inaugurated 2025)",
-      viceChancellor: "Mount Kigali University Vice Chancellor",
       campusDescription: "Purpose-built campus in Kagarama, Kigali featuring AI-powered classrooms with humanoid robots, medical simulation labs, a 4-star training hotel (Kigali Paramount Hotel), Olympic-size swimming pool, digital library, modern student residences, and recreational facilities."
     },
     campuses: [
@@ -1631,8 +1603,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 2010 as a campus of Mount Kenya University, Mount Kigali University received its own Charter from HEC Rwanda in 2023. The university has since invested over 30 billion RWF in state-of-the-art infrastructure.",
-      mission: "To provide quality education that transforms lives and empowers communities through innovative teaching, research, and community engagement.",
-      vision: "To be a leading center of academic excellence in Africa, producing graduates who are globally competitive and socially responsible.",
       accreditation: "Fully accredited by the Higher Education Council (HEC) of Rwanda — University Charter granted 2023",
       achievements: ["Obtained independent University Charter (2023)", "30B+ RWF campus investment", "First university in Rwanda with humanoid robot teaching assistants", "4-star training hotel on campus", "Students from 34+ nationalities"]
     },
@@ -1668,11 +1638,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "The University of Kigali started its operations in October 2013 upon receiving a definitive license to operate as a private university. It has since grown to become one of Rwanda's premier private higher education institutions with 9,000+ students across three campuses and 35+ nationalities represented.",
-      mission: "To provide quality, accessible, and industry-relevant higher education that produces competent, ethical, and innovative graduates who contribute to national and regional development.",
-      vision: "To be a leading center of academic excellence and innovation in East Africa, producing globally competitive graduates.",
-      coreValues: ["Academic excellence", "Innovation", "Integrity", "Inclusivity", "Professionalism", "Community engagement"],
-      chancellor: "UoK Chancellor",
-      viceChancellor: "University of Kigali Vice Chancellor",
       campusDescription: "Three campuses: Kacyiru Main Campus (Gasabo District, Kigali) housing all 6 schools, Remera Campus with accommodation facilities, and Musanze Campus in the Northern Province providing a natural learning setting."
     },
     campuses: [
@@ -1929,8 +1894,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Started operations in October 2013 upon receiving a definitive license to operate as a private university. Has grown to 9,000+ students across three campuses with students from 35+ countries.",
-      mission: "To provide quality, accessible, and industry-relevant higher education that produces competent, ethical, and innovative graduates.",
-      vision: "To be a leading center of academic excellence and innovation in East Africa.",
       accreditation: "Fully accredited chartered university by the Government of the Republic of Rwanda since 2013",
       achievements: ["9,000+ enrolled students", "10,000+ alumni worldwide", "3 campuses across Rwanda", "Students from 35+ countries", "6 schools with 28+ active programs"]
     },
@@ -1966,11 +1929,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "CMU-Africa was established in 2011 through a partnership between Carnegie Mellon University and the Government of Rwanda to address the critical shortage of high-quality engineering talent in Africa. It is CMU's first degree-granting campus outside the United States, located in Kigali Innovation City.",
-      mission: "To produce creative and technically strong engineers, trained in the African context and prepared to make a transformative impact in their communities and the world.",
-      vision: "To educate and empower the next generation of African leaders and innovators.",
-      coreValues: ["Excellence", "Innovation", "Leadership", "Impact", "Collaboration"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "CMU-Africa is located in Kigali Innovation City, a USD 10 million state-of-the-art campus built with support from the African Development Bank. The campus features modern classrooms, a 500-seat stadium, advanced ICT infrastructure, collaborative spaces, and serves as a regional ICT center of excellence."
     },
     campuses: [
@@ -2132,8 +2090,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Established in 2011 through partnership between Carnegie Mellon University and the Government of Rwanda. CMU-Africa is CMU's first degree-granting campus outside the US.",
-      mission: "To produce creative and technically strong engineers trained in the African context.",
-      vision: "To educate and empower the next generation of African leaders and innovators.",
       accreditation: "Accredited by Middle States Commission on Higher Education (USA) and HEC Rwanda.",
       achievements: ["First US research university with full operations in Africa", "Mastercard Foundation Scholars Program partner", "Strategic partnership with Government of Rwanda", "State-of-the-art Kigali Innovation City campus"]
     },
@@ -2170,11 +2126,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "UGHE was launched in September 2015 as an initiative of Partners In Health, founded by Dr. Paul Farmer and colleagues. The university was built on a 250-acre campus gifted by the Butaro community, with catalytic support from the Cummings Foundation, Bill & Melinda Gates Foundation, and the Government of Rwanda.",
-      mission: "To radically change the way health care is delivered around the world by training health professionals who serve the most vulnerable communities.",
-      vision: "A world where everyone has access to quality health care regardless of their ability to pay.",
-      coreValues: ["Equity", "Compassion", "Excellence", "Social Justice", "Community Partnership"],
-      chancellor: "Dr. Jim Yong Kim",
-      viceChancellor: "Prof. Philip Cotton",
       campusDescription: "UGHE's main campus is located on 250 acres in Butaro, a rural district in Northern Province. The campus features state-of-the-art classrooms, teaching laboratories, a clinical simulation center, information commons, dining facilities, and residential accommodations. It is complemented by an administrative office in Kigali Heights."
     },
     campuses: [
@@ -2335,8 +2286,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "UGHE launched in September 2015 as a Partners In Health initiative with support from Cummings Foundation, Bill & Melinda Gates Foundation, and Government of Rwanda. The Butaro campus was completed in January 2019 and inaugurated by President Paul Kagame.",
-      mission: "To radically change how health care is delivered worldwide by training compassionate health professionals.",
-      vision: "A world where everyone has access to quality health care.",
       accreditation: "Fully accredited by HEC Rwanda.",
       achievements: ["First tuition-free medical education model in Rwanda", "250-acre rural campus built with community partnership", "Graduates serving in 24+ countries", "Innovative MBBS-MGHD dual degree program"]
     },
@@ -2373,11 +2322,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "Kepler launched in 2004 as Orphans of Rwanda, becoming Generation Rwanda in 2010. In 2013, Kepler partnered with Southern New Hampshire University (SNHU) to offer accredited US degrees with in-person support. Kepler College was established as an accredited Rwandan degree-granting institution offering its own bachelor's programs while maintaining the SNHU partnership.",
-      mission: "To prepare young Africans with global competencies and the mindset to solve local challenges.",
-      vision: "A world where every talented young African has access to quality higher education and employment.",
-      coreValues: ["Innovation", "Access", "Excellence", "Community", "Impact"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Kepler College is located in Kigali, Rwanda, with modern facilities designed for blended learning. The campus combines physical classrooms with online learning infrastructure, career development centers, and collaborative spaces."
     },
     campuses: [
@@ -2533,8 +2477,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Kepler began in 2004 as Orphans of Rwanda and evolved through Generation Rwanda (2010) to become Kepler (2013). Kepler College was established as an accredited degree-granting institution offering its own bachelor's programs alongside the historic SNHU partnership.",
-      mission: "To prepare young Africans with global competencies and the mindset to solve local challenges.",
-      vision: "A world where every talented young African has access to quality higher education and meaningful employment.",
       accreditation: "Accredited by HEC Rwanda. SNHU degrees accredited in the US.",
       achievements: ["90% employment rate within 6 months of graduation", "400+ employer partnerships", "Income Share Agreement model", "Refugee education program", "Blended learning innovation"]
     },
@@ -2565,11 +2507,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "Founded in 2016, KTU was established to meet Rwanda's growing demand for technical and engineering professionals.",
-      mission: "To provide quality technical and applied science education that drives Rwanda's industrial transformation.",
-      vision: "To be the premier technical university in East Africa.",
-      coreValues: ["Technical excellence", "Innovation", "Practical learning", "Industry relevance", "Integrity"],
-      chancellor: "KTU Chancellor",
-      viceChancellor: "KTU Vice Chancellor",
       campusDescription: "Modern campus in Kigali with engineering workshops, ICT labs, and innovation spaces."
     },
     campuses: [
@@ -2733,8 +2670,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 2016, KTU was established to meet Rwanda's growing demand for technical and engineering professionals.",
-      mission: "To provide quality technical and applied science education that drives Rwanda's industrial transformation.",
-      vision: "To be the premier technical university in East Africa.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["Modern engineering labs", "Industry partnerships", "5,000+ graduates", "National innovation awards"]
     },
@@ -2764,11 +2699,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "Established in 1997, Umutara Polytechnic has been providing technical education in Eastern Rwanda for over 25 years.",
-      mission: "To provide quality technical education in agriculture and engineering for regional development.",
-      vision: "To be a leading technical institution in Eastern Africa.",
-      coreValues: ["Practical learning", "Community engagement", "Sustainability", "Excellence"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Campus in Nyagatare with farm facilities, engineering workshops, and modern classrooms."
     },
     campuses: [
@@ -2916,8 +2846,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Established in 1997, Umutara Polytechnic has been providing technical education in Eastern Rwanda for over 25 years.",
-      mission: "To provide quality technical education in agriculture and engineering for regional development.",
-      vision: "To be a leading technical institution in Eastern Africa.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["Serving Eastern Province", "Practical training focus", "Community partnerships", "Modern farm facilities"]
     },
@@ -2947,11 +2875,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "Founded in 2010, the Nyanza Republican Institute of Technology serves the technical education needs of Southern Rwanda.",
-      mission: "To produce competent technical professionals through quality education and practical training.",
-      vision: "To be the leading technical institute in Southern Rwanda.",
-      coreValues: ["Technical competence", "Discipline", "Innovation", "Community service"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Campus in Nyanza with engineering labs, computer labs, and workshops."
     },
     campuses: [
@@ -3099,8 +3022,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 2010, the Nyanza Republican Institute of Technology serves the technical education needs of Southern Rwanda.",
-      mission: "To produce competent technical professionals through quality education and practical training.",
-      vision: "To be the leading technical institute in Southern Rwanda.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["Strong industry links", "Practical curriculum", "Modern laboratories", "Growing enrollment"]
     },
@@ -3130,11 +3051,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "Founded in 1997, KIST was Rwanda's premier technical institute before merging into the University of Rwanda in 2013.",
-      mission: "To provide quality science and technology education for national development.",
-      vision: "To be a leading institution in science and technology in Africa.",
-      coreValues: ["Scientific excellence", "Innovation", "Practical learning", "Research"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Nyarugenge campus in Kigali with engineering workshops, ICT labs, and science laboratories."
     },
     campuses: [
@@ -3284,8 +3200,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 1997, KIST was Rwanda's premier technical institute before merging into the University of Rwanda in 2013.",
-      mission: "To provide quality science and technology education for national development.",
-      vision: "To be a leading institution in science and technology in Africa.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["Pioneer technical education", "Strong alumni network", "Industry partnerships", "Research output"]
     },
@@ -3315,11 +3229,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "Established in 1987, ISAE has been at the forefront of agricultural education in Rwanda for over 35 years.",
-      mission: "To advance agricultural knowledge and practices for food security and sustainable development.",
-      vision: "To be the leading agricultural university in East Africa.",
-      coreValues: ["Agricultural excellence", "Sustainability", "Research", "Community impact", "Innovation"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Campus in Busogo with research farms, veterinary clinic, laboratories, and modern classrooms."
     },
     campuses: [
@@ -3481,8 +3390,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Established in 1987, ISAE has been at the forefront of agricultural education in Rwanda for over 35 years.",
-      mission: "To advance agricultural knowledge and practices for food security and sustainable development.",
-      vision: "To be the leading agricultural university in East Africa.",
       accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["Research farm", "Veterinary training center", "Agricultural innovations", "Regional partnerships"]
     },
@@ -3512,11 +3419,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "https://www.facebook.com/AUCAofficial/", twitter: "https://x.com/AUCA_SA", instagram: "https://www.instagram.com/aucarwanda/", linkedin: "https://rw.linkedin.com/company/adventist-university-of-central-africa", youtube: "" },
     overview: {
       history: "Founded in 1978 and officially opened on 15 October 1984. AUCA received its definitive operating license via law n°0056/05 of 3 February 1988, granting legal personality as a non-profit association. It was the first Adventist university chartered on the African continent and the first private university in Rwanda. AUCA operates three campuses: Masoro (main), Gishushu (science and technology), and Ngoma (nursing).",
-      mission: "To provide quality Christian education that integrates faith, learning, and service for the holistic development of individuals and communities.",
-      vision: "To be a leading Adventist institution of higher learning in Africa, known for academic excellence, research, and community service.",
-      coreValues: ["Excellence", "Integrity", "Service", "Wholeness", "Stewardship"],
-      chancellor: "",
-      viceChancellor: "Dr. Pacifique Nizeyimana (Interim)",
       campusDescription: "AUCA has three campuses: Masoro Campus (main) in Gasabo District, Kigali — a 1500-capacity conference hall and academic blocks; Gishushu Campus (Science and Technology Centre) in Remera, Kigali for IT and Master's programs; and Ngoma Campus in Karongi District, Western Province for Nursing and Midwifery."
     },
     campuses: [
@@ -3718,8 +3620,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 1978 and officially opened in 1984, AUCA was the first private university in Rwanda and the first Adventist university on the African continent. It operates three campuses and hosts the Adventist School of Medicine of East-Central Africa (ASOME).",
-      mission: "To provide quality Christian education integrating faith, learning, and service.",
-      vision: "To be a leading Adventist institution of higher learning in Africa.",
       accreditation: "Fully accredited by HEC Rwanda, Adventist Accrediting Association, and International Board of Education",
       achievements: ["First private university in Rwanda", "First Adventist university chartered in Africa", "Hosts ASOME medical school", "Three campuses nationwide", "1500-capacity conference facility"]
     },
@@ -3751,11 +3651,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "", twitter: "", instagram: "", linkedin: "", youtube: "" },
     overview: {
       history: "Founded in 2010 as a private Catholic university in Butare (Huye), Southern Province. CUR is affiliated with the Catholic Church and committed to providing quality education rooted in Christian values. The university has grown to serve 2,500+ students across multiple faculties.",
-      mission: "To provide quality higher education rooted in Catholic values, fostering academic excellence, research, and community service.",
-      vision: "To be a leading Catholic university in Africa known for academic excellence, ethical formation, and transformative impact on society.",
-      coreValues: ["Truth", "Excellence", "Service", "Integrity", "Community"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Main campus in Butare (Huye), Southern Province, with modern academic buildings, library, and student facilities. CUR also operates additional campuses in other regions."
     },
     campuses: [
@@ -3942,8 +3837,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 2010 as a private Catholic university in Butare (Huye), CUR is dedicated to providing quality education rooted in Catholic values and has partnerships with international institutions including UNESCO and Morgan State University.",
-      mission: "To provide quality higher education rooted in Catholic values, fostering academic excellence, research, and community service.",
-      vision: "To be a leading Catholic university in Africa.",
       accreditation: "Fully accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["2,500+ students enrolled", "6 faculties", "International partnerships", "UNESCO collaboration", "Catholic Church affiliation"]
     },
@@ -3974,11 +3867,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "https://www.facebook.com/eastafricanuniversityrwanda/", twitter: "https://twitter.com/eauniversityrw", instagram: "https://www.instagram.com/eastafricanuniversityrwanda/", linkedin: "", youtube: "https://www.youtube.com/channel/UCibbPd8fYp-nY-pMMnBpXrQ" },
     overview: {
       history: "East African University Rwanda (EAUR) was established in 2016 as a private higher education institution in Remera, Kigali. The university focuses on providing affordable, career-oriented education with a practical approach to learning.",
-      mission: "To provide accessible, quality higher education that equips students with practical skills and knowledge for professional success.",
-      vision: "To be a leading private university in the East African region known for academic excellence and innovation.",
-      coreValues: ["Excellence", "Innovation", "Integrity", "Diversity", "Community Engagement"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Main campus in Remera, Kigali with modern academic buildings, library, and student facilities."
     },
     campuses: [
@@ -4150,8 +4038,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "Founded in 2016, EAUR provides affordable higher education in Remera, Kigali with a focus on practical skill development.",
-      mission: "To provide accessible, quality higher education.",
-      vision: "To be a leading private university in East Africa.",
       accreditation: "Accredited by HEC Rwanda",
       achievements: ["7+ undergraduate programs", "Located in Remera, Kigali", "Industry partnerships"]
     },
@@ -4182,11 +4068,6 @@ export const universities: University[] = [  {
     socialMedia: { facebook: "https://www.facebook.com/profile.php?id=61568928943846", twitter: "https://x.com/UTAB_BYUMBA", instagram: "", linkedin: "https://www.linkedin.com/company/university-of-technology-and-arts-of-byumba-utab/", youtube: "https://www.youtube.com/channel/UCR5PdF2aP0TskzipAqKAi7Q" },
     overview: {
       history: "UTAB (formerly IPB) was established in 2006 as a private higher education institution in Byumba, Northern Province. The university received official recognition from the Ministry of Education in 2010. UTAB has grown to serve 10,000-15,000 students across its main campus in Byumba and a branch campus in Gatsibo.",
-      mission: "To provide quality education and training that develops competent, innovative, and ethical professionals for national and regional development.",
-      vision: "To be a centre of academic excellence in technology, arts, and sciences in the East African region.",
-      coreValues: ["Academic Excellence", "Innovation", "Integrity", "Community Service", "Professionalism"],
-      chancellor: "",
-      viceChancellor: "",
       campusDescription: "Main campus in Byumba (Gicumbi District) in the beautiful mountains of Northern Province. Branch campus in Gatsibo. Features modern buildings, libraries, computer labs, and sports facilities."
     },
     campuses: [
@@ -4370,8 +4251,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "UTAB (formerly IPB) was founded in 2006 and officially recognized by the Ministry of Education in 2010. It is a large private university in Northern Province with 10,000-15,000 students.",
-      mission: "To provide quality education developing competent, innovative professionals.",
-      vision: "To be a centre of academic excellence in technology, arts, and sciences in East Africa.",
       accreditation: "Fully accredited by HEC Rwanda since 2010",
       achievements: ["10,000-15,000 enrolled students", "Erasmus+ program participation", "Moodle e-learning platform", "Two campuses", "Chancen International partnership"]
     },

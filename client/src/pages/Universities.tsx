@@ -187,7 +187,7 @@ export default function Universities() {
                       </div>
                       <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/5">
                         <span className="text-xs text-gray-500">
-                          {t("universities.tuition")}: {uni.tuition.localMin} RWF
+                          {t("universities.tuition")}: {uni.tuition ? `${uni.tuition.localMin} RWF` : "N/A"}
                         </span>
                         <span className="text-sm text-emerald font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                           {t("universities.learn-more")}

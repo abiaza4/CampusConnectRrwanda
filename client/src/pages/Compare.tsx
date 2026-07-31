@@ -122,7 +122,7 @@ export default function Compare() {
                               {field.key === "founded" && u.founded}
                               {field.key === "facultiesCount" && u.faculties.length}
                               {field.key === "programsCount" && u.programs.length}
-                              {field.key === "tuitionLocal" && `${u.tuition.localMin} - ${u.tuition.localMax} RWF`}
+                              {field.key === "tuitionLocal" && (u.tuition ? `${u.tuition.localMin} - ${u.tuition.localMax} RWF` : "N/A")}
                               {field.key === "hostels" && (u.accommodation.hostels ? t("compare.available") : t("compare.not-available"))}
                               {field.key === "accommodationCost" && u.accommodation.estimatedCost}
                             </td>
