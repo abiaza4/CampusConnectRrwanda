@@ -27,8 +27,12 @@ export default function Footer() {
                   <span className="text-white">Campus</span>
                   <span className="text-emerald">Connect</span>
                 </span>
-                <span className="block text-[11px] md:text-xs font-semibold tracking-wide text-white">
-                  Rwanda
+                <span className="flex items-center gap-1.5">
+                  <span className="h-px flex-1 bg-current opacity-60" />
+                  <span className="text-[11px] md:text-xs font-semibold tracking-wide text-white">
+                    Rwanda
+                  </span>
+                  <span className="h-px flex-1 bg-current opacity-60" />
                 </span>
               </div>
             </Link>
