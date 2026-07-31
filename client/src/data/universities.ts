@@ -608,24 +608,20 @@ export const universities: University[] = [  {
     ],
     academicInfo: {
       schools: [
-        { name: "School of Economics and Business Studies", description: "Offering programs in accounting, finance, marketing, and management." },
-        { name: "School of Science & Technology", description: "Offering programs in computer science, IT, software engineering, and network engineering." },
+        { name: "School of Economics and Business Studies", description: "Offering programs in finance, accounting, and economics." },
+        { name: "School of Science & Technology", description: "Offering programs in computer science: software engineering, network engineering, and data science." },
         { name: "School of Law", description: "Offering LLB and legal studies programs." },
-        { name: "School of Social Sciences", description: "Offering programs in sociology, psychology, international relations, and development studies." },
+        { name: "School of Social Sciences", description: "Offering programs in development studies and international relations." },
         { name: "School of Education", description: "Offering teacher training and education programs." }
       ],
       departments: [
         { name: "Department of Accounting", school: "School of Economics and Business Studies", description: "Accounting education and research." },
         { name: "Department of Finance", school: "School of Economics and Business Studies", description: "Finance and investment programs." },
-        { name: "Department of Marketing", school: "School of Economics and Business Studies", description: "Marketing and sales management." },
-        { name: "Department of Management", school: "School of Economics and Business Studies", description: "Business management and administration." },
-        { name: "Department of Computer Science", school: "School of Science & Technology", description: "Computer science and programming." },
-        { name: "Department of Information Technology", school: "School of Science & Technology", description: "IT and systems management." },
+        { name: "Department of Economics", school: "School of Economics and Business Studies", description: "Economics programs." },
         { name: "Department of Software Engineering", school: "School of Science & Technology", description: "Software development and engineering." },
         { name: "Department of Network Engineering", school: "School of Science & Technology", description: "Network and telecommunications." },
+        { name: "Department of Data Science", school: "School of Science & Technology", description: "Data science and analytics." },
         { name: "Department of Law", school: "School of Law", description: "Legal education and research." },
-        { name: "Department of Sociology", school: "School of Social Sciences", description: "Sociological studies and research." },
-        { name: "Department of Psychology", school: "School of Social Sciences", description: "Psychology and counseling programs." },
         { name: "Department of International Relations", school: "School of Social Sciences", description: "International relations and diplomacy." },
         { name: "Department of Development Studies", school: "School of Social Sciences", description: "Development and social change." },
         { name: "Department of Education", school: "School of Education", description: "Teacher training and education." }
@@ -633,15 +629,11 @@ export const universities: University[] = [  {
       undergraduatePrograms: [
         { name: "BBA in Accounting", duration: "3 years", description: "Bachelor of Business Administration in Accounting." },
         { name: "BBA in Finance", duration: "3 years", description: "Bachelor of Business Administration in Finance." },
-        { name: "BBA in Marketing", duration: "3 years", description: "Bachelor of Business Administration in Marketing." },
-        { name: "BBA in Management", duration: "3 years", description: "Bachelor of Business Administration in Management." },
-        { name: "BSc Computer Science", duration: "4 years", description: "Bachelor of Science in Computer Science." },
-        { name: "BSc Information Technology", duration: "4 years", description: "Bachelor of Science in Information Technology." },
+        { name: "BA in Economics", duration: "3 years", description: "Bachelor of Arts in Economics." },
         { name: "BSc Software Engineering", duration: "4 years", description: "Bachelor of Science in Software Engineering." },
         { name: "BSc Network Engineering", duration: "4 years", description: "Bachelor of Science in Network Engineering." },
+        { name: "BSc Data Science", duration: "4 years", description: "Bachelor of Science in Data Science." },
         { name: "LLB", duration: "4 years", description: "Bachelor of Laws." },
-        { name: "BA in Sociology", duration: "3 years", description: "Bachelor of Arts in Sociology." },
-        { name: "BA in Psychology", duration: "3 years", description: "Bachelor of Arts in Psychology." },
         { name: "BA in International Relations", duration: "3 years", description: "Bachelor of Arts in International Relations." },
         { name: "BA in Development Studies", duration: "3 years", description: "Bachelor of Arts in Development Studies." },
         { name: "BSc Education", duration: "3 years", description: "Bachelor of Science in Education." }
@@ -668,24 +660,20 @@ export const universities: University[] = [  {
       modeOfStudy: ["Full-time", "Part-time", "Evening", "Weekend"]
     },
     faculties: [
-      { name: "School of Economics and Business Studies", description: "Accounting, Finance, Marketing, Management", icon: "briefcase" },
-      { name: "School of Science & Technology", description: "Computer Science, IT, Software Engineering, Network Engineering", icon: "cpu" },
+      { name: "School of Economics and Business Studies", description: "Finance, Accounting, Economics", icon: "briefcase" },
+      { name: "School of Science & Technology", description: "Software Engineering, Network Engineering, Data Science", icon: "cpu" },
       { name: "School of Law", description: "LLB, Legal Studies", icon: "scale" },
-      { name: "School of Social Sciences", description: "Sociology, Psychology, International Relations, Development Studies", icon: "book-open" },
+      { name: "School of Social Sciences", description: "Development Studies, International Relations", icon: "book-open" },
       { name: "School of Education", description: "Teacher Training, Educational Studies", icon: "graduation-cap" }
     ],
     programs: [
       { name: "BBA in Accounting", level: "Bachelor", duration: "3 years", faculty: "School of Economics and Business Studies" },
       { name: "BBA in Finance", level: "Bachelor", duration: "3 years", faculty: "School of Economics and Business Studies" },
-      { name: "BBA in Marketing", level: "Bachelor", duration: "3 years", faculty: "School of Economics and Business Studies" },
-      { name: "BBA in Management", level: "Bachelor", duration: "3 years", faculty: "School of Economics and Business Studies" },
-      { name: "BSc Computer Science", level: "Bachelor", duration: "4 years", faculty: "School of Science & Technology" },
-      { name: "BSc Information Technology", level: "Bachelor", duration: "4 years", faculty: "School of Science & Technology" },
+      { name: "BA in Economics", level: "Bachelor", duration: "3 years", faculty: "School of Economics and Business Studies" },
       { name: "BSc Software Engineering", level: "Bachelor", duration: "4 years", faculty: "School of Science & Technology" },
       { name: "BSc Network Engineering", level: "Bachelor", duration: "4 years", faculty: "School of Science & Technology" },
+      { name: "BSc Data Science", level: "Bachelor", duration: "4 years", faculty: "School of Science & Technology" },
       { name: "LLB", level: "Bachelor", duration: "4 years", faculty: "School of Law" },
-      { name: "BA in Sociology", level: "Bachelor", duration: "3 years", faculty: "School of Social Sciences" },
-      { name: "BA in Psychology", level: "Bachelor", duration: "3 years", faculty: "School of Social Sciences" },
       { name: "BA in International Relations", level: "Bachelor", duration: "3 years", faculty: "School of Social Sciences" },
       { name: "BA in Development Studies", level: "Bachelor", duration: "3 years", faculty: "School of Social Sciences" },
       { name: "BSc Education", level: "Bachelor", duration: "3 years", faculty: "School of Education" },
@@ -1453,13 +1441,6 @@ export const universities: University[] = [  {
       { name: "Diploma in IT", level: "Diploma", duration: "2 years", faculty: "School of ICT & Computing" },
       { name: "Diploma in Hospitality", level: "Diploma", duration: "2 years", faculty: "School of Hospitality & Tourism" }
     ],
-    tuition: {
-      localMin: "1,000,000",
-      localMax: "2,500,000",
-      internationalMin: "2,500",
-      internationalMax: "5,000",
-      currency: "RWF / USD"
-    },
     admission: {
       requirements: [
         "Rwandan Advanced Certificate of Secondary Education (A-Level) with at least two principal passes",
@@ -1477,6 +1458,7 @@ export const universities: University[] = [  {
         "Certified copies of academic certificates and transcripts",
         "Copy of national ID or passport",
         "Recent passport-size photographs",
+        "Bank statement (required)",
         "Proof of payment of application fee"
       ],
       internationalRequirements: [
@@ -1488,13 +1470,8 @@ export const universities: University[] = [  {
       applicationDeadlines: "Rolling admissions — applications open year-round. Apply online at admission.mkur.ac.rw.",
       intakePeriods: ["January", "May", "September"],
       howToApply: "Apply online through the MKUR admissions portal at admission.mkur.ac.rw. Download prospectus from mkur.ac.rw.",
-      applicationFees: "RWF 10,000 for local applicants, USD 50 for international applicants"
+      applicationFees: "RWF 20,000"
     },
-    tuitionDetails: [
-      { program: "Undergraduate Programs", level: "Bachelor", localAmount: "1,000,000 - 2,500,000 RWF/year", internationalAmount: "2,500 - 5,000 USD/year" },
-      { program: "Postgraduate Programs", level: "Master", localAmount: "1,500,000 - 3,000,000 RWF/year", internationalAmount: "3,000 - 5,500 USD/year" },
-      { program: "Diploma Programs", level: "Diploma", localAmount: "600,000 - 1,200,000 RWF/year", internationalAmount: "1,500 - 3,000 USD/year" }
-    ],
     scholarships: [
       { name: "MKUR Merit Scholarship", type: "University", description: "For top academic performers with excellent grades.", amount: "Up to 50% tuition reduction", eligibility: "Based on academic merit" },
       { name: "Need-Based Bursary", type: "University", description: "Financial assistance for economically disadvantaged students.", amount: "Partial tuition coverage", eligibility: "Based on financial need" },
