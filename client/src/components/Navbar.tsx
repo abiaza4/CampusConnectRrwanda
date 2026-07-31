@@ -128,7 +128,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 ml-2 md:ml-4">
           <Link href="/cost-calculator">
             <Button
               variant="ghost"
@@ -138,6 +138,7 @@ export default function Navbar() {
               {t("nav.cost-calculator")}
             </Button>
           </Link>
+          <LanguageSwitcher />
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg transition-all text-gray-500 hover:text-navy hover:bg-gray-100 dark:text-gray-400 dark:hover:text-emerald dark:hover:bg-white/5"
@@ -145,7 +146,6 @@ export default function Navbar() {
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <LanguageSwitcher />
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-lg transition-all text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5"
