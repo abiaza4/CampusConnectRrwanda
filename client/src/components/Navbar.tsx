@@ -53,7 +53,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <img
-            src="/ccr logo.jpg"
+            src="/ccr logo.png"
             alt="CampusConnect Rwanda"
             className="h-12 w-12 md:h-14 md:w-14 object-contain transition-transform duration-200 group-hover:scale-105"
           />
