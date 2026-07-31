@@ -603,10 +603,6 @@ export const universities: University[] = [  {
     },
     overview: {
       history: "ULK was founded in 1996 by Prof. Dr. RWIGAMBA Balinda to provide quality higher education in Rwanda and the region. Since its inception, ULK has grown from a single campus to multiple campuses serving thousands of students.",
-      mission: "To educate, teach, conduct research and serve the community. The fundamental mission of ULK is to provide the students with a training which will enable them to become actors and organizers of a complete development of the nation.",
-      vision: "Kigali Independent University ULK is destined to stand out as a remarkable university for excellence at the heart of Africa with highly motivated students and high qualified personnel endowed with elevated ethical values.",
-      coreValues: ["Academic excellence", "Ethical leadership", "Innovation and creativity", "Inclusivity and diversity", "Community engagement"],
-      viceChancellor: "Prof. Dr ONUORAH, Martins Onyekwelu (Ag. Vice-Chancellor)",
       campusDescription: "ULK operates multiple campuses in Kigali and Gisenyi, featuring modern buildings, well-equipped libraries, computer labs, and sports facilities."
     },
     campuses: [
@@ -869,8 +865,6 @@ export const universities: University[] = [  {
     },
     about: {
       history: "ULK was founded in 1996 by Prof. Dr. RWIGAMBA Balinda to provide quality higher education in Rwanda and the region.",
-      mission: "To educate, teach, conduct research and serve the community. The fundamental mission of ULK is to provide the students with a training which will enable them to become actors and organizers of a complete development of the nation.",
-      vision: "Kigali Independent University ULK is destined to stand out as a remarkable university for excellence at the heart of Africa with highly motivated students and high qualified personnel endowed with elevated ethical values.",
       accreditation: "Fully accredited by the Higher Education Council (HEC) of Rwanda",
       achievements: ["42,958+ graduates", "5 schools offering diverse programs", "211 teaching staff", "1,326 computers for student use", "28+ years of educational excellence"]
     },
@@ -1254,8 +1248,7 @@ export const universities: University[] = [  {
       internationalRequirements: ["Valid passport", "Student visa", "HEC equivalence", "Financial proof"],
       applicationDeadlines: "Rolling admissions. Applications open before each intake.",
       intakePeriods: ["January", "September"],
-      howToApply: "Apply online at https://digitalcampus.ines.ac.rw/admission/ or visit the admissions office in Musanze.",
-      applicationFees: "RWF 10,000"
+      howToApply: "Apply online at https://digitalcampus.ines.ac.rw/admission/ or visit the admissions office in Musanze."
     },
     tuitionDetails: [
       { program: "Undergraduate (Full Tuition)", level: "Bachelor", localAmount: "645,000 - 2,850,000 RWF/year", internationalAmount: "1,800 - 3,500 USD/year" },
@@ -1327,7 +1320,7 @@ export const universities: University[] = [  {
       { question: "How do I apply to INES?", answer: "Apply online at https://digitalcampus.ines.ac.rw/admission/ or visit the admissions office in Musanze." }
     ],
     downloads: [
-      { name: "Fee Structure (2025/2026)", url: "https://ines.ac.rw/tuition-fees", type: "PDF" },
+      { name: "Fee Structure (2025/2026)", url: "https://www.ines.ac.rw/tuition-fees", type: "PDF" },
       { name: "Online Application", url: "https://digitalcampus.ines.ac.rw/admission/", type: "Link" },
       { name: "International Students Guide", url: "https://www.ines.ac.rw/international-students", type: "Link" }
     ],
@@ -3687,7 +3680,7 @@ export const universities: University[] = [  {
       { question: "Does AUCA have accommodation?", answer: "Limited on-campus housing is available. Private apartments and hostels are available near Masoro, Gishushu, and Ngoma campuses." }
     ],
     downloads: [
-      { name: "Fee Structure (2025/2026)", url: "https://auca.ac.rw/tuition-fees", type: "PDF" },
+      { name: "Fee Structure (2025/2026)", url: "https://auca.ac.rw/wp-content/uploads/2025/07/AUCA-Fee-Structure-2025-2026-Nursing.pdf", type: "PDF" },
       { name: "Undergraduate Application Form", url: "https://auca.ac.rw/apply", type: "PDF" },
       { name: "Postgraduate Application Form", url: "https://auca.ac.rw/postgraduate-apply", type: "PDF" },
       { name: "ASOME Medical Program Guide", url: "https://share.google/hk77xl2Ja06rouRqh", type: "PDF" },
@@ -4388,209 +4381,219 @@ export const universities: University[] = [  {
     ]
   },
   {
-    id: "umst",
-    name: "University of Medical Sciences and Technology (UMST)",
+    id: "unilak",
+    name: "University of Lay Adventists of Kigali (UNILAK)",
     location: "Kigali, Rwanda",
     city: "Kigali",
     type: "Private",
-    description: "A leading Pan-African medical university founded in 1996 with internationally accredited programs in medicine, dentistry, medical laboratory science, and biomedical engineering. UMST operates campuses in Rwanda, Sudan, and Saudi Arabia, with its Rwanda main campus in Nyarugunga, Kigali.",
-    logo: "https://www.umst.org/images/logos/umst_logo.png",
-    coverImage: "https://www.umst.org/images/news/tanzania-grad.jpg",
-    website: "https://umst.org",
-    founded: 1996,
-    motto: "Building Tomorrow's Leaders",
-    accreditationStatus: "Accredited by the Higher Education Council (HEC) of Rwanda and the Ministry of Higher Education of Sudan",
-    ownership: "Private (Non-profit)",
-    email: "info@umst.org",
-    telephone: "+250 788 303 386",
-    physicalAddress: "KK 56 St, Nyarugunga, PO Box 3523, Kigali, Rwanda",
+    description: "A vibrant private university in Rwanda committed to academic excellence, innovation, and personal growth. UNILAK operates multiple campuses in Kigali, Rwamagana, and Nyanza with programs across computing, economics, law, environmental studies, and education.",
+    logo: "https://site.unilak.ac.rw/wp-content/uploads/2021/07/cropped-cropped-new_logo1.png",
+    coverImage: "https://site.unilak.ac.rw/wp-content/uploads/2023/12/IMG-20231208-WA0033.jpg",
+    website: "https://site.unilak.ac.rw",
+    founded: 2010,
+    motto: "Empowering Minds, Inspiring Futures",
+    accreditationStatus: "Accredited by the Higher Education Council (HEC) of Rwanda",
+    ownership: "Private",
+    email: "info@unilak.ac.rw",
+    telephone: "+250 791 591 773",
+    physicalAddress: "Kigali, Rwanda",
     googleMapsLocation: "",
-    socialMedia: { facebook: "", twitter: "https://twitter.com/UMST_RWANDA", instagram: "https://instagram.com/umst_university", linkedin: "https://www.linkedin.com/school/university-of-medical-sciences-&-technology/", youtube: "https://youtube.com/@UMSTRWANDA" },
+    socialMedia: {
+      facebook: "https://www.facebook.com/Unilak.pr/",
+      twitter: "https://x.com/unilak_rwanda",
+      instagram: "https://www.instagram.com/unilak_official/",
+      linkedin: "",
+      youtube: "http://www.youtube.com/@univer"
+    },
     overview: {
-      history: "UMST was founded in 1996 in Khartoum, Sudan with 60 students and two pioneering faculties: Medicine and Medical Laboratory Technology. Over the decades it expanded to 17 faculties with 7,000+ students. Following the Sudanese civil war (2023), UMST launched the 'GO AFRICA' initiative, establishing its first cross-border campus in Kigali, Rwanda in 2024. Today UMST operates state-of-the-art facilities in Kigali with clinical rotations in six Rwandan hospitals.",
-      mission: "To provide internationally accredited, excellence-driven education in medical sciences and technology, producing competent, ethical healthcare professionals for Africa and the world.",
-      vision: "To be the leading Pan-African university in medical sciences and technology, advancing healthcare through education, research, and innovation.",
-      coreValues: ["Excellence", "Integrity", "Innovation", "Compassion", "Pan-African Leadership"],
-      chancellor: "",
-      viceChancellor: "",
-      campusDescription: "UMST Rwanda campus in Nyarugunga, Kigali features state-of-the-art medical simulation labs, lecture halls, and clinical training facilities. Clinical rotations are conducted at six partner hospitals across Kigali, including King Faisal Hospital and University Teaching Hospital of Kigali (CHUK)."
+      history: "UNILAK was established to provide quality higher education in Rwanda with a focus on holistic development, innovation, and community engagement. The university has grown to serve students across multiple campuses in Kigali, Rwamagana, and Nyanza.",
+      campusDescription: "UNILAK operates three campuses: Kigali Campus (main), Rwamagana Campus, and Nyanza Campus, offering modern learning facilities and a vibrant academic environment."
     },
     campuses: [
-      { name: "Kigali Campus (Main)", location: "KK 56 St, Nyarugunga, Kigali, Rwanda", description: "Main campus with state-of-the-art medical simulation labs, lecture halls, and clinical training facilities." }
+      { name: "Kigali Campus (Main)", location: "Kigali, Rwanda", description: "Main campus with academic buildings, libraries, and administrative offices." },
+      { name: "Rwamagana Campus", location: "Rwamagana, Eastern Province", description: "Satellite campus serving the Eastern Province." },
+      { name: "Nyanza Campus", location: "Nyanza, Southern Province", description: "Satellite campus serving the Southern Province." }
     ],
     academicInfo: {
       schools: [
-        { name: "Faculty of Medicine", description: "MBBS program — 5 years. Internationally accredited medical degree." },
-        { name: "Faculty of Dentistry", description: "BDS program — 4/5 years. Dental surgery education." },
-        { name: "Faculty of Medical Laboratory Science", description: "BSc Medical Laboratory Science — 4 years. Diagnostic technology and biomedical innovation." },
-        { name: "Faculty of Biomedical Engineering", description: "BSc Biomedical Engineering — 4 years. Interdisciplinary engineering principles applied to medicine." }
+        { name: "Faculty of Computing & Information Sciences", description: "IT, Software Engineering, Information Systems Management." },
+        { name: "Faculty of Economic Sciences & Management", description: "Accounting, Finance, Marketing, HRM, Economics, Cooperative Management." },
+        { name: "Faculty of Law", description: "Bachelor of Laws (LLB) and postgraduate legal programs." },
+        { name: "Faculty of Environmental Studies", description: "Environmental Management, Rural Development, Emergency & Disaster Management." },
+        { name: "Faculty of Education", description: "Mathematics & Economics, Mathematics & Computer Science, Mathematics & Geography, Economics & Entrepreneurship." }
       ],
-      departments: [
-        { name: "Department of Human Anatomy", school: "Faculty of Medicine", description: "Anatomy education and research." },
-        { name: "Department of Medical Physiology", school: "Faculty of Medicine", description: "Physiology education." },
-        { name: "Department of Medical Biochemistry", school: "Faculty of Medicine", description: "Biochemistry education." },
-        { name: "Department of Pathology and Forensic Medicine", school: "Faculty of Medicine", description: "Pathology and forensics." },
-        { name: "Department of Dentistry", school: "Faculty of Dentistry", description: "Dental surgery." },
-        { name: "Department of Medical Laboratory Science", school: "Faculty of Medical Laboratory Science", description: "Diagnostic laboratory techniques." },
-        { name: "Department of Medical Imaging", school: "Faculty of Biomedical Engineering", description: "Medical imaging technology." },
-        { name: "Department of Bioinstrumentation Technology", school: "Faculty of Biomedical Engineering", description: "Bioinstrumentation." }
-      ],
+      departments: [],
       undergraduatePrograms: [
-        { name: "MBBS (Bachelor of Medicine and Surgery)", duration: "5 years", description: "Internationally accredited medical degree." },
-        { name: "BDS (Bachelor of Dental Surgery)", duration: "4 years", description: "Dental surgery degree." },
-        { name: "BSc Medical Laboratory Science", duration: "4 years", description: "Diagnostic medical laboratory science." },
-        { name: "BSc Biomedical Engineering", duration: "4 years", description: "Engineering applied to medicine and biology." }
+        { name: "BSc in Information Technology", duration: "4 years", description: "Bachelor of Science in Information Technology." },
+        { name: "BSc in Software Engineering", duration: "4 years", description: "Bachelor of Science in Software Engineering." },
+        { name: "BSc in Information Systems Management", duration: "4 years", description: "Bachelor of Science in Information Systems Management." },
+        { name: "BBA in Accounting", duration: "3 years", description: "Bachelor of Business Administration in Accounting." },
+        { name: "BBA in Finance", duration: "3 years", description: "Bachelor of Business Administration in Finance." },
+        { name: "BBA in Marketing", duration: "3 years", description: "Bachelor of Business Administration in Marketing." },
+        { name: "BBA in Human Resources Management", duration: "3 years", description: "Bachelor of Business Administration in HRM." },
+        { name: "BA in Economics", duration: "3 years", description: "Bachelor of Arts in Economics." },
+        { name: "BA in Cooperative Management", duration: "3 years", description: "Bachelor of Arts in Cooperative Management." },
+        { name: "LLB", duration: "4 years", description: "Bachelor of Laws." },
+        { name: "BSc in Environmental Management & Conservation", duration: "4 years", description: "Bachelor of Science in Environmental Management." },
+        { name: "BSc in Rural Development", duration: "4 years", description: "Bachelor of Science in Rural Development." },
+        { name: "BSc in Emergency & Disaster Management", duration: "4 years", description: "Bachelor of Science in Emergency & Disaster Management." },
+        { name: "BEd in Mathematics & Economics", duration: "4 years", description: "Bachelor of Education in Mathematics & Economics." },
+        { name: "BEd in Mathematics & Computer Science", duration: "4 years", description: "Bachelor of Education in Mathematics & Computer Science." },
+        { name: "BEd in Mathematics & Geography", duration: "4 years", description: "Bachelor of Education in Mathematics & Geography." },
+        { name: "BEd in Economics & Entrepreneurship", duration: "4 years", description: "Bachelor of Education in Economics & Entrepreneurship." }
       ],
-      postgraduatePrograms: [],
+      postgraduatePrograms: [
+        { name: "MBA in Marketing", duration: "2 years", description: "Master of Business Administration in Marketing." },
+        { name: "MBA in Finance", duration: "2 years", description: "Master of Business Administration in Finance." },
+        { name: "MBA in Human Resources Management", duration: "2 years", description: "Master of Business Administration in HRM." },
+        { name: "MBA in Entrepreneurship", duration: "2 years", description: "Master of Business Administration in Entrepreneurship." },
+        { name: "MBA in Project Management", duration: "2 years", description: "Master of Business Administration in Project Management." },
+        { name: "MBA in Accounting", duration: "2 years", description: "Master of Business Administration in Accounting." },
+        { name: "MSc in Information Technology", duration: "2 years", description: "Master of Science in Information Technology." },
+        { name: "MSc in Management Information Systems", duration: "2 years", description: "Master of Science in Management Information Systems." },
+        { name: "LLM in International Criminal Law", duration: "2 years", description: "Master of Laws in International Criminal Law." },
+        { name: "LLM in Environment & Land Use Law", duration: "2 years", description: "Master of Laws in Environment & Land Use Law." },
+        { name: "MSc in Environmental & Development Studies", duration: "2 years", description: "Master of Science in Environmental & Development Studies." }
+      ],
       phdPrograms: [],
       diplomaPrograms: [],
       certificatePrograms: [],
-      modeOfStudy: ["Full-time"]
+      modeOfStudy: ["Full-time", "Part-time", "Evening"]
     },
     faculties: [
-      { name: "Faculty of Medicine", description: "MBBS program — 5 years", icon: "Stethoscope" },
-      { name: "Faculty of Dentistry", description: "BDS program — 4 years", icon: "Smile" },
-      { name: "Faculty of Medical Laboratory Science", description: "BSc MLS — 4 years", icon: "FlaskConical" },
-      { name: "Faculty of Biomedical Engineering", description: "BSc BME — 4 years", icon: "Monitor" }
+      { name: "Computing & Information Sciences", description: "IT, Software Engineering, Information Systems", icon: "cpu" },
+      { name: "Economic Sciences & Management", description: "Accounting, Finance, Marketing, HRM, Economics", icon: "briefcase" },
+      { name: "Law", description: "LLB, LLM programs", icon: "scale" },
+      { name: "Environmental Studies", description: "Environmental Management, Rural Development", icon: "leaf" },
+      { name: "Education", description: "Mathematics, Economics, Geography, Computer Science", icon: "graduation-cap" }
     ],
     programs: [
-      { name: "MBBS (Medicine)", level: "Bachelor", duration: "5 years", faculty: "Faculty of Medicine" },
-      { name: "BDS (Dentistry)", level: "Bachelor", duration: "4 years", faculty: "Faculty of Dentistry" },
-      { name: "BSc Medical Laboratory Science", level: "Bachelor", duration: "4 years", faculty: "Faculty of Medical Laboratory Science" },
-      { name: "BSc Biomedical Engineering", level: "Bachelor", duration: "4 years", faculty: "Faculty of Biomedical Engineering" }
+      { name: "BSc Information Technology", level: "Bachelor", duration: "4 years", faculty: "Computing & Information Sciences" },
+      { name: "BSc Software Engineering", level: "Bachelor", duration: "4 years", faculty: "Computing & Information Sciences" },
+      { name: "BSc Information Systems Management", level: "Bachelor", duration: "4 years", faculty: "Computing & Information Sciences" },
+      { name: "BBA Accounting", level: "Bachelor", duration: "3 years", faculty: "Economic Sciences & Management" },
+      { name: "BBA Finance", level: "Bachelor", duration: "3 years", faculty: "Economic Sciences & Management" },
+      { name: "BBA Marketing", level: "Bachelor", duration: "3 years", faculty: "Economic Sciences & Management" },
+      { name: "BBA Human Resources Management", level: "Bachelor", duration: "3 years", faculty: "Economic Sciences & Management" },
+      { name: "BA Economics", level: "Bachelor", duration: "3 years", faculty: "Economic Sciences & Management" },
+      { name: "BA Cooperative Management", level: "Bachelor", duration: "3 years", faculty: "Economic Sciences & Management" },
+      { name: "LLB", level: "Bachelor", duration: "4 years", faculty: "Law" },
+      { name: "BSc Environmental Management & Conservation", level: "Bachelor", duration: "4 years", faculty: "Environmental Studies" },
+      { name: "BSc Rural Development", level: "Bachelor", duration: "4 years", faculty: "Environmental Studies" },
+      { name: "BSc Emergency & Disaster Management", level: "Bachelor", duration: "4 years", faculty: "Environmental Studies" },
+      { name: "MBA Marketing", level: "Master", duration: "2 years", faculty: "Economic Sciences & Management" },
+      { name: "MBA Finance", level: "Master", duration: "2 years", faculty: "Economic Sciences & Management" },
+      { name: "MBA Human Resources Management", level: "Master", duration: "2 years", faculty: "Economic Sciences & Management" },
+      { name: "MBA Entrepreneurship", level: "Master", duration: "2 years", faculty: "Economic Sciences & Management" },
+      { name: "MBA Project Management", level: "Master", duration: "2 years", faculty: "Economic Sciences & Management" },
+      { name: "MBA Accounting", level: "Master", duration: "2 years", faculty: "Economic Sciences & Management" },
+      { name: "MSc Information Technology", level: "Master", duration: "2 years", faculty: "Computing & Information Sciences" },
+      { name: "MSc Management Information Systems", level: "Master", duration: "2 years", faculty: "Computing & Information Sciences" },
+      { name: "LLM International Criminal Law", level: "Master", duration: "2 years", faculty: "Law" },
+      { name: "LLM Environment & Land Use Law", level: "Master", duration: "2 years", faculty: "Law" },
+      { name: "MSc Environmental & Development Studies", level: "Master", duration: "2 years", faculty: "Environmental Studies" }
     ],
-    tuition: { localMin: "7,500", localMax: "15,000", internationalMin: "7,500", internationalMax: "15,000", currency: "USD" },
-    admission: {
-      requirements: ["Secondary school certificate with science background", "Biology, Chemistry, Physics/Mathematics at A-Level", "Entrance examination", "Interview"],
-      entryQualifications: ["A-Level science background", "Equivalent international qualifications"],
-      requiredDocuments: ["Application form", "Academic transcripts", "National ID or passport", "Passport photos", "Medical certificate", "Application fee"],
-      internationalRequirements: ["Valid passport", "Academic transcripts", "English proficiency", "Student visa documentation", "Proof of financial support"],
-      applicationDeadlines: "Rolling admissions. 2026 intake open — apply early due to limited seats.",
-      intakePeriods: ["September", "January"],
-      howToApply: "Apply online at https://umst.org/admissions",
-      applicationFees: "Contact admissions office"
+    tuition: {
+      localMin: "",
+      localMax: "",
+      internationalMin: "",
+      internationalMax: "",
+      currency: "RWF"
     },
-    tuitionDetails: [
-      { program: "MBBS (Medicine)", level: "Undergraduate", localAmount: "$12,000 - $15,000/yr", internationalAmount: "$12,000 - $15,000/yr" },
-      { program: "BDS (Dentistry)", level: "Undergraduate", localAmount: "$10,000 - $13,000/yr", internationalAmount: "$10,000 - $13,000/yr" },
-      { program: "BSc Medical Laboratory Science", level: "Undergraduate", localAmount: "$7,500 - $10,000/yr", internationalAmount: "$7,500 - $10,000/yr" },
-      { program: "BSc Biomedical Engineering", level: "Undergraduate", localAmount: "$7,500 - $10,000/yr", internationalAmount: "$7,500 - $10,000/yr" }
-    ],
-    scholarships: [
-      { name: "MBBS Scholarship (Rwanda Government)", type: "Government", description: "Fully funded MBBS scholarship in partnership with the Government of Rwanda." },
-      { name: "Merit-Based Scholarship", type: "University", description: "Academic excellence awards." },
-      { name: "UMST Alumni Scholarship", type: "University", description: "For dependents of UMST alumni." }
-    ],
+    admission: {
+      requirements: ["A-Level certificate with relevant subject combinations", "English proficiency", "Program-specific requirements"],
+      entryQualifications: ["A-Level certificate", "Foundation programs", "Equivalent international qualifications"],
+      requiredDocuments: ["Application form", "Academic certificates", "National ID or passport", "Passport photos"],
+      internationalRequirements: ["Valid passport", "Student visa", "HEC equivalence", "Proof of financial support"],
+      applicationDeadlines: "Rolling admissions with intakes in January and September.",
+      intakePeriods: ["January", "September"],
+      howToApply: "Apply online at https://site.unilak.ac.rw/ or visit the admissions office."
+    },
+    tuitionDetails: [],
+    scholarships: [],
     internationalStudent: {
       welcomeGuide: true,
-      internationalAdmissions: "International students from all countries welcome. UMST has students from across Africa and the Middle East.",
-      equivalenceGuidance: "International qualifications evaluated for equivalence.",
+      internationalAdmissions: "International students welcome. Contact admissions office for guidance.",
+      equivalenceGuidance: "International qualifications must be evaluated by HEC Rwanda.",
       visaInfo: "Student visa support provided with admission letter.",
-      residencePermit: "Residence permit guidance provided upon arrival.",
+      residencePermit: "Residence permit guidance available.",
       airportArrival: "Airport pickup can be arranged.",
       orientationWeek: true,
       languageSupport: "English is the language of instruction.",
-      exchangePrograms: ["Sudan campus", "Saudi Arabia campus"]
+      exchangePrograms: ["Erasmus+"]
     },
     accommodation: {
       hostels: false,
-      nearbyApartments: "Private apartments available in Nyarugunga and nearby Kicukiro areas.",
-      privateHostels: "Private student hostels available near campus.",
-      estimatedCost: "RWF 150,000 - 300,000/month",
-      accommodationOffice: "Contact UMST Student Affairs for accommodation assistance."
+      nearbyApartments: "Private apartments available near all campuses",
+      privateHostels: "Available near Kigali campus",
+      estimatedCost: ""
     },
     studentLife: {
-      clubs: ["Medical Students Association", "Research Club", "Debate Club", "Cultural Society"],
-      sports: ["Football", "Basketball", "Table Tennis"],
-      events: ["Medical Camps (IRCAD Africa)", "Cultural Day", "Health Outreach Programs", "Research Symposium"],
-      organizations: ["Student Guild", "Pan-African Student Network"]
+      clubs: ["Debate Club", "Cultural Club", "Environmental Club"],
+      sports: ["Football", "Basketball", "Volleyball"],
+      events: ["Cultural Day", "Career Fair", "Research Seminars", "Pitch Day"],
+      organizations: ["Student Council", "Alumni Association"]
     },
     facilities: {
-      libraries: ["UMST Medical Library — extensive medical reference collections"],
-      labs: ["Medical Simulation Lab", "Anatomy Lab", "Microbiology Lab", "Biochemistry Lab", "Biomedical Engineering Lab"],
-      sports: ["Football pitch", "Basketball court"],
-      other: ["Clinical training at 6 partner hospitals", "Student lounge", "Cafeteria"]
+      libraries: ["UNILAK Library"],
+      labs: ["Computer Labs", "Science Labs"],
+      sports: ["Sports facilities"],
+      other: ["Wi-Fi", "Student Lounge", "Cafeteria"]
     },
     careerDevelopment: {
       internships: true,
       industrialAttachment: true,
       careerOffice: true,
-      jobPlacementSupport: "Clinical rotations at partner hospitals leading to job opportunities.",
-      alumniNetwork: "Strong alumni network across Africa, Middle East, and beyond."
+      jobPlacementSupport: "Career services assist with job placements and internships.",
+      alumniNetwork: "Growing alumni network."
     },
     research: {
-      centers: ["Medical Research Centre"],
-      innovationLabs: ["Biomedical Innovation Lab"],
-      publications: ["Research published in international medical journals"],
-      conferences: ["Annual Medical Research Conference", "African MENA Brain Week"],
-      partnerships: ["King Faisal Hospital Rwanda", "CHUK (Kigali Teaching Hospital)", "IRCAD Africa", "Rwanda Ministry of Health"]
+      centers: ["Research Centers"],
+      innovationLabs: [],
+      publications: ["Research publications"],
+      conferences: ["ICCIST", "ICBMI", "ICEED"],
+      partnerships: ["Erasmus+", "International university partnerships"]
     },
     gallery: [],
     videos: [],
     rankings: {
       national: "",
-      international: "Internationally accredited medical programs",
-      awards: ["Distinguished Academic Institution Award (Sudan, 2015)"],
-      accreditations: ["Higher Education Council (HEC) Rwanda", "Ministry of Higher Education Sudan", "WHO recognized", "Association of Arab Universities"],
-      memberships: ["Association of Arab Universities", "World Health Organization (WHO) listed"]
+      international: "",
+      awards: [],
+      accreditations: ["Higher Education Council (HEC) of Rwanda"],
+      memberships: []
     },
     faq: [
-      { question: "Is UMST accredited in Rwanda?", answer: "Yes, UMST's Rwanda campus is fully accredited by the Higher Education Council (HEC) of Rwanda and its medical programs are internationally recognized." },
-      { question: "What programs does UMST offer?", answer: "UMST offers MBBS (Medicine), BDS (Dentistry), BSc Medical Laboratory Science, and BSc Biomedical Engineering at its Kigali campus." },
-      { question: "How much is tuition at UMST?", answer: "Tuition ranges from $7,500 to $15,000 USD per year depending on the program." },
-      { question: "Does UMST have clinical training?", answer: "Yes, clinical rotations are conducted at six partner hospitals in Kigali including King Faisal Hospital and CHUK." },
-      { question: "Are there scholarships for UMST?", answer: "Yes, including a fully funded MBBS scholarship through the Rwanda Government partnership and merit-based awards." },
-      { question: "What is the duration of the MBBS program?", answer: "The MBBS program is 5 years of study plus clinical rotations." }
+      { question: "Where is UNILAK located?", answer: "UNILAK has three campuses: Kigali (main), Rwamagana, and Nyanza." },
+      { question: "What programs does UNILAK offer?", answer: "UNILAK offers programs across five faculties: Computing & Information Sciences, Economic Sciences & Management, Law, Environmental Studies, and Education." },
+      { question: "Does UNILAK offer postgraduate programs?", answer: "Yes, UNILAK offers MBA programs, MSc in IT and Environmental Studies, and LLM programs." }
     ],
-    downloads: [
-      { name: "Fee Structure (2025/2026)", url: "https://umst.rw/admissions/fees", type: "PDF" },
-      { name: "MBBS Application Guide", url: "https://umst.rw/apply/mbbs", type: "PDF" },
-      { name: "BDS Application Guide", url: "https://umst.rw/apply/bds", type: "PDF" },
-      { name: "MLS Application Guide", url: "https://umst.rw/apply/mls", type: "PDF" },
-      { name: "University Prospectus", url: "https://umst.rw/prospectus", type: "PDF" }
-    ],
-    nearbyPlaces: [
-      { name: "King Faisal Hospital", type: "Healthcare", distance: "4 km" },
-      { name: "CHUK (Kigali Teaching Hospital)", type: "Healthcare", distance: "6 km" },
-      { name: "Kicukiro Town Centre", type: "Shopping", distance: "2 km" },
-      { name: "Kigali International Airport", type: "Transport", distance: "8 km" }
-    ],
-    reviews: [
-      { name: "Dr. Amina K.", rating: 5, comment: "World-class medical education with excellent clinical exposure at Kigali's top hospitals.", date: "2025-11-20" },
-      { name: "John M.", rating: 4, comment: "The state-of-the-art simulation labs and dedicated faculty make UMST a top choice for medicine.", date: "2025-09-15" }
-    ],
+    downloads: [],
+    nearbyPlaces: [],
+    reviews: [],
     quickFacts: {
-      Established: "1996 (Rwanda campus 2024)",
-      Type: "Private (Non-profit)",
-      Headquarters: "Kigali, Rwanda (Pan-African)",
-      "Programs Offered": "Medicine, Dentistry, MLS, BME",
-      "Program Duration": "4-5 years",
-      "Clinical Partners": "6 Kigali hospitals",
-      Language: "English",
-      Intakes: "September, January",
-      Accreditation: "HEC Rwanda + International",
-      Students: "7,000+ (all campuses)",
-      Tuition: "$7,500 - $15,000/yr",
-      Countries: "Rwanda, Sudan, Saudi Arabia"
+      Established: "2010",
+      Type: "Private",
+      Campuses: "3 (Kigali, Rwamagana, Nyanza)",
+      Faculties: "5",
+      Intakes: "January, September",
+      Language: "English"
     },
     contact: {
-      phone: "+250 788 303 386",
-      email: "info@umst.org",
-      website: "https://umst.org",
-      address: "KK 56 St, Nyarugunga, PO Box 3523, Kigali, Rwanda"
+      phone: "+250 791 591 773",
+      email: "info@unilak.ac.rw",
+      website: "https://site.unilak.ac.rw",
+      address: "Kigali, Rwanda"
     },
     about: {
-      history: "Founded in 1996 in Khartoum, Sudan, UMST expanded to Kigali in 2024 under the 'GO AFRICA' initiative following the Sudanese civil war. Today it is a leading Pan-African medical university.",
-      mission: "To provide internationally accredited medical education producing competent healthcare professionals.",
-      vision: "To be the leading Pan-African medical university.",
-      accreditation: "Accredited by HEC Rwanda, Ministry of Higher Education Sudan, WHO recognized",
-      achievements: ["Founded 1996 — three decades of excellence", "Rwanda campus established 2024", "7,000+ students across campuses", "International accreditations", "State-of-the-art Kigali campus", "6 clinical partner hospitals"]
+      history: "UNILAK was established to provide quality higher education in Rwanda with a focus on holistic development and academic excellence.",
+      accreditation: "Accredited by the Higher Education Council (HEC) of Rwanda",
+      achievements: ["Multiple campuses across Rwanda", "Erasmus+ exchange programs", "Diverse academic programs"]
     },
     images: [
-      "https://www.umst.org/images/gallery/campus-photo-1.jpeg",
-      "https://www.umst.org/images/gallery/DJI_0575.jpeg",
-      "https://www.umst.org/images/gallery/5M1A6593.jpeg",
-      "https://www.umst.org/images/gallery/5M1A4536.jpeg"
+      "https://site.unilak.ac.rw/wp-content/uploads/2023/12/IMG-20231208-WA0033.jpg",
+      "https://site.unilak.ac.rw/wp-content/uploads/2025/10/09A0334-1024x683.jpg",
+      "https://site.unilak.ac.rw/wp-content/uploads/2025/10/45A1913-1024x683.jpg"
     ]
   },
 ];
@@ -4617,8 +4620,8 @@ const idAliases: Record<string, string> = {
   "east-african-university-rwanda": "eaur",
   utab: "utab",
   "university-of-technology-and-arts-of-byumba": "utab",
-  umst: "umst",
-  "university-of-medical-sciences-and-technology": "umst",
+  unilak: "unilak",
+  "university-of-lay-adventists-of-kigali": "unilak",
   alu: "alu",
   "african-leadership-university": "alu",
   cmu: "cmu",
