@@ -55,9 +55,16 @@ export default function Team() {
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">
               <Badge className="bg-white/10 text-white border-white/20 mb-4">{t("team.badge")}</Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Fraunces', serif" }}>
-                {t("team.hero-title")}
-              </h1>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-4">
+                <img
+                  src="/ccr logo.png"
+                  alt="CCR Logo"
+                  className="h-16 w-16 md:h-20 md:w-20 object-contain"
+                />
+                <h1 className="text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+                  {t("team.hero-title")}
+                </h1>
+              </div>
               <p className="text-white/70 text-lg">
                 {t("team.hero-description")}
               </p>
