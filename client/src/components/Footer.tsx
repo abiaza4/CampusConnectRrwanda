@@ -14,7 +14,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-3 group">
               <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-navy to-emerald p-0.5 shadow shadow-navy/20">
                 <img
-                  src="/campusconnect logo.jpg"
+                  src="/ccr logo.jpg"
                   alt="CampusConnect Rwanda"
                   className="h-8 w-8 rounded-full object-cover transition-transform duration-200 group-hover:scale-105"
                 />

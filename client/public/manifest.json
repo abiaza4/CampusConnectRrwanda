@@ -11,7 +11,7 @@
   "scope": "/",
   "categories": ["education", "university", "scholarships"],
   "icons": [
-    { "src": "/campusconnect logo.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any" },
-    { "src": "/campusconnect logo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
+    { "src": "/ccr logo.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any" },
+    { "src": "/ccr logo.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any maskable" }
   ]
 }
