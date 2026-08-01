@@ -64,6 +64,7 @@ export default function Footer() {
                 { tKey: "nav.study-guide", href: "/study-guide" },
                 { tKey: "nav.scholarships", href: "/scholarships" },
                 { tKey: "nav.compare", href: "/compare" },
+                { tKey: "nav.popular-courses", href: "/popular-courses" },
                 { tKey: "nav.events", href: "/events" },
                 { tKey: "nav.currency-converter", href: "/currency-converter" },
                 { tKey: "nav.equivalence", href: "/equivalence" },

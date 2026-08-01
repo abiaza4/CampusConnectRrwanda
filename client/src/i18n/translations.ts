@@ -26,6 +26,7 @@ export const translations: Translations = {
   "nav.currency-converter": { en: "Currency Converter", rw: "Ihindura ry'Ifaranga", fr: "Convertisseur de Devises", sw: "Kibadilisha Fedha", ar: "محول العملات" },
   "nav.faq": { en: "FAQ", rw: "Ibibazo", fr: "FAQ", sw: "Maswali", ar: "الأسئلة الشائعة" },
   "nav.team": { en: "Our Team", rw: "Itsinda Ryacu", fr: "Notre Équipe", sw: "Timu Yetu", ar: "فريقنا" },
+  "nav.popular-courses": { en: "Popular Courses", rw: "Amasomo Azwi Cyane", fr: "Cours Populaires", sw: "Kozi Maarufu", ar: "الدورات الشائعة" },
   "hero.search-placeholder": { en: "Search universities...", rw: "Shakisha amashuri makuru...", fr: "Rechercher des universités...", sw: "Tafuta vyuo...", ar: "ابحث عن الجامعات..." },
   "hero.subtitle": { en: "Discover accredited universities, scholarships, and study opportunities in Rwanda.", rw: "Shakisha amashuri makuru yemewe, amahugurwa, n'iby'ubushakashatsi mu Rwanda.", fr: "Découvrez les universités accréditées, les bourses et les opportunités d'études au Rwanda.", sw: "Gundua vyuo vilivyoidhinishwa, udhamini, na fursa za masomo nchini Rwanda.", ar: "اكتشف الجامعات المعتمدة والمنح الدراسية وفرص الدراسة في رواندا." },
   "hero.slide1-title": { en: "Discover Rwanda's Universities with Confidence", rw: "Menya Kaminuza z'u Rwanda ku Mwizerwa", fr: "Découvrez les Universités du Rwanda en Toute Confiance", sw: "Gundua Vyuo vya Rwanda kwa Ujasiri", ar: "اكتشف جامعات رواندا بثقة" },

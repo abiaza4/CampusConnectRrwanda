@@ -17,6 +17,7 @@ const navLinks = [
     { tKey: "nav.important-info", href: "/important-info" },
   ]},
   { tKey: "nav.compare", href: "/compare" },
+  { tKey: "nav.popular-courses", href: "/popular-courses" },
   { tKey: "nav.events", href: "/events" },
   { tKey: "nav.blog", href: "/blog" },
   { tKey: "nav.about", href: "/about" },
