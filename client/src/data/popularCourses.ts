@@ -28,7 +28,7 @@ export const popularCourses = [
   {
     name: "Mass Media & Communication",
     details: "Journalism · Broadcasting · Public Relations",
-    keywords: ["communication", "journalism", "media"],
+    keywords: ["mass communication", "mass media", "journalism", "broadcasting"],
     icon: Radio,
   },
   {
