@@ -74,6 +74,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import ScrollReveal from "@/components/ScrollReveal";
+import UniversityCostCalculator from "@/components/UniversityCostCalculator";
 import { getUniversityById } from "@/data/universities";
 import { universityImages } from "@/data/images";
 
@@ -1388,17 +1389,26 @@ export default function UniversityProfile() {
       {/* Content Area */}
       <section className="py-8 md:py-12 bg-gray-50 dark:bg-background">
         <div className="container">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            >
-              {renderSection()}
-            </motion.div>
-          </AnimatePresence>
+          <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-start">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {renderSection()}
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Sidebar: Cost Calculator */}
+            <div className="lg:order-2">
+              <div className="lg:sticky lg:top-20">
+                <UniversityCostCalculator university={university} />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
