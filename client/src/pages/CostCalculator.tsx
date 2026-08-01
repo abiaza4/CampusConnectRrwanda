@@ -1,9 +1,12 @@
 import { useState, useMemo } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, GraduationCap, Home, Bus, Utensils, Wifi, ShoppingBag, DollarSign } from "lucide-react";
+import { Calculator, GraduationCap, Home, Bus, Utensils, Wifi, ShoppingBag, DollarSign, Building2, CheckCircle2 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageSEO from "@/components/PageSEO";
+import { universities, getUniversityTuitionRange, type University } from "@/data/universities";
+
+const EXCHANGE_RATE = 1475;
 
 const categories = [
   { key: "tuition", label: "Tuition", icon: GraduationCap, default: 1200000, min: 450000, max: 5000000, step: 50000 },
@@ -14,10 +17,19 @@ const categories = [
   { key: "personal", label: "Personal Expenses", icon: ShoppingBag, default: 50000, min: 0, max: 200000, step: 10000 },
 ];
 
+const formatRwf = (n: number) => "RWF " + n.toLocaleString();
+const toUsd = (n: number) => "$" + Math.round(n / EXCHANGE_RATE).toLocaleString();
+
 export default function CostCalculator() {
   const { t } = useLanguage();
+  const [selectedUniversity, setSelectedUniversity] = useState<University | null>(null);
   const [costs, setCosts] = useState<Record<string, number>>(
     Object.fromEntries(categories.map((c) => [c.key, c.default]))
+  );
+
+  const tuitionRange = useMemo(
+    () => getUniversityTuitionRange(selectedUniversity),
+    [selectedUniversity]
   );
 
   const monthlyTotal = useMemo(
@@ -26,11 +38,20 @@ export default function CostCalculator() {
   );
 
   const annualTotal = monthlyTotal * 12;
-  const usdMonthly = Math.round(monthlyTotal / 1500);
-  const usdAnnual = Math.round(annualTotal / 1500);
 
   const updateCost = (key: string, value: number) => {
     setCosts((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleUniversityChange = (id: string) => {
+    const uni = universities.find((u) => u.id === id) || null;
+    setSelectedUniversity(uni);
+    const range = getUniversityTuitionRange(uni);
+    if (range) {
+      const mid = Math.round((range.min + range.max) / 2);
+      const tuitionCat = categories[0];
+      updateCost("tuition", Math.max(tuitionCat.min, Math.min(tuitionCat.max, mid)));
+    }
   };
 
   return (
@@ -61,6 +82,47 @@ export default function CostCalculator() {
           <div className="grid lg:grid-cols-[1fr_340px] gap-8">
             {/* Sliders */}
             <div className="space-y-4">
+              <ScrollReveal delay={0.05}>
+                <div className="bg-white dark:bg-card rounded-2xl p-5 border border-gray-100 dark:border-white/5">
+                  <label className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-lg bg-emerald/10 flex items-center justify-center">
+                      <Building2 className="w-4 h-4 text-emerald" />
+                    </div>
+                    <span className="font-medium text-sm text-gray-900 dark:text-white">
+                      Select your university
+                    </span>
+                  </label>
+                  <select
+                    value={selectedUniversity?.id ?? ""}
+                    onChange={(e) => handleUniversityChange(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-background border border-gray-200 dark:border-white/10 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald/50"
+                  >
+                    <option value="">General estimate (no specific university)</option>
+                    {universities.map((u) => (
+                      <option key={u.id} value={u.id}>
+                        {u.name}
+                      </option>
+                    ))}
+                  </select>
+                  {selectedUniversity && tuitionRange && (
+                    <div className="mt-3 p-3 rounded-xl bg-emerald/5 border border-emerald/10 flex items-start gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-emerald mt-0.5 shrink-0" />
+                      <p className="text-xs text-gray-700 dark:text-gray-300">
+                        <strong>{selectedUniversity.name}</strong>: annual tuition of approximately{" "}
+                        {formatRwf(tuitionRange.min)}
+                        {tuitionRange.max !== tuitionRange.min
+                          ? ` – ${formatRwf(tuitionRange.max)}`
+                          : ""}{" "}
+                        (<strong>{toUsd(tuitionRange.min)}</strong>
+                        {tuitionRange.max !== tuitionRange.min
+                          ? ` – ${toUsd(tuitionRange.max)}`
+                          : ""}{" "}
+                        USD). The tuition slider below is prefilled to this range.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </ScrollReveal>
               {categories.map((cat) => (
                 <ScrollReveal key={cat.key} delay={0.05}>
                   <div className="bg-white dark:bg-card rounded-2xl p-5 border border-gray-100 dark:border-white/5">
@@ -71,9 +133,12 @@ export default function CostCalculator() {
                         </div>
                         <span className="font-medium text-sm text-gray-900 dark:text-white">{t(`calculator.label-${cat.key}`)}</span>
                       </div>
-                      <span className="text-sm font-bold text-navy dark:text-emerald">
-                        RWF {costs[cat.key].toLocaleString()}
-                      </span>
+                      <div className="text-right">
+                        <span className="block text-sm font-bold text-navy dark:text-emerald">
+                          {formatRwf(costs[cat.key])}
+                        </span>
+                        <span className="block text-xs text-gray-400">≈ {toUsd(costs[cat.key])} USD</span>
+                      </div>
                     </div>
                     <input
                       type="range"
@@ -85,8 +150,8 @@ export default function CostCalculator() {
                       className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full appearance-none cursor-pointer accent-emerald"
                     />
                     <div className="flex justify-between text-xs text-gray-400 mt-1">
-                      <span>RWF {cat.min.toLocaleString()}</span>
-                      <span>RWF {cat.max.toLocaleString()}</span>
+                      <span>{formatRwf(cat.min)}</span>
+                      <span>{formatRwf(cat.max)}</span>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -103,22 +168,26 @@ export default function CostCalculator() {
                   <div className="space-y-4">
                     <div className="p-4 rounded-xl bg-emerald/5 border border-emerald/10">
                       <p className="text-xs text-gray-500 mb-1">{t("calculator.monthly-total")}</p>
-                      <p className="text-2xl font-bold text-emerald">RWF {monthlyTotal.toLocaleString()}</p>
-                      <p className="text-xs text-gray-400">~ ${usdMonthly.toLocaleString()} USD</p>
+                      <p className="text-2xl font-bold text-emerald">{formatRwf(monthlyTotal)}</p>
+                      <p className="text-sm font-semibold text-gray-500">≈ {toUsd(monthlyTotal)} USD</p>
                     </div>
                     <div className="p-4 rounded-xl bg-navy/5 dark:bg-navy/20 border border-navy/10">
                       <p className="text-xs text-gray-500 mb-1">{t("calculator.annual-total")}</p>
-                      <p className="text-2xl font-bold text-navy dark:text-emerald">RWF {annualTotal.toLocaleString()}</p>
-                      <p className="text-xs text-gray-400">~ ${usdAnnual.toLocaleString()} USD</p>
+                      <p className="text-2xl font-bold text-navy dark:text-emerald">{formatRwf(annualTotal)}</p>
+                      <p className="text-sm font-semibold text-gray-500">≈ {toUsd(annualTotal)} USD</p>
                     </div>
                     <div className="p-4 rounded-xl bg-gold/5 border border-gold/20">
                       <p className="text-xs text-gray-500 mb-1">{t("calculator.per-semester")}</p>
-                      <p className="text-lg font-bold text-gold">RWF {Math.round(monthlyTotal * 6).toLocaleString()}</p>
+                      <p className="text-lg font-bold text-gold">{formatRwf(Math.round(monthlyTotal * 6))}</p>
+                      <p className="text-sm font-semibold text-gray-500">≈ {toUsd(Math.round(monthlyTotal * 6))} USD</p>
                     </div>
                   </div>
-                  <p className="text-xs text-gray-400 mt-4 text-center">
-                    {t("calculator.exchange-rate")}
-                  </p>
+                  <div className="mt-4 p-3 rounded-xl bg-gray-50 dark:bg-background flex items-center justify-center gap-2">
+                    <DollarSign size={16} className="text-emerald" />
+                    <p className="text-xs text-gray-500">
+                      {t("calculator.exchange-rate")}
+                    </p>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

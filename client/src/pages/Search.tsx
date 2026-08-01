@@ -1,12 +1,51 @@
 import { useState, useMemo, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Search, MapPin, GraduationCap } from "lucide-react";
+import { Search, MapPin, GraduationCap, Code, Monitor, DollarSign, Microscope, Radio, Scale } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { universities } from "@/data/universities";
+import { searchUniversities } from "@/data/universities";
 import PageSEO from "@/components/PageSEO";
+
+const popularCourses = [
+  {
+    name: "Computer Science",
+    details: "Software Engineering · Networking · Data Science",
+    query: "computer science",
+    icon: Code,
+  },
+  {
+    name: "Information Technology",
+    details: "IT Systems · Networking · Cybersecurity",
+    query: "information technology",
+    icon: Monitor,
+  },
+  {
+    name: "Finance",
+    details: "Banking · Accounting · Economics",
+    query: "finance",
+    icon: DollarSign,
+  },
+  {
+    name: "Biomedical Laboratory Sciences",
+    details: "Medical Lab Technology · Diagnostics",
+    query: "biomedical",
+    icon: Microscope,
+  },
+  {
+    name: "Mass Media & Communication",
+    details: "Journalism · Broadcasting · Public Relations",
+    query: "communication",
+    icon: Radio,
+  },
+  {
+    name: "Law (LLB)",
+    details: "Bachelor of Laws · LLM · Legal Studies",
+    query: "law",
+    icon: Scale,
+  },
+];
 
 export default function Search() {
   const { t } = useLanguage();
@@ -19,18 +58,7 @@ export default function Search() {
     if (q) setQuery(q);
   }, [location]);
 
-  const results = useMemo(() => {
-    const q = query.toLowerCase().trim();
-    if (!q) return [];
-    return universities.filter(
-      (u) =>
-        u.name.toLowerCase().includes(q) ||
-        u.description.toLowerCase().includes(q) ||
-        u.city.toLowerCase().includes(q) ||
-        u.programs.some((p) => p.name.toLowerCase().includes(q)) ||
-        u.faculties.some((f) => f.name.toLowerCase().includes(q))
-    );
-  }, [query]);
+  const results = useMemo(() => searchUniversities(query), [query]);
 
   return (
     <div>
@@ -91,6 +119,38 @@ export default function Search() {
               <p className="text-gray-400">{t("search.enter_query")}</p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Most Applied Courses */}
+      <section className="py-10 sm:py-12 md:py-16 bg-gray-50 dark:bg-background border-t border-gray-100 dark:border-white/5">
+        <div className="container">
+          <div className="text-center mb-8 sm:mb-10 px-4">
+            <Badge className="bg-emerald/10 text-emerald border-emerald/20 mb-3">Most Applied Courses</Badge>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white" style={{ fontFamily: "'Fraunces', serif" }}>
+              Courses Applied For the Most
+            </h2>
+            <p className="text-gray-500 mt-2 text-sm sm:text-base">
+              Tap a course to see which universities in Rwanda offer it.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {popularCourses.map((course, i) => (
+              <ScrollReveal key={course.name} delay={i * 0.06}>
+                <Link href={`/search?q=${encodeURIComponent(course.query)}`}>
+                  <div className="bg-white dark:bg-card rounded-2xl p-5 sm:p-6 border border-gray-100 dark:border-white/5 hover:shadow-lg hover:border-emerald/30 transition-all h-full cursor-pointer group">
+                    <div className="w-12 h-12 rounded-xl bg-emerald/10 flex items-center justify-center mb-4 group-hover:bg-emerald/20 transition-colors">
+                      <course.icon className="w-6 h-6 text-emerald" />
+                    </div>
+                    <h3 className="font-bold text-gray-900 dark:text-white mb-1" style={{ fontFamily: "'Fraunces', serif" }}>
+                      {course.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{course.details}</p>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
     </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { universities, getAllCities } from "@/data/universities";
+import { universities, getAllCities, searchUniversities } from "@/data/universities";
 import PageSEO from "@/components/PageSEO";
 
 export default function Universities() {
@@ -28,17 +28,11 @@ export default function Universities() {
 
   const filtered = useMemo(() => {
     const query = search.toLowerCase().trim();
-    return universities.filter((u) => {
-      const matchesSearch =
-        !query ||
-        u.name.toLowerCase().includes(query) ||
-        u.description.toLowerCase().includes(query) ||
-        u.city.toLowerCase().includes(query) ||
-        u.programs.some((p) => p.name.toLowerCase().includes(query)) ||
-        u.faculties.some((f) => f.name.toLowerCase().includes(query));
+    const matched = query ? searchUniversities(query) : universities;
+    return matched.filter((u) => {
       const matchesType = typeFilter === "All" || u.type === typeFilter;
       const matchesCity = cityFilter === "All" || u.city === cityFilter;
-      return matchesSearch && matchesType && matchesCity;
+      return matchesType && matchesCity;
     });
   }, [search, typeFilter, cityFilter]);
 

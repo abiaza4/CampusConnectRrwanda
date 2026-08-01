@@ -556,7 +556,7 @@ export const translations: Translations = {
   "calculator.monthly-total": { en: "Monthly Total", rw: "Igiteranyo cy'Ukwezi", fr: "Total Mensuel", sw: "Jumla ya Kila Mwezi", ar: "المجموع الشهري" },
   "calculator.annual-total": { en: "Annual Total", rw: "Igiteranyo cy'Umwaka", fr: "Total Annuel", sw: "Jumla ya Mwaka", ar: "المجموع السنوي" },
   "calculator.per-semester": { en: "Per Semester (6 months)", rw: "Ku gihembwe (amezi 6)", fr: "Par Semestre (6 mois)", sw: "Kwa Semesta (miezi 6)", ar: "لكل فصل دراسي (6 أشهر)" },
-  "calculator.exchange-rate": { en: "Exchange rate: ~1,500 RWF = 1 USD (approximate)", rw: "Igiciro cy'ivunjisha: ~1,500 RWF = 1 USD (hafi)", fr: "Taux de change : ~1 500 RWF = 1 USD (approximatif)", sw: "Kiwango cha ubadilishaji: ~1,500 RWF = 1 USD (kadirio)", ar: "سعر الصرف: ~1,500 فرنك رواندي = 1 دولار أمريكي (تقريبي)" },
+  "calculator.exchange-rate": { en: "Exchange rate: 1 USD ≈ 1,475 RWF (approximate)", rw: "Igiciro cy'ivunjisha: 1 USD ≈ 1,475 RWF (hafi)", fr: "Taux de change : 1 USD ≈ 1 475 RWF (approximatif)", sw: "Kiwango cha ubadilishaji: 1 USD ≈ 1,475 RWF (kadirio)", ar: "سعر الصرف: 1 دولار ≈ 1,475 فرنك رواندي (تقريبي)" },
   "calculator.breakdown-title": { en: "Cost Breakdown Summary", rw: "Incamake y'Igiciro", fr: "Résumé de la Répartition des Coûts", sw: "Muhtasari wa Uchanganuzi wa Gharama", ar: "ملخص تفصيل التكاليف" },
   "calculator.table-category": { en: "Category", rw: "Icyiciro", fr: "Catégorie", sw: "Kategoria", ar: "الفئة" },
   "calculator.table-monthly": { en: "Monthly (RWF)", rw: "Kwezi (RWF)", fr: "Mensuel (RWF)", sw: "Kwa Mwezi (RWF)", ar: "شهريًا (فرنك رواندي)" },

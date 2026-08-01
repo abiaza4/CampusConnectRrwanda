@@ -4507,3 +4507,73 @@ export function getUniversitiesByType(type: "Public" | "Private"): University[] 
   return universities.filter((u) => u.type === type);
 }
 
+const SHORT_NAME_MAP: Record<string, string> = {
+  ur: "unr",
+  ulk: "ulk",
+  auca: "auca",
+  unilak: "unilak",
+  ines: "ruhengeri-rtc",
+  "mt kigali": "mount-kenya",
+  mtkigali: "mount-kenya",
+  mkur: "mount-kenya",
+  mku: "mount-kenya",
+  utab: "utab",
+  uok: "uok",
+  uk: "uok",
+  ktu: "ktu",
+  cmu: "cmu",
+  ughe: "ughe",
+  alu: "alu",
+  kist: "kist",
+  isae: "isae",
+  cur: "cur",
+  eaur: "eaur",
+  kepler: "kepler",
+  rtcu: "ruhengeri-rtc",
+};
+
+export function searchUniversities(query: string): University[] {
+  const q = query.toLowerCase().trim();
+  if (!q) return [];
+  const aliasId = SHORT_NAME_MAP[q];
+  if (aliasId) {
+    return universities.filter((u) => u.id === aliasId);
+  }
+  return universities.filter((u) => {
+    const courseNames = [
+      ...u.programs.map((p) => p.name),
+      ...u.academicInfo.undergraduatePrograms.map((p) => p.name),
+      ...u.academicInfo.postgraduatePrograms.map((p) => p.name),
+      ...u.academicInfo.diplomaPrograms.map((p) => p.name),
+      ...u.academicInfo.certificatePrograms.map((p) => p.name),
+      ...(u.tuitionDetails ?? []).map((t) => t.program),
+    ].map((p) => p.toLowerCase());
+    return (
+      u.name.toLowerCase().includes(q) ||
+      u.description.toLowerCase().includes(q) ||
+      u.city.toLowerCase().includes(q) ||
+      u.location.toLowerCase().includes(q) ||
+      courseNames.some((p) => p.includes(q)) ||
+      u.faculties.some((f) => f.name.toLowerCase().includes(q))
+    );
+  });
+}
+
+export function getUniversityTuitionRange(uni: University | undefined): { min: number; max: number } | null {
+  if (!uni) return null;
+  const parse = (s: string) => Number(s.replace(/[^0-9.]/g, ""));
+  if (uni.tuitionDetails?.length) {
+    const nums = (uni.tuitionDetails[0].localAmount.match(/[\d,.]+/g) ?? [])
+      .map((s) => parse(s))
+      .filter((n) => n > 0);
+    if (nums.length >= 2) return { min: nums[0], max: nums[1] };
+    if (nums.length === 1) return { min: nums[0], max: nums[0] };
+  }
+  if (uni.tuition) {
+    const min = parse(String(uni.tuition.localMin ?? ""));
+    const max = parse(String(uni.tuition.localMax ?? ""));
+    if (min || max) return { min: min || max, max: max || min };
+  }
+  return null;
+}
+
