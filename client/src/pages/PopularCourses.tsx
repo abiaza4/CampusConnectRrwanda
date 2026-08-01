@@ -4,7 +4,7 @@ import { GraduationCap, TrendingUp, MapPin, ChevronDown, Building2 } from "lucid
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { popularCourses } from "@/data/popularCourses";
-import { searchUniversities } from "@/data/universities";
+import { findUniversitiesByAnyKeyword } from "@/data/universities";
 import PageSEO from "@/components/PageSEO";
 
 export default function PopularCourses() {
@@ -41,7 +41,7 @@ export default function PopularCourses() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {popularCourses.map((course, i) => {
               const isOpen = expanded === course.name;
-              const matches = searchUniversities(course.query);
+              const matches = findUniversitiesByAnyKeyword(course.keywords);
               return (
                 <ScrollReveal key={course.name} delay={i * 0.06}>
                   <div

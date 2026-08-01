@@ -4,37 +4,37 @@ export const popularCourses = [
   {
     name: "Computer Science",
     details: "Software Engineering · Networking · Data Science",
-    query: "computer science",
+    keywords: ["computer science", "software engineering", "data science", "network engineering"],
     icon: Code,
   },
   {
     name: "Information Technology",
     details: "IT Systems · Networking · Cybersecurity",
-    query: "information technology",
+    keywords: ["information technology", "information and communication technology"],
     icon: Monitor,
   },
   {
     name: "Finance",
     details: "Banking · Accounting · Economics",
-    query: "finance",
+    keywords: ["finance"],
     icon: DollarSign,
   },
   {
     name: "Biomedical Laboratory Sciences",
     details: "Medical Lab Technology · Diagnostics",
-    query: "biomedical",
+    keywords: ["biomedical", "medical laboratory", "laboratory sciences", "lab sciences"],
     icon: Microscope,
   },
   {
     name: "Mass Media & Communication",
     details: "Journalism · Broadcasting · Public Relations",
-    query: "communication",
+    keywords: ["communication", "journalism", "media"],
     icon: Radio,
   },
   {
     name: "Law (LLB)",
     details: "Bachelor of Laws · LLM · Legal Studies",
-    query: "law",
+    keywords: ["law"],
     icon: Scale,
   },
 ];

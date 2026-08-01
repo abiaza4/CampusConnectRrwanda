@@ -1390,7 +1390,9 @@ export const universities: University[] = [  {
         { name: "BSc Nursing", duration: "4 years", description: "Bachelor of Science in Nursing." },
         { name: "LLB", duration: "4 years", description: "Bachelor of Laws." },
         { name: "BSc Education", duration: "3 years", description: "Bachelor of Science in Education." },
-        { name: "BSc Hospitality Management", duration: "3 years", description: "Bachelor in Hospitality and Tourism Management." }
+        { name: "BSc Hospitality Management", duration: "3 years", description: "Bachelor in Hospitality and Tourism Management." },
+        { name: "BSc Medical Laboratory Sciences", duration: "4 years", description: "Bachelor of Science in Medical Laboratory Sciences." },
+        { name: "BA Mass Communication", duration: "3 years", description: "Bachelor of Arts in Mass Media and Communication." }
       ],
       postgraduatePrograms: [
         { name: "MBA", duration: "2 years", description: "Master of Business Administration." },
@@ -1432,6 +1434,8 @@ export const universities: University[] = [  {
       { name: "LLB", level: "Bachelor", duration: "4 years", faculty: "School of Law" },
       { name: "BSc Education", level: "Bachelor", duration: "3 years", faculty: "School of Education" },
       { name: "BSc Hospitality Management", level: "Bachelor", duration: "3 years", faculty: "School of Hospitality & Tourism" },
+      { name: "BSc Medical Laboratory Sciences", level: "Bachelor", duration: "4 years", faculty: "School of Health Sciences" },
+      { name: "BA Mass Communication", level: "Bachelor", duration: "3 years", faculty: "School of Business & Economics" },
       { name: "MBA", level: "Master", duration: "2 years", faculty: "School of Business & Economics" },
       { name: "MSc Computer Science", level: "Master", duration: "2 years", faculty: "School of ICT & Computing" },
       { name: "MSc Public Health", level: "Master", duration: "2 years", faculty: "School of Health Sciences" },
@@ -4547,16 +4551,30 @@ export function searchUniversities(query: string): University[] {
       ...u.academicInfo.diplomaPrograms.map((p) => p.name),
       ...u.academicInfo.certificatePrograms.map((p) => p.name),
       ...(u.tuitionDetails ?? []).map((t) => t.program),
+      ...u.academicInfo.schools.map((s) => `${s.name} ${s.description}`),
+      ...u.academicInfo.departments.map((d) => `${d.name} ${d.school} ${d.description}`),
+      ...u.faculties.map((f) => `${f.name} ${f.description}`),
     ].map((p) => p.toLowerCase());
     return (
       u.name.toLowerCase().includes(q) ||
       u.description.toLowerCase().includes(q) ||
       u.city.toLowerCase().includes(q) ||
       u.location.toLowerCase().includes(q) ||
-      courseNames.some((p) => p.includes(q)) ||
-      u.faculties.some((f) => f.name.toLowerCase().includes(q))
+      courseNames.some((p) => p.includes(q))
     );
   });
+}
+
+export function findUniversitiesByAnyKeyword(keywords: string[]): University[] {
+  const keys = keywords.filter(Boolean).map((k) => k.toLowerCase());
+  if (keys.length === 0) return [];
+  const matched = new Map<string, University>();
+  for (const k of keys) {
+    for (const u of searchUniversities(k)) {
+      matched.set(u.id, u);
+    }
+  }
+  return Array.from(matched.values());
 }
 
 export function getUniversityTuitionRange(uni: University | undefined): { min: number; max: number } | null {
