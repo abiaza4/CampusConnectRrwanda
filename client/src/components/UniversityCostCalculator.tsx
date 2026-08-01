@@ -44,6 +44,15 @@ export default function UniversityCostCalculator({ university }: { university: U
 
   return (
     <div className="bg-white dark:bg-card rounded-2xl p-5 border border-gray-100 dark:border-white/5 shadow-lg">
+      <div className="mb-4 flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-gold/10 border border-gold/20">
+        <span className="flex items-center gap-1.5 text-xs font-semibold text-gold">
+          <DollarSign className="w-3.5 h-3.5" /> Exchange Rate
+        </span>
+        <span className="text-xs font-bold text-gray-800 dark:text-white">
+          1 USD ≈ 1,475 RWF <span className="font-medium text-gray-500">(100 USD ≈ 147,500 RWF)</span>
+        </span>
+      </div>
+
       <h3 className="font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2" style={{ fontFamily: "'Fraunces', serif" }}>
         <Calculator size={18} className="text-emerald" /> Cost Calculator
       </h3>

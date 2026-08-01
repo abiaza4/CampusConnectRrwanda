@@ -82,6 +82,16 @@ export default function CostCalculator() {
           <div className="grid lg:grid-cols-[1fr_340px] gap-8">
             {/* Sliders */}
             <div className="space-y-4">
+              <ScrollReveal delay={0.02}>
+                <div className="flex items-center justify-between gap-2 px-4 py-3 rounded-2xl bg-gold/10 border border-gold/20">
+                  <span className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gold">
+                    <DollarSign className="w-4 h-4" /> Exchange Rate
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-gray-800 dark:text-white">
+                    1 USD ≈ 1,475 RWF <span className="font-medium text-gray-500">(100 USD ≈ 147,500 RWF)</span>
+                  </span>
+                </div>
+              </ScrollReveal>
               <ScrollReveal delay={0.05}>
                 <div className="bg-white dark:bg-card rounded-2xl p-5 border border-gray-100 dark:border-white/5">
                   <label className="flex items-center gap-3 mb-3">
